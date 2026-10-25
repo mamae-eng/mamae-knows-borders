@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mamae Knows Borders — Filipino Visa & Global Pathway Guide</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -17,11 +16,11 @@
     <!-- Top Disclaimer Banner -->
     <div class="bg-amber-50 border-b border-amber-200 text-amber-900 px-4 py-2 text-xs sm:text-sm text-center font-medium">
         <i class="fa-solid fa-triangle-exclamation mr-1.5 text-amber-600"></i>
-        <strong>Disclaimer:</strong> Mamae Knows Borders is an independent informational guide created by a fellow Filipino traveler and former OFW. We are not affiliated with any embassy, the Department of Foreign Affairs (DFA), or DMW/POEA. Always verify requirements on official government websites.
+        <strong>Disclaimer:</strong> Mamae Knows Borders is an independent informational guide created by a fellow Filipino traveler and former OFW. We are not affiliated with any embassy, the DFA, or DMW/POEA. Always verify requirements on official government websites.
     </div>
 
     <!-- Navigation Bar -->
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <div class="bg-blue-600 text-white p-2.5 rounded-xl shadow-md">
@@ -34,7 +33,7 @@
             </div>
             <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-600">
                 <a href="#about" class="hover:text-blue-600 transition">About Mamae</a>
-                <a href="#categories" class="hover:text-blue-600 transition">Guides & Pathways</a>
+                <a href="#categories" class="hover:text-blue-600 transition">Interactive Guides</a>
                 <a href="#checklist" class="hover:text-blue-600 transition">Document Checklist</a>
                 <a href="#official-links" class="hover:text-blue-600 transition">Official Portals</a>
             </nav>
@@ -47,21 +46,22 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white py-20 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <section class="relative bg-slate-900 text-white py-24 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=1600&q=80" alt="Travel Background" class="absolute inset-0 w-full h-full object-cover opacity-25">
         <div class="relative max-w-4xl mx-auto space-y-6">
-            <span class="bg-blue-500/20 text-blue-300 border border-blue-400/30 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider">
+            <span class="bg-blue-500/30 text-blue-200 border border-blue-400/30 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider">
                 Built from Lived Experience, for Filipinos Worldwide
             </span>
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
                 Navigating Global Borders with a <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">PH Passport</span>
             </h1>
-            <p class="text-lg sm:text-xl text-slate-300 font-normal max-w-2xl mx-auto">
-                Comprehensive, honest, and step-by-step guides for tourist visas, work permits, permanent residency, and OFW compliance. 
+            <p class="text-lg sm:text-xl text-slate-200 font-normal max-w-2xl mx-auto">
+                Click any guide below for honest, step-by-step instructions on tourist visas, work permits, permanent residency, and OFW compliance.
             </p>
             <div class="pt-4 flex flex-wrap justify-center gap-4">
                 <a href="#categories" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition">
-                    Explore Guides
+                    Open Interactive Guides
                 </a>
                 <a href="#about" class="bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-3.5 rounded-xl backdrop-blur-sm transition border border-white/20">
                     Read Mamae's Story
@@ -70,41 +70,350 @@
         </div>
     </section>
 
-    <!-- About Me / Founder Story Section -->
+    <!-- About Me / Founder Story Section with Picture Slot -->
     <section id="about" class="py-16 bg-white border-b border-slate-200">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-sm">
-                <div class="max-w-3xl mx-auto space-y-6">
-                    <div class="flex items-center space-x-3 text-blue-600">
-                        <i class="fa-solid fa-heart text-2xl"></i>
-                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Bakit ko binuo ang site na ito? (Why I Built This)</h2>
+            <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-sm flex flex-col md:flex-row gap-8 items-center">
+                
+                <!-- Mamae's Photo Area (Change the src="..." to your own uploaded photo later!) -->
+                <div class="w-48 h-48 sm:w-64 sm:h-64 flex-shrink-0 rounded-2xl overflow-hidden shadow-md border-4 border-white relative group">
+                    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=600&q=80" alt="Mamae Travel Story" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-3 text-white text-xs text-center font-semibold">
+                        From Bulacan to New York
                     </div>
-                    <div class="prose text-slate-700 leading-relaxed space-y-4 text-sm sm:text-base">
-                        <p>
-                            I grew up in a small town in <strong>Bulacan, Philippines</strong>, carrying a big childhood dream: seeing the magical landscapes of "Middle Earth" and traveling across different countries. 
-                        </p>
-                        <p>
-                            At 20 years old, I processed my old green Philippine passport all by myself—traveling all the way to Manila and arriving at 3:00 AM just to secure a slot. At 21, I experienced firsthand the struggle of leaving as an OFW to Taiwan, dealing with high processing fees, agency anxiety, and the overwhelming paperwork required of a young Filipino stepping abroad for the first time.
-                        </p>
-                        <p>
-                            Years later, even now as a permanent resident in <strong>New York</strong> holding a US Green Card, I know firsthand that <strong>holding foreign status doesn't completely exempt us from the complexities of travel documentation and visa anxiety</strong>. I built this site because I deeply understand the friction, financial stress, and confusion that Filipinos face when trying to cross borders—whether for a quick vacation, a job contract, or immigration. <em>Hindi madali, pero kaya natin.</em>
-                        </p>
+                </div>
+
+                <!-- Story Text -->
+                <div class="space-y-4 text-slate-700 leading-relaxed text-sm sm:text-base">
+                    <div class="flex items-center space-x-2 text-blue-600">
+                        <i class="fa-solid fa-heart text-xl"></i>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Hi, I'm Mamae!</h2>
                     </div>
+                    <p>
+                        I grew up in a small town in <strong>Bulacan, Philippines</strong>, carrying a big childhood dream: seeing the magical landscapes of "Middle Earth" and traveling across different countries. 
+                    </p>
+                    <p>
+                        At 20 years old, I processed my old green Philippine passport all by myself—traveling all the way to Manila and arriving at 3:00 AM just to secure a slot. At 21, I experienced firsthand the struggle of leaving as an OFW to Taiwan, dealing with high processing fees, agency anxiety, and the overwhelming paperwork required of a young Filipino stepping abroad for the first time.
+                    </p>
+                    <p>
+                        Years later, even now as a permanent resident in <strong>New York</strong> holding a US Green Card, I know firsthand that <strong>holding foreign status doesn't exempt us from the visa processes required of a Philippine passport holder</strong>. I built this site because I understand the struggle. <em>Hindi madali, pero kaya natin!</em>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Main Content Categories -->
+    <!-- Interactive Guides Section -->
     <section id="categories" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow w-full">
         <div class="text-center max-w-2xl mx-auto mb-12">
-            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Step-by-Step Pathways</h2>
-            <p class="text-slate-600 mt-2">Choose a category below to explore comprehensive guides and official portal requirements.</p>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Interactive Step-by-Step Guides</h2>
+            <p class="text-slate-600 mt-2">Click on any card below to open the full step-by-step requirements, tips, and official links.</p>
         </div>
 
-        <!-- Category Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <!-- Category 1: Tourism & Short Visits -->
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col">
-                <div class="h-48 bg
+        <!-- Dynamic Cards Grid (Populated via JS below for easy editing!) -->
+        <div id="guidesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </section>
+
+    <!-- Interactive Document Checklist Section -->
+    <section id="checklist" class="py-16 bg-white border-t border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Interactive Document Checklist</h2>
+                <p class="text-slate-600 mt-2">Select your visa type and check off your documents as you prepare them.</p>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+                <div class="mb-6">
+                    <label class="block text-sm font-bold text-slate-700 mb-2">Select Visa / Pathway Type:</label>
+                    <select id="visaSelect" onchange="updateChecklist()" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="tourist">Tourist Visa (Japan, Korea, US, Schengen)</option>
+                        <option value="ofw">OFW / DMW Departure (Taiwan, Middle East, etc.)</option>
+                        <option value="work">Skilled Work Visa</option>
+                        <option value="study">Student Visa</option>
+                    </select>
+                </div>
+                <div id="checklistContent" class="space-y-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Official Government Portals Section -->
+    <section id="official-links" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Official Government Portals</h2>
+            <p class="text-slate-600 mt-2">Zero fake news. Always transact directly through official websites.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a href="https://dfa.gov.ph" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
+                <div class="text-blue-600 text-xl mb-3"><i class="fa-solid fa-passport"></i></div>
+                <h3 class="font-bold text-slate-900">DFA Philippines</h3>
+                <p class="text-xs text-slate-500 mt-1">Passport appointments, Apostille, and consular services.</p>
+                <span class="text-xs text-blue-600 font-semibold mt-3 inline-block">Visit Official Site <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
+            </a>
+
+            <a href="https://www.dmw.gov.ph" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
+                <div class="text-amber-600 text-xl mb-3"><i class="fa-solid fa-briefcase"></i></div>
+                <h3 class="font-bold text-slate-900">DMW (Formerly POEA)</h3>
+                <p class="text-xs text-slate-500 mt-1">OFW OEC issuance, job order verification, and direct-hire guides.</p>
+                <span class="text-xs text-blue-600 font-semibold mt-3 inline-block">Visit Official Site <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
+            </a>
+
+            <a href="https://cfo.gov.ph" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
+                <div class="text-teal-600 text-xl mb-3"><i class="fa-solid fa-people-roof"></i></div>
+                <h3 class="font-bold text-slate-900">CFO Philippines</h3>
+                <p class="text-xs text-slate-500 mt-1">Mandatory seminars for emigrants, PR holders, and foreign spouses.</p>
+                <span class="text-xs text-blue-600 font-semibold mt-3 inline-block">Visit Official Site <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
+            </a>
+
+            <a href="https://travel.state.gov" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
+                <div class="text-indigo-600 text-xl mb-3"><i class="fa-solid fa-flag-usa"></i></div>
+                <h3 class="font-bold text-slate-900">U.S. Dept of State</h3>
+                <p class="text-xs text-slate-500 mt-1">Official U.S. tourist (B1/B2), work, and immigrant visa information.</p>
+                <span class="text-xs text-blue-600 font-semibold mt-3 inline-block">Visit Official Site <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Interactive Popup Modal (Hidden by default) -->
+    <div id="guideModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 animate-fadeIn">
+            <div class="relative h-56">
+                <img id="modalImg" src="" alt="Guide Banner" class="w-full h-full object-cover">
+                <button onclick="closeModal()" class="absolute top-4 right-4 bg-black/60 hover:bg-black text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent p-6 text-white">
+                    <span id="modalBadge" class="bg-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase"></span>
+                    <h3 id="modalTitle" class="text-2xl sm:text-3xl font-extrabold mt-2"></h3>
+                </div>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <p id="modalDesc" class="text-slate-600 text-sm sm:text-base"></p>
+                
+                <div>
+                    <h4 class="font-bold text-slate-900 text-base mb-3 flex items-center">
+                        <i class="fa-solid fa-list-check text-blue-600 mr-2"></i> Step-by-Step Process
+                    </h4>
+                    <ol id="modalSteps" class="list-decimal list-inside space-y-2 text-sm text-slate-700 bg-slate-50 p-4 rounded-2xl border border-slate-200"></ol>
+                </div>
+
+                <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4">
+                    <h4 class="font-bold text-amber-900 text-sm mb-1 flex items-center">
+                        <i class="fa-solid fa-lightbulb text-amber-600 mr-2"></i> Mamae's Real-Talk Tip:
+                    </h4>
+                    <p id="modalTip" class="text-xs sm:text-sm text-amber-800"></p>
+                </div>
+
+                <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row gap-3 justify-between items-center">
+                    <a id="modalLink" href="#" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto text-center bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-xl text-sm transition">
+                        Go to Official Government Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1.5"></i>
+                    </a>
+                    <button onclick="closeModal()" class="w-full sm:w-auto text-center bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-6 py-3 rounded-xl text-sm transition">
+                        Close Guide
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <p class="text-sm font-semibold">Mamae Knows Borders — Built with dedication for Filipinos dreaming of the world.</p>
+            <p class="text-xs text-slate-400 max-w-xl mx-auto">
+                Disclaimer: This site is strictly for informational purposes. Visa policies change frequently. Always check official embassy or government websites before making travel or financial commitments.
+            </p>
+            <p class="text-xs text-slate-500 pt-4 border-t border-slate-800">
+                © 2026 Mamae Knows Borders. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Website Data & Interactive Scripts -->
+    <script>
+        const guides = [
+            {
+                id: "taiwan-ofw",
+                badge: "OFW & Work Pathway",
+                title: "Taiwan OFW & Factory/Caregiver Guide",
+                image: "https://images.unsplash.com/photo-1508248467877-aec1b08de376?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "From placement fees to MECO and DMW requirements—everything you need to know before working in Taiwan.",
+                steps: [
+                    "Verify the recruitment agency and job order on the official DMW website or mobile app.",
+                    "Prepare your valid Passport, Unified Multi-Purpose ID (UMID/SSS), and PSA Birth Certificate.",
+                    "Undergo medical examination only at a clinic accredited by the Taiwan Ministry of Health & DMW.",
+                    "Complete your Pre-Departure Orientation Seminar (PDOS) and biometric processing.",
+                    "Secure your Overseas Employment Certificate (OEC) from DMW before your flight."
+                ],
+                tip: "As someone who went to Taiwan as a 21-year-old OFW: NEVER pay money upfront to anyone outside of an official, DMW-verified agency office, and always keep copies of your receipts!",
+                officialUrl: "https://www.dmw.gov.ph"
+            },
+            {
+                id: "japan-tourist",
+                badge: "Tourism",
+                title: "Japan Tourist Visa Guide",
+                image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "Step-by-step preparation for bank certificates, daily itineraries (Taizai Nitteihyo), and VFS/Agency submission.",
+                steps: [
+                    "Download and fill out the official Japanese Visa Application Form completely.",
+                    "Prepare a 2x2cm (or 4.5x3.5cm) photo with white background taken within the last 6 months.",
+                    "Request your Bank Certificate (with ADB - Average Daily Balance) and latest ITR (BIR Form 2316).",
+                    "Write your daily Schedule of Stay (Itinerary) cleanly—no need to buy flight tickets yet!",
+                    "Submit documents via an accredited agency or VFS Japan center."
+                ],
+                tip: "Do not put a 'sudden huge deposit' into your bank account right before requesting a bank certificate. Embassies look for consistent Average Daily Balance (ADB)!",
+                officialUrl: "https://www.ph.emb-japan.go.jp/itpr_en/00_000035.html"
+            },
+            {
+                id: "new-zealand",
+                badge: "Middle Earth Dream",
+                title: "New Zealand Tourist & Work Visas",
+                image: "https://images.unsplash.com/photo-1469521669194-babb45599def?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "Fulfilling the 'Middle Earth' dream! Online visitor visa applications and Accredited Employer Work Visas.",
+                steps: [
+                    "Create a RealMe account on the official Immigration New Zealand (INZ) portal.",
+                    "Scan all your supporting documents in PDF format (Passport, Bank Statements, COE, Approved Leave).",
+                    "Show strong ties to the Philippines (employment, property, or family responsibilities).",
+                    "Pay the visa application fee and IVL levy online and wait for electronic processing."
+                ],
+                tip: "New Zealand applications are 100% online for tourists! Make sure your cover letter clearly explains why you want to visit (yes, mentioning Lord of the Rings/Hobbiton is great!) and when you will return to work.",
+                officialUrl: "https://www.immigration.govt.nz"
+            },
+            {
+                id: "us-visa",
+                badge: "Tourism & Green Card",
+                title: "U.S. B1/B2 Tourist & Immigrant Guide",
+                image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "DS-160 tips, embassy interview preparation, and what to know about traveling even with a US Green Card.",
+                steps: [
+                    "Complete the DS-160 form online accurately (your answers here are the most important part!).",
+                    "Pay the MRV visa fee and schedule your biometrics and Embassy interview appointment.",
+                    "Show up on time at the US Embassy in Manila (leave electronics and bags behind).",
+                    "Answer the consul's questions honestly, briefly, and confidently."
+                ],
+                tip: "For B1/B2 tourist interviews, the consul rarely looks at thick folders of documents—they judge your honesty and your DS-160 form. Also, remember: having a US Green Card lets you enter a few places like Canada or Mexico easier, but for Europe (Schengen) or Japan, you STILL need to apply for a visa with your PH passport!",
+                officialUrl: "https://ph.usembassy.gov/visas/"
+            },
+            {
+                id: "schengen-europe",
+                badge: "Tourism",
+                title: "Schengen Visa (Europe) — Even from the US",
+                image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "How Filipino passport holders (in PH or living abroad as PRs) apply to visit France, Italy, Switzerland, and more.",
+                steps: [
+                    "Identify your main destination country (where you will spend the most days).",
+                    "Book an appointment at VFS Global or TLScontact at least 2 to 3 months before your trip.",
+                    "Purchase Schengen-compliant Travel Medical Insurance (minimum €30,000 coverage).",
+                    "Compile flight reservations, hotel bookings, 3-6 months bank statements, and employment proof."
+                ],
+                tip: "Even as a US Green Card holder in New York, I still have to book biometrics appointments and submit bank statements for a Schengen visa! Book your VFS slot early because slots fill up months in advance.",
+                officialUrl: "https://home-affairs.ec.europa.eu/policies/schengen-borders-and-visa/visa-policy_en"
+            },
+            {
+                id: "dfa-apostille",
+                badge: "How-To Vault",
+                title: "PH Passport & DFA Apostille Guide",
+                image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "No more 3:00 AM lines! How to book online appointments for passports and document authentication.",
+                steps: [
+                    "Go to the official DFA Online Appointment System (never pay fixers on Facebook!).",
+                    "Select your preferred consular office location and time slot.",
+                    "Pay the processing fee through accredited payment centers within 24 hours.",
+                    "Bring your original PSA documents, valid IDs, and printed application form on your appointment date."
+                ],
+                tip: "Back when I was 20, I had to travel from Bulacan to Manila at 3:00 AM just to line up for my old green passport. Today, everything is by online appointment—never pay 'fixers' selling slots online!",
+                officialUrl: "https://dfa.gov.ph"
+            }
+        ];
+
+        function renderGuides() {
+            const grid = document.getElementById('guidesGrid');
+            grid.innerHTML = guides.map((g, index) => `
+                <div onclick="openModal(${index})" class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:shadow-xl hover:-translate-y-1 transition duration-200 cursor-pointer group">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="${g.image}" alt="${g.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex flex-col justify-end p-5 text-white">
+                            <span class="bg-blue-600/90 text-[11px] font-bold px-2.5 py-1 rounded-md w-max mb-1.5 uppercase tracking-wide">${g.badge}</span>
+                            <h3 class="text-lg font-extrabold leading-snug">${g.title}</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                        <p class="text-sm text-slate-600">${g.shortDesc}</p>
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-blue-600 font-bold text-sm">
+                            <span>Read Step-by-Step Guide</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openModal(index) {
+            const g = guides[index];
+            document.getElementById('modalImg').src = g.image;
+            document.getElementById('modalBadge').innerText = g.badge;
+            document.getElementById('modalTitle').innerText = g.title;
+            document.getElementById('modalDesc').innerText = g.shortDesc;
+            document.getElementById('modalSteps').innerHTML = g.steps.map(s => `<li class="leading-relaxed">${s}</li>`).join('');
+            document.getElementById('modalTip').innerText = g.tip;
+            document.getElementById('modalLink').href = g.officialUrl;
+            document.getElementById('guideModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('guideModal').classList.add('hidden');
+        }
+
+        const checklistData = {
+            tourist: [
+                "Valid Philippine Passport (at least 6 months validity beyond travel dates)",
+                "Completed Official Visa Application Form",
+                "Passport-size colored photos (check country's exact size specs)",
+                "Bank Certificate (with ADB) and Bank Statements (past 3-6 months)",
+                "Income Tax Return (BIR Form 2316) or Certificate of Employment (COE) with approved leave",
+                "Daily Travel Itinerary & Hotel Reservations"
+            ],
+            ofw: [
+                "Verified Employment Contract from DMW / MWO",
+                "DMW E-Registration Account & Mobile App Profile",
+                "Pre-Departure Orientation Seminar (PDOS) Certificate",
+                "Medical Examination Certificate from a DMW-accredited clinic",
+                "Valid Passport & Approved Work Visa / Entry Permit",
+                "Overseas Employment Certificate (OEC)"
+            ],
+            work: [
+                "Approved Work Visa or Employer Sponsorship Letter",
+                "Authenticated Educational & Civil Documents (DFA Apostille)",
+                "Updated Resume / Curriculum Vitae & Employment Certificates",
+                "NBI Clearance (For Travel Abroad)",
+                "Medical Fitness Clearance"
+            ],
+            study: [
+                "Official Letter of Acceptance (LOA) from the school/university",
+                "Proof of Financial Capacity (Tuition + Living Expenses)",
+                "Valid Philippine Passport & Visa Photos",
+                "English Proficiency Exam Results (IELTS / PTE / TOEFL)",
+                "Statement of Purpose (SOP) / Study Plan Letter"
+            ]
+        };
+
+        function updateChecklist() {
+            const select = document.getElementById('visaSelect');
+            const container = document.getElementById('checklistContent');
+            const items = checklistData[select.value] || [];
+            container.innerHTML = items.map(item => `
+                <label class="flex items-start space-x-3 bg-white p-3.5 rounded-xl border border-slate-200 hover:bg-blue-50/50 transition cursor-pointer">
+                    <input type="checkbox" class="mt-1 h-4 w-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500">
+                    <span class="text-sm text-slate-700 font-medium">${item}</span>
+                </label>
+            `).join('');
+        }
+
+        window.onload = () => {
+            renderGuides();
+            updateChecklist();
+        };
+    </script>
+</body>
+</html>
