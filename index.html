@@ -53,13 +53,13 @@
         <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=1600&q=80" alt="Travel Background" class="absolute inset-0 w-full h-full object-cover opacity-25">
         <div class="relative max-w-4xl mx-auto space-y-6">
             <span class="bg-blue-500/30 text-blue-200 border border-blue-400/30 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider">
-                Tourist Visas & American Dream Pathways
+                Comprehensive Passport & Tourist Hub
             </span>
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
                 Explore the World with a <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">PH Passport</span>
             </h1>
             <p class="text-lg sm:text-xl text-slate-200 font-normal max-w-2xl mx-auto">
-                Discover visa-free destinations, U.S. tourist and immigrant pathways, and step-by-step guides with zero fake news.
+                Detailed passport application masterclasses, valid ID requirements, visa-free destinations, and tourist walkthroughs built on 100% verified facts.
             </p>
             <div class="pt-4 flex flex-wrap justify-center gap-4">
                 <a href="#categories" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition">
@@ -75,8 +75,8 @@
     <!-- Interactive Guides Section -->
     <section id="categories" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow w-full">
         <div class="text-center max-w-2xl mx-auto mb-12">
-            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Visa & Immigration Pathways</h2>
-            <p class="text-slate-600 mt-2">Click any card below to view step-by-step requirements, tips, and official government links.</p>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Passport, Valid IDs & Tourist Pathways</h2>
+            <p class="text-slate-600 mt-2">Click any card below to view comprehensive step-by-step instructions, valid ID requirements, and official links.</p>
         </div>
 
         <div id="guidesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
@@ -86,16 +86,17 @@
     <section id="checklist" class="py-16 bg-white border-t border-b border-slate-200">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Interactive Document Checklist</h2>
-                <p class="text-slate-600 mt-2">Check off your requirements as you prepare your visa application.</p>
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Comprehensive Document & Entry Checklist</h2>
+                <p class="text-slate-600 mt-2">Select your category below and check off your requirements before heading out.</p>
             </div>
 
             <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
                 <div class="mb-6">
-                    <label class="block text-sm font-bold text-slate-700 mb-2">Select Passport / Visa Scenario:</label>
+                    <label class="block text-sm font-bold text-slate-700 mb-2">Select Category:</label>
                     <select id="visaSelect" onchange="updateChecklist()" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="passport">Philippine Passport Application & Valid IDs</option>
+                        <option value="visafree">Visa-Free Destinations (ASEAN, Taiwan, South America)</option>
                         <option value="tourist">Standard Tourist Visa (Japan, Korea, Schengen)</option>
-                        <option value="visafree">Visa-Free Destinations (Taiwan, Singapore, HK, etc.)</option>
                         <option value="usvisitor">U.S. B1/B2 Tourist Visa Prep</option>
                     </select>
                 </div>
@@ -108,10 +109,24 @@
     <section id="official-links" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-12">
             <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Official Government Portals</h2>
-            <p class="text-slate-600 mt-2">Zero fake news. Always check official embassy websites directly.</p>
+            <p class="text-slate-600 mt-2">Strictly verified information. Always check official embassy websites directly.</p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a href="https://dfa.gov.ph" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
+                <div class="text-blue-700 text-xl mb-3"><i class="fa-solid fa-passport"></i></div>
+                <h3 class="font-bold text-slate-900">DFA Philippines</h3>
+                <p class="text-xs text-slate-500 mt-1">Official passport appointments and authentication portals.</p>
+                <span class="text-xs text-blue-600 font-semibold mt-3 inline-block">Official Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
+            </a>
+
+            <a href="https://www.boca.gov.tw/fp-149-4486-7785a-2.html" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
+                <div class="text-teal-600 text-xl mb-3"><i class="fa-solid fa-plane"></i></div>
+                <h3 class="font-bold text-slate-900">Taiwan BOCA</h3>
+                <p class="text-xs text-slate-500 mt-1">Official Taiwan visa-exemption rules & entry requirements.</p>
+                <span class="text-xs text-blue-600 font-semibold mt-3 inline-block">Official Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
+            </a>
+
             <a href="https://ph.usembassy.gov/visas/" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
                 <div class="text-indigo-600 text-xl mb-3"><i class="fa-solid fa-flag-usa"></i></div>
                 <h3 class="font-bold text-slate-900">U.S. Embassy in PH</h3>
@@ -123,20 +138,6 @@
                 <div class="text-blue-600 text-xl mb-3"><i class="fa-solid fa-building-columns"></i></div>
                 <h3 class="font-bold text-slate-900">USCIS Official Site</h3>
                 <p class="text-xs text-slate-500 mt-1">Immigration, petitions, green cards, and citizenship.</p>
-                <span class="text-xs text-blue-600 font-semibold mt-3 inline-block">Official Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
-            </a>
-
-            <a href="https://www.boca.gov.tw/fp-149-4486-7785a-2.html" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
-                <div class="text-teal-600 text-xl mb-3"><i class="fa-solid fa-plane"></i></div>
-                <h3 class="font-bold text-slate-900">Taiwan BOCA</h3>
-                <p class="text-xs text-slate-500 mt-1">Official Taiwan visa-exemption rules & entry requirements.</p>
-                <span class="text-xs text-blue-600 font-semibold mt-3 inline-block">Official Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
-            </a>
-
-            <a href="https://dfa.gov.ph" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
-                <div class="text-blue-700 text-xl mb-3"><i class="fa-solid fa-passport"></i></div>
-                <h3 class="font-bold text-slate-900">DFA Philippines</h3>
-                <p class="text-xs text-slate-500 mt-1">Passport appointments, Apostille, and consular services.</p>
                 <span class="text-xs text-blue-600 font-semibold mt-3 inline-block">Official Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
             </a>
         </div>
@@ -204,7 +205,7 @@
                 
                 <div>
                     <h4 class="font-bold text-slate-900 text-base mb-3 flex items-center">
-                        <i class="fa-solid fa-list-check text-blue-600 mr-2"></i> Key Requirements & Steps
+                        <i class="fa-solid fa-list-check text-blue-600 mr-2"></i> Comprehensive Entry Details & Steps
                     </h4>
                     <ol id="modalSteps" class="list-decimal list-inside space-y-2 text-sm text-slate-700 bg-slate-50 p-4 rounded-2xl border border-slate-200"></ol>
                 </div>
@@ -288,13 +289,74 @@
     <script>
         const guides = [
             {
+                id: "ph-passport",
+                badge: "Passport & Valid IDs",
+                title: "Philippine Passport Application & Valid IDs Masterclass",
+                image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "Complete guide to processing your Philippine passport through the official DFA appointment system, plus how to acquire accepted primary valid IDs.",
+                steps: [
+                    "Step 1: Secure accepted valid IDs. How to get them: PhilSys National ID (register for free at PSA registration hubs or online), UMID/SSS ID (apply at SSS branches once employed/contributing), or Postal ID (apply at PhilPost offices).",
+                    "Step 2: Book an appointment online exclusively via the official DFA Online Appointment System (never deal with Facebook fixers).",
+                    "Step 3: Prepare your original PSA Authenticated Birth Certificate (and Marriage Certificate if married).",
+                    "Step 4: Print your application packet and payment receipt. Arrive at the DFA Consular Office 30 minutes before your slot.",
+                    "Step 5: Undergo verification, biometric capture (photo and fingerprints), and pay for courier home delivery."
+                ],
+                tip: "Back when I was 20, I had to travel from Bulacan to Manila at 3:00 AM just to line up for my old green passport. Today it's fully online—never pay fixers selling slots on social media!",
+                officialUrl: "https://dfa.gov.ph"
+            },
+            {
+                id: "visa-free-asean",
+                badge: "Direct Visa-Free Hub",
+                title: "ASEAN & Neighboring Visa-Free Destinations",
+                image: "https://images.unsplash.com/photo-1508248467877-aec1b08de376?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "Comprehensive breakdown for Philippine passport holders: Singapore (30 days), Thailand (60 days), Malaysia (30 days), Vietnam (21 days), and Hong Kong (14 days).",
+                steps: [
+                    "Passport Validity: Must have at least 6 months remaining validity upon arrival.",
+                    "Return Ticket: Confirmed return or onward air ticket is strictly required.",
+                    "Accommodation: Confirmed hotel bookings or detailed host invitation/contact details.",
+                    "Financial Proof: Sufficient daily allowance funds and company/employment ID in case of secondary questioning."
+                ],
+                tip: "Visa-free entry is a privilege, not a guarantee! Always bring your printed return tickets, hotel bookings, and company ID so immigration officers can clear you smoothly.",
+                officialUrl: "https://dfa.gov.ph"
+            },
+            {
+                id: "taiwan-visafree",
+                badge: "Direct Visa-Free (Taiwan)",
+                title: "Taiwan Visa-Free Entry Program",
+                image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "Complete guidelines for Taiwan's visa-exemption program allowing Filipino passport holders up to 14 days of stay for tourism.",
+                steps: [
+                    "Ensure your Philippine passport is valid for at least 6 months upon entry.",
+                    "Hold a confirmed return air ticket or proof of onward travel.",
+                    "Complete the online ROC Travel Authorization Certificate / Arrival Card prior to departure.",
+                    "Prepare hotel reservation details and proof of funds."
+                ],
+                tip: "Fill out the online National Immigration Agency arrival card a day before your flight to breeze through Taiwan customs seamlessly!",
+                officialUrl: "https://www.boca.gov.tw/fp-149-4486-7785a-2.html"
+            },
+            {
+                id: "south-america-visafree",
+                badge: "Direct Visa-Free (Latin America)",
+                title: "South America (Brazil & Colombia)",
+                image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "Explore South America! PH passport holders can visit Brazil and Colombia visa-free for up to 90 days as tourists.",
+                steps: [
+                    "Check airline layover routes carefully: ensure transit airports in the US or Europe do not require transit visas.",
+                    "Valid Philippine passport with 6+ months validity and clean passport pages.",
+                    "Roundtrip air travel itinerary and confirmed hotel accommodation vouchers.",
+                    "International Certificate of Vaccination (Yellow Fever) if required by entry regulations."
+                ],
+                tip: "Always double-check your airline layovers! Passing through certain US or European airports during transit might require a separate transit visa.",
+                officialUrl: "https://dfa.gov.ph"
+            },
+            {
                 id: "us-b1b2",
                 badge: "U.S. Tourist Visa",
                 title: "U.S. B1/B2 Tourist Visa Guide",
                 image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80",
                 shortDesc: "Step-by-step preparation for the DS-160 application form, MRV fee payment, and U.S. Embassy interview preparation in Manila.",
                 steps: [
-                    "Complete the online Form DS-160 accurately (your answers form the core of your application).",
+                    "Complete online Form DS-160 accurately (your answers form the core of your application).",
                     "Pay the MRV visa application fee through accredited payment channels.",
                     "Schedule and attend your biometrics appointment and U.S. Embassy interview.",
                     "Answer the consular officer's questions truthfully, calmly, and concisely."
@@ -304,7 +366,7 @@
             },
             {
                 id: "american-dream",
-                badge: "Ongoing Resource (Growing Hub)",
+                badge: "Ongoing Resource",
                 title: "Pathway to the American Dream (US Immigration & Green Cards)",
                 image: "https://images.unsplash.com/photo-1508433957232-3107f5fd5995?auto=format&fit=crop&w=800&q=80",
                 shortDesc: "An expanding guide exploring legitimate legal pathways to U.S. permanent residency: family sponsorship, employment petitions, and adjustment of status.",
@@ -315,4 +377,105 @@
                     "Check back frequently as we continuously add new detailed breakdowns and updates!"
                 ],
                 tip: "This page is an ongoing resource! As we audit more USCIS guidelines, we will continuously add more step-by-step notes on avoiding immigration scams.",
-                officialUrl: "
+                officialUrl: "https://www.uscis.gov"
+            }
+        ];
+
+        function renderGuides() {
+            const grid = document.getElementById('guidesGrid');
+            if (!grid) return;
+            grid.innerHTML = guides.map((g, index) => `
+                <div onclick="openModal(${index})" class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:shadow-xl hover:-translate-y-1 transition duration-200 cursor-pointer group">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="${g.image}" alt="${g.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex flex-col justify-end p-5 text-white">
+                            <span class="bg-blue-600/90 text-[11px] font-bold px-2.5 py-1 rounded-md w-max mb-1.5 uppercase tracking-wide">${g.badge}</span>
+                            <h3 class="text-lg font-extrabold leading-snug">${g.title}</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                        <p class="text-sm text-slate-600">${g.shortDesc}</p>
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-blue-600 font-bold text-sm">
+                            <span>View Comprehensive Guide</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openModal(index) {
+            const g = guides[index];
+            document.getElementById('modalImg').src = g.image;
+            document.getElementById('modalBadge').innerText = g.badge;
+            document.getElementById('modalTitle').innerText = g.title;
+            document.getElementById('modalDesc').innerText = g.shortDesc;
+            document.getElementById('modalSteps').innerHTML = g.steps.map(s => `<li class="leading-relaxed">${s}</li>`).join('');
+            document.getElementById('modalTip').innerText = g.tip;
+            document.getElementById('modalLink').href = g.officialUrl;
+            document.getElementById('guideModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('guideModal').classList.add('hidden');
+        }
+
+        function openCoffeeModal() {
+            document.getElementById('coffeeModal').classList.remove('hidden');
+        }
+
+        function closeCoffeeModal() {
+            document.getElementById('coffeeModal').classList.add('hidden');
+        }
+
+        const checklistData = {
+            passport: [
+                "Confirmed DFA Online Appointment Printout & Application Form",
+                "Original PSA Authenticated Birth Certificate (Security Paper)",
+                "At least ONE primary valid ID (e.g., PhilSys National ID, UMID/SSS, valid Driver's License, PRC ID, Postal ID)",
+                "Official DFA Processing Fee Payment Receipt",
+                "Supporting documents for married women (PSA Marriage Certificate)"
+            ],
+            visafree: [
+                "Valid Philippine Passport (at least 6 months validity from entry date)",
+                "Confirmed Return or Onward Air Ticket",
+                "Hotel Accommodation Bookings / Host Contact Details",
+                "Sufficient travel funds / cash allowance for the duration of stay",
+                "Company ID, Certificate of Employment, or School ID for Bureau of Immigration inspection"
+            ],
+            tourist: [
+                "Valid Philippine Passport (at least 6 months validity)",
+                "Completed Official Visa Application Form & Photo",
+                "Bank Certificate with Average Daily Balance (ADB) & Bank Statements",
+                "Certificate of Employment (COE) with approved leave or ITR (BIR Form 2316)",
+                "Confirmed Hotel Bookings & Detailed Flight Itinerary"
+            ],
+            usvisitor: [
+                "Valid Philippine Passport",
+                "Completed Online Form DS-160 confirmation page with barcode",
+                "MRV Fee Payment Receipt",
+                "Passport-size photo meeting U.S. visa photo standards",
+                "Supporting tie documents (Employment proof, property titles, or immediate family ties in PH)"
+            ]
+        };
+
+        function updateChecklist() {
+            const select = document.getElementById('visaSelect');
+            const container = document.getElementById('checklistContent');
+            if (!container || !select) return;
+            const items = checklistData[select.value] || [];
+            container.innerHTML = items.map(item => `
+                <label class="flex items-start space-x-3 bg-white p-3.5 rounded-xl border border-slate-200 hover:bg-blue-50/50 transition cursor-pointer">
+                    <input type="checkbox" class="mt-1 h-4 w-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500">
+                    <span class="text-sm text-slate-700 font-medium">${item}</span>
+                </label>
+            `).join('');
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderGuides();
+            updateChecklist();
+        });
+    </script>
+</body>
+</html>
