@@ -53,17 +53,17 @@
         <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=1600&q=80" alt="Travel Background" class="absolute inset-0 w-full h-full object-cover opacity-25">
         <div class="relative max-w-4xl mx-auto space-y-6">
             <span class="bg-blue-500/30 text-blue-200 border border-blue-400/30 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider">
-                Tourist Visa & Passport Freedom Hub
+                Tourist Visas & American Dream Pathways
             </span>
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
                 Explore the World with a <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">PH Passport</span>
             </h1>
             <p class="text-lg sm:text-xl text-slate-200 font-normal max-w-2xl mx-auto">
-                Discover visa-free destinations, secondary visa travel perks, and step-by-step tourist application guides with zero fake news.
+                Discover visa-free destinations, U.S. tourist and immigrant pathways, and step-by-step guides with zero fake news.
             </p>
             <div class="pt-4 flex flex-wrap justify-center gap-4">
                 <a href="#categories" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition">
-                    Explore Tourist Guides
+                    Explore Guides
                 </a>
                 <a href="#about" class="bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-3.5 rounded-xl backdrop-blur-sm transition border border-white/20">
                     Read Mamae's Story
@@ -75,8 +75,8 @@
     <!-- Interactive Guides Section -->
     <section id="categories" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow w-full">
         <div class="text-center max-w-2xl mx-auto mb-12">
-            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Tourist Visa & Pathway Guides</h2>
-            <p class="text-slate-600 mt-2">Click any card below to view direct visa-free rules, secondary visa entry perks, and official links.</p>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Visa & Immigration Pathways</h2>
+            <p class="text-slate-600 mt-2">Click any card below to view step-by-step requirements, tips, and official government links.</p>
         </div>
 
         <div id="guidesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
@@ -86,8 +86,8 @@
     <section id="checklist" class="py-16 bg-white border-t border-b border-slate-200">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Interactive Tourist Document Checklist</h2>
-                <p class="text-slate-600 mt-2">Check off your requirements as you prepare your tourist visa application.</p>
+                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Interactive Document Checklist</h2>
+                <p class="text-slate-600 mt-2">Check off your requirements as you prepare your visa application.</p>
             </div>
 
             <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
@@ -96,7 +96,7 @@
                     <select id="visaSelect" onchange="updateChecklist()" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500">
                         <option value="tourist">Standard Tourist Visa (Japan, Korea, Schengen)</option>
                         <option value="visafree">Visa-Free Destinations (Taiwan, Singapore, HK, etc.)</option>
-                        <option value="secondary">Traveling with US / Schengen / Japan Visa Perks</option>
+                        <option value="usvisitor">U.S. B1/B2 Tourist Visa Prep</option>
                     </select>
                 </div>
                 <div id="checklistContent" class="space-y-3"></div>
@@ -112,6 +112,20 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a href="https://ph.usembassy.gov/visas/" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
+                <div class="text-indigo-600 text-xl mb-3"><i class="fa-solid fa-flag-usa"></i></div>
+                <h3 class="font-bold text-slate-900">U.S. Embassy in PH</h3>
+                <p class="text-xs text-slate-500 mt-1">Official U.S. tourist and immigrant visa information.</p>
+                <span class="text-xs text-blue-600 font-semibold mt-3 inline-block">Official Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
+            </a>
+
+            <a href="https://www.uscis.gov" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
+                <div class="text-blue-600 text-xl mb-3"><i class="fa-solid fa-building-columns"></i></div>
+                <h3 class="font-bold text-slate-900">USCIS Official Site</h3>
+                <p class="text-xs text-slate-500 mt-1">Immigration, petitions, green cards, and citizenship.</p>
+                <span class="text-xs text-blue-600 font-semibold mt-3 inline-block">Official Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
+            </a>
+
             <a href="https://www.boca.gov.tw/fp-149-4486-7785a-2.html" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
                 <div class="text-teal-600 text-xl mb-3"><i class="fa-solid fa-plane"></i></div>
                 <h3 class="font-bold text-slate-900">Taiwan BOCA</h3>
@@ -120,29 +134,15 @@
             </a>
 
             <a href="https://dfa.gov.ph" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
-                <div class="text-blue-600 text-xl mb-3"><i class="fa-solid fa-passport"></i></div>
+                <div class="text-blue-700 text-xl mb-3"><i class="fa-solid fa-passport"></i></div>
                 <h3 class="font-bold text-slate-900">DFA Philippines</h3>
                 <p class="text-xs text-slate-500 mt-1">Passport appointments, Apostille, and consular services.</p>
-                <span class="text-xs text-blue-600 font-semibold mt-3 inline-block">Official Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
-            </a>
-
-            <a href="https://ph.usembassy.gov/visas/" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
-                <div class="text-indigo-600 text-xl mb-3"><i class="fa-solid fa-flag-usa"></i></div>
-                <h3 class="font-bold text-slate-900">U.S. Embassy in PH</h3>
-                <p class="text-xs text-slate-500 mt-1">Official B1/B2 tourist visa application guidelines.</p>
-                <span class="text-xs text-blue-600 font-semibold mt-3 inline-block">Official Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
-            </a>
-
-            <a href="https://home-affairs.ec.europa.eu/policies/schengen-borders-and-visa/visa-policy_en" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
-                <div class="text-blue-700 text-xl mb-3"><i class="fa-solid fa-landmark"></i></div>
-                <h3 class="font-bold text-slate-900">EU Schengen Visa Policy</h3>
-                <p class="text-xs text-slate-500 mt-1">Official European Union Schengen guidelines.</p>
                 <span class="text-xs text-blue-600 font-semibold mt-3 inline-block">Official Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
             </a>
         </div>
     </section>
 
-    <!-- About Me / Founder Story Section (Witty & Anonymous) -->
+    <!-- About Me / Founder Story Section -->
     <section id="about" class="py-16 bg-white border-b border-slate-200">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-sm flex flex-col md:flex-row gap-8 items-center">
@@ -158,7 +158,7 @@
                         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Hi, I'm Mamae!</h2>
                     </div>
                     <p>
-                        I grew up in <strong>Bulacan, Philippines</strong> dreaming of Middle Earth and stamping my passport until it begged for mercy. At 20 years old, I survived the legendary 3:00 AM Manila stampede just to process my old green Philippine passport all by myself. At 21, I braved life as an OFW in Taiwan—learning early on that bureaucracy loves paperwork more than Filipinos love a good *chismis*.
+                        I grew up in a small town in <strong>Bulacan, Philippines</strong> dreaming of Middle Earth and stamping my passport until it begged for mercy. At 20 years old, I survived the legendary 3:00 AM Manila stampede just to process my old green Philippine passport all by myself. At 21, I braved life as an OFW in Taiwan—learning early on that bureaucracy loves paperwork more than Filipinos love a good *chismis*.
                     </p>
                     <p>
                         Fast forward to today: even with a <strong>US Green Card</strong> in hand, I’ve learned firsthand that holding foreign status doesn't magically exempt you from the endless loops of travel documentation. I built <em>Mamae Knows Borders</em> because I’ve stood in those confusing lines and paid those unnecessary fees so you don't have to walk in blind. <em>Hindi madali, pero kaya natin!</em>
@@ -176,7 +176,7 @@
             </div>
             <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Did This Guide Save You Stress or Agency Fees?</h2>
             <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
-                <strong>Mamae Knows Borders</strong> is 100% free and independent. If these tourist guides helped you plan your travels or understand your visa options, you can treat me to a warm cup of coffee!
+                <strong>Mamae Knows Borders</strong> is 100% free and independent. If these guides helped you plan your travels or understand your visa options, you can treat me to a warm cup of coffee!
             </p>
             <div class="pt-2 flex justify-center">
                 <button onclick="openCoffeeModal()" class="bg-amber-400 hover:bg-amber-500 text-slate-900 font-extrabold px-8 py-4 rounded-2xl shadow-md hover:shadow-lg transition flex items-center text-base">
@@ -264,7 +264,7 @@
                 </div>
                 <div class="border border-blue-200 rounded-2xl p-4 bg-blue-50/50 space-y-2">
                     <span class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-100 px-2 py-0.5 rounded">Philippines</span>
-                    <h4 class="font-bold text-slate-900 text-sm">GCash (Masked QR Code)</h4>
+                    <h4 class="font-bold text-slate-900 text-sm">Masked GCash QR</h4>
                     <p class="text-xs text-slate-600">You can upload a cropped GCash QR image (`gcash-qr.jpg`) to GitHub to display here.</p>
                 </div>
             </div>
@@ -288,183 +288,31 @@
     <script>
         const guides = [
             {
-                id: "visa-free-asean",
-                badge: "Direct Visa-Free",
-                title: "ASEAN & Neighboring Visa-Free Destinations",
-                image: "https://images.unsplash.com/photo-1508248467877-aec1b08de376?auto=format&fit=crop&w=800&q=80",
-                shortDesc: "Fly out with just your PH passport! Countries like Singapore (30 days), Hong Kong (14 days), Thailand (60 days), and Malaysia (30 days) require no prior visa.",
-                steps: [
-                    "Ensure your Philippine passport has at least 6 months validity remaining upon entry.",
-                    "Prepare your return or onward flight ticket (immigration officers frequently check this).",
-                    "Have confirmed hotel accommodation bookings or host contact information ready.",
-                    "Present an employer certificate or proof of funds if asked by Bureau of Immigration officers."
-                ],
-                tip: "Visa-free entry does not mean automatic entry! Always be polite, concise, and ready with your return ticket and hotel bookings when immigration asks at NAIA.",
-                officialUrl: "https://dfa.gov.ph"
-            },
-            {
-                id: "taiwan-visafree",
-                badge: "Direct Visa-Free (Taiwan)",
-                title: "Taiwan Visa-Free Entry Program",
-                image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
-                shortDesc: "Filipino passport holders can visit Taiwan visa-free for up to 14 days under the official visa-exemption program.",
-                steps: [
-                    "Verify your passport has a minimum 6-month validity.",
-                    "Have a return air ticket or proof of onward travel.",
-                    "Complete the online immigration arrival card prior to arrival on the National Immigration Agency website.",
-                    "Show hotel bookings or host information if requested."
-                ],
-                tip: "Make sure you fill out the online ROC arrival card before landing to make your airport queue super fast!",
-                officialUrl: "https://www.boca.gov.tw/fp-149-4486-7785a-2.html"
-            },
-            {
-                id: "secondary-visa-perks",
-                badge: "Valid Visa Perks",
-                title: "Traveling With a Valid US / Schengen / Japan Visa",
+                id: "us-b1b2",
+                badge: "U.S. Tourist Visa",
+                title: "U.S. B1/B2 Tourist Visa Guide",
                 image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80",
-                shortDesc: "Did you know holding a valid US, Schengen, UK, or Japan visa unlocks visa-free entry to Mexico for up to 180 days, plus simplified entry to other regions?",
+                shortDesc: "Step-by-step preparation for the DS-160 application form, MRV fee payment, and U.S. Embassy interview preparation in Manila.",
                 steps: [
-                    "Ensure your primary visa (US B1/B2, Schengen, or Japan multiple-entry visa) is completely valid and unexpired.",
-                    "Check specific country rules (for Mexico, your US/Schengen/UK/Japan/Canada visa must typically be multiple-entry).",
-                    "Book your flights and ensure your passport has ample blank pages.",
-                    "Present your valid visa card/sticker to immigration upon arrival."
+                    "Complete the online Form DS-160 accurately (your answers form the core of your application).",
+                    "Pay the MRV visa application fee through accredited payment channels.",
+                    "Schedule and attend your biometrics appointment and U.S. Embassy interview.",
+                    "Answer the consular officer's questions truthfully, calmly, and concisely."
                 ],
-                tip: "Always check if your secondary visa needs to have been 'used' at least once before traveling, as some destinations require prior entry stamp usage!",
-                officialUrl: "https://travel.state.gov"
+                tip: "Consuls rarely look at heavy folders of documents. They judge your application primarily on your DS-160 and your strong economic, family, or social ties to the Philippines!",
+                officialUrl: "https://ph.usembassy.gov/visas/"
             },
             {
-                id: "japan-tourist",
-                badge: "Tourist Visa Required",
-                title: "Japan Tourist Visa Guide",
-                image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80",
-                shortDesc: "Step-by-step preparation for bank certificates, daily itineraries, and accredited agency submission for Japan.",
+                id: "american-dream",
+                badge: "Ongoing Resource (Growing Hub)",
+                title: "Pathway to the American Dream (US Immigration & Green Cards)",
+                image: "https://images.unsplash.com/photo-1508433957232-3107f5fd5995?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "An expanding guide exploring legitimate legal pathways to U.S. permanent residency: family sponsorship, employment petitions, and adjustment of status.",
                 steps: [
-                    "Fill out the official Japanese Visa Application Form accurately.",
-                    "Prepare your 2x2cm or passport-size photo with a white background.",
-                    "Secure a Bank Certificate showing healthy Average Daily Balance (ADB) and recent ITR.",
-                    "Draft your daily Schedule of Stay (Itinerary).",
-                    "Submit your documents through an accredited travel agency in Manila or Cebu."
+                    "Understand immigrant visa categories (Family-Based vs. Employment-Based petitions like EB-2/EB-3).",
+                    "Review official petition filing requirements managed by USCIS.",
+                    "Prepare for consular processing or adjustment of status (Green Card application steps).",
+                    "Check back frequently as we continuously add new detailed breakdowns and updates!"
                 ],
-                tip: "Do not make sudden massive cash deposits into your bank account right before applying. Embassies prefer seeing a stable, natural savings flow!",
-                officialUrl: "https://www.ph.emb-japan.go.jp/itpr_en/00_000035.html"
-            },
-            {
-                id: "schengen-europe",
-                badge: "Tourist Visa Required",
-                title: "Schengen Visa (Europe)",
-                image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80",
-                shortDesc: "How Filipino passport holders apply to visit France, Italy, Switzerland, and the 29 Schengen member countries.",
-                steps: [
-                    "Determine your main destination country (where you will spend the most nights).",
-                    "Book an appointment with VFS Global or TLScontact several months in advance.",
-                    "Purchase mandatory Schengen Travel Medical Insurance covering at least €30,000.",
-                    "Compile flight reservations, hotel vouchers, bank statements, and employment certificates."
-                ],
-                tip: "Schengen appointments fill up extremely fast. Book your VFS slot as early as possible before committing to non-refundable hotel bookings!",
-                officialUrl: "https://home-affairs.ec.europa.eu/policies/schengen-borders-and-visa/visa-policy_en"
-            },
-            {
-                id: "ofw-coming-soon",
-                badge: "Coming Soon",
-                title: "OFW & DMW Compliance Hub",
-                image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80",
-                shortDesc: "To ensure zero fake news and 100% reliability, our dedicated OFW, OEC, and DMW compliance guides are currently being audited against official government sources.",
-                steps: [
-                    "Reviewing official DMW (Department of Migrant Workers) regulations.",
-                    "Verifying direct-hire and OEC exemption procedures.",
-                    "Establishing direct links to official DMW portals."
-                ],
-                tip: "Mamae's Promise: We never publish unverified OFW rules. Accurate and reliable OFW guides will launch here as soon as our review is complete!",
-                officialUrl: "https://www.dmw.gov.ph"
-            }
-        ];
-
-        function renderGuides() {
-            const grid = document.getElementById('guidesGrid');
-            grid.innerHTML = guides.map((g, index) => `
-                <div onclick="openModal(${index})" class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:shadow-xl hover:-translate-y-1 transition duration-200 cursor-pointer group">
-                    <div class="h-48 relative overflow-hidden">
-                        <img src="${g.image}" alt="${g.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex flex-col justify-end p-5 text-white">
-                            <span class="bg-blue-600/90 text-[11px] font-bold px-2.5 py-1 rounded-md w-max mb-1.5 uppercase tracking-wide">${g.badge}</span>
-                            <h3 class="text-lg font-extrabold leading-snug">${g.title}</h3>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                        <p class="text-sm text-slate-600">${g.shortDesc}</p>
-                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-blue-600 font-bold text-sm">
-                            <span>View Guide Details</span>
-                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function openModal(index) {
-            const g = guides[index];
-            document.getElementById('modalImg').src = g.image;
-            document.getElementById('modalBadge').innerText = g.badge;
-            document.getElementById('modalTitle').innerText = g.title;
-            document.getElementById('modalDesc').innerText = g.shortDesc;
-            document.getElementById('modalSteps').innerHTML = g.steps.map(s => `<li class="leading-relaxed">${s}</li>`).join('');
-            document.getElementById('modalTip').innerText = g.tip;
-            document.getElementById('modalLink').href = g.officialUrl;
-            document.getElementById('guideModal').classList.remove('hidden');
-        }
-
-        function closeModal() {
-            document.getElementById('guideModal').classList.add('hidden');
-        }
-
-        function openCoffeeModal() {
-            document.getElementById('coffeeModal').classList.remove('hidden');
-        }
-
-        function closeCoffeeModal() {
-            document.getElementById('coffeeModal').classList.add('hidden');
-        }
-
-        const checklistData = {
-            tourist: [
-                "Valid Philippine Passport (at least 6 months validity)",
-                "Completed Visa Application Form & Photo",
-                "Bank Certificate (with ADB) & Bank Statements",
-                "Certificate of Employment (COE) with approved leave or ITR",
-                "Confirmed Hotel Bookings & Flight Itinerary"
-            ],
-            visafree: [
-                "Valid Philippine Passport (6+ months validity)",
-                "Return or Onward Air Ticket",
-                "Proof of Accommodation / Hotel Bookings",
-                "Sufficient travel funds for your stay",
-                "Online Arrival Card completed prior to landing (if required, e.g., Taiwan)"
-            ],
-            secondary: [
-                "Valid Philippine Passport",
-                "Valid Multiple-Entry US, Schengen, UK, or Japan Visa",
-                "Valid Return or Onward Flight Ticket",
-                "Hotel Reservations & Proof of Financial Support",
-                "Check if your secondary visa has been used at least once"
-            ]
-        };
-
-        function updateChecklist() {
-            const select = document.getElementById('visaSelect');
-            const container = document.getElementById('checklistContent');
-            const items = checklistData[select.value] || [];
-            container.innerHTML = items.map(item => `
-                <label class="flex items-start space-x-3 bg-white p-3.5 rounded-xl border border-slate-200 hover:bg-blue-50/50 transition cursor-pointer">
-                    <input type="checkbox" class="mt-1 h-4 w-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500">
-                    <span class="text-sm text-slate-700 font-medium">${item}</span>
-                </label>
-            `).join('');
-        }
-
-        window.onload = () => {
-            renderGuides();
-            updateChecklist();
-        };
-    </script>
-</body>
-</html>
+                tip: "This page is an ongoing resource! As we audit more USCIS guidelines, we will continuously add more step-by-step notes on avoiding immigration scams.",
+                officialUrl: "
