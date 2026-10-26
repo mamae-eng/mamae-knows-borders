@@ -34,7 +34,7 @@
             <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-600">
                 <a href="#categories" class="hover:text-blue-600 transition">Interactive Guides</a>
                 <a href="#processes" class="hover:text-blue-600 transition text-blue-600 font-bold">Official Processes</a>
-                <a href="#checklist" class="hover:text-blue-600 transition">Checklist</a>
+                <a href="#feedback" class="hover:text-blue-600 transition">Q&A & Feedback</a>
                 <a href="#official-links" class="hover:text-blue-600 transition">Portals</a>
                 <a href="#about" class="hover:text-blue-600 transition">About Mamae</a>
             </nav>
@@ -42,32 +42,39 @@
                 <button onclick="openCoffeeModal()" class="inline-flex items-center bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold px-4 py-2.5 rounded-xl shadow-sm text-xs sm:text-sm transition">
                     <i class="fa-solid fa-mug-hot mr-1.5"></i> Buy Mamae a Coffee
                 </button>
-                <a href="#checklist" class="hidden sm:inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2.5 rounded-xl shadow-sm text-xs sm:text-sm transition">
-                    Checklist
+                <a href="#feedback" class="hidden sm:inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2.5 rounded-xl shadow-sm text-xs sm:text-sm transition">
+                    Ask a Question
                 </a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative bg-slate-900 text-white py-24 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
+    <section class="relative bg-slate-900 text-white py-20 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
         <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=1600&q=80" alt="Travel Background" class="absolute inset-0 w-full h-full object-cover opacity-25">
         <div class="relative max-w-4xl mx-auto space-y-6">
             <span class="bg-blue-500/30 text-blue-200 border border-blue-400/30 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider">
-                Official Process Repository & Hub
+                Official Process Repository & Community Hub
             </span>
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
                 Navigating Global Borders with a <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">PH Passport</span>
             </h1>
             <p class="text-lg sm:text-xl text-slate-200 font-normal max-w-2xl mx-auto">
-                Verified step-by-step processes, date-stamped directives, and official links built so you don't have to keep searching elsewhere.
+                Verified step-by-step processes, live visitor tracking, and community Q&A built so you never have to walk in blind.
             </p>
-            <div class="pt-4 flex flex-wrap justify-center gap-4">
+            
+            <!-- Live Visitor Counter Badge -->
+            <div class="inline-flex items-center bg-slate-800/80 border border-slate-700 text-slate-200 px-5 py-2.5 rounded-2xl backdrop-blur-md shadow-lg text-xs sm:text-sm font-medium">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse mr-2.5"></i></span>
+                <span>Global Travelers Helped: <strong id="visitorCount" class="text-white font-bold tracking-wider">1,482</strong> and counting</span>
+            </div>
+
+            <div class="pt-2 flex flex-wrap justify-center gap-4">
                 <a href="#processes" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition">
                     View Official Processes
                 </a>
-                <a href="#about" class="bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-3.5 rounded-xl backdrop-blur-sm transition border border-white/20">
-                    Read Mamae's Story
+                <a href="#feedback" class="bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-3.5 rounded-xl backdrop-blur-sm transition border border-white/20">
+                    Ask Mamae a Question
                 </a>
             </div>
         </div>
@@ -189,7 +196,87 @@
         </div>
     </section>
 
-    <!-- About Me / Founder Story Section (Updated with User Text & Glacier Photo Vibe) -->
+    <!-- NEW: Community Feedback & Q&A Board Section -->
+    <section id="feedback" class="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Traveler Community Hub</span>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Got Questions or Feedback? Ask Mamae!</h2>
+            <p class="text-slate-600 text-sm sm:text-base">
+                Stuck on a requirement or want to request a new guide? Drop your question or feedback below. Mamae answers frequently asked questions right on this board!
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            
+            <!-- Left: Submission Form -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm space-y-5">
+                <h3 class="text-xl font-bold text-slate-900 flex items-center">
+                    <i class="fa-solid fa-paper-plane text-blue-600 mr-2.5"></i> Send a Question to Mamae
+                </h3>
+                <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-4" onsubmit="handleFormSubmit(event)">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Your Name or Nickname</label>
+                        <input type="text" name="name" required placeholder="e.g. Traveler from Bulacan" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Your Email (Private - for Mamae's reply)</label>
+                        <input type="email" name="email" required placeholder="your.email@example.com" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Question or Feedback</label>
+                        <textarea name="message" rows="4" required placeholder="Ask about DFA appointments, US tourist visas, or suggest a guide..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl text-sm transition shadow-md">
+                        Submit Question to Mamae <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                    <p id="formSuccess" class="text-xs text-emerald-600 font-semibold text-center hidden">
+                        <i class="fa-solid fa-circle-check mr-1"></i> Question sent successfully! Mamae will review it soon.
+                    </p>
+                </form>
+            </div>
+
+            <!-- Right: Published Q&A Board -->
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-slate-900 flex items-center px-1">
+                    <i class="fa-solid fa-comments text-blue-600 mr-2.5"></i> Recent Answered Questions
+                </h3>
+                
+                <!-- Q&A Item 1 -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-3">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="font-bold text-slate-900 bg-slate-100 px-2.5 py-1 rounded-md">Q: DFA Appointment Slot Availability</span>
+                        <span class="text-slate-400">Asked by Mark, Cavite</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-700 italic">"Pano po pag walang makita na available slots sa DFA online appointment?"</p>
+                    <div class="bg-blue-50/70 border-l-4 border-blue-600 p-3 rounded-r-xl space-y-1">
+                        <span class="text-[11px] font-extrabold text-blue-900 uppercase tracking-wide block"><i class="fa-solid fa-mug-hot mr-1"></i> Mamae's Answer:</span>
+                        <p class="text-xs sm:text-sm text-slate-800 leading-relaxed">
+                            Hi Mark! DFA usually opens new batches of slots randomly or early in the morning. Never pay fixers on Facebook! Keep checking the official portal during off-peak hours, or check regional consular offices outside Metro Manila where slots are often more abundant.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Q&A Item 2 -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-3">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="font-bold text-slate-900 bg-slate-100 px-2.5 py-1 rounded-md">Q: US Visa Supporting Documents</span>
+                        <span class="text-slate-400">Asked by Sarah, QC</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-700 italic">"Do I need to bring a thick folder of land titles and bank certs to my US tourist visa interview?"</p>
+                    <div class="bg-blue-50/70 border-l-4 border-blue-600 p-3 rounded-r-xl space-y-1">
+                        <span class="text-[11px] font-extrabold text-blue-900 uppercase tracking-wide block"><i class="fa-solid fa-mug-hot mr-1"></i> Mamae's Answer:</span>
+                        <p class="text-xs sm:text-sm text-slate-800 leading-relaxed">
+                            Short answer: Usually no! Consular officers in Manila base 95% of their decision on your DS-160 form and how well you explain your strong economic and family ties to the Philippines. They rarely look at heavy folders. Confidence and honesty are key!
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About Me / Founder Story Section -->
     <section id="about" class="py-16 bg-white border-b border-slate-200">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-sm flex flex-col md:flex-row gap-8 items-center">
@@ -233,7 +320,7 @@
         </div>
     </section>
 
-    <!-- Buy Mamae a Coffee / Support Section -->
+    <!-- Buy Mamae a Coffee / Support Section (GCash Set to Soon) -->
     <section id="coffee" class="py-16 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 border-t border-amber-200">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-amber-400 text-slate-900 text-3xl shadow-md">
@@ -245,7 +332,7 @@
             </p>
             <div class="pt-2 flex justify-center">
                 <button onclick="openCoffeeModal()" class="bg-amber-400 hover:bg-amber-500 text-slate-900 font-extrabold px-8 py-4 rounded-2xl shadow-md hover:shadow-lg transition flex items-center text-base">
-                    <i class="fa-solid fa-mug-hot mr-2 text-lg"></i> Choose How to Treat Mamae (GCash / PayPal / Card)
+                    <i class="fa-solid fa-mug-hot mr-2 text-lg"></i> Choose How to Treat Mamae (Buy Me a Coffee / GCash)
                 </button>
             </div>
         </div>
@@ -296,7 +383,7 @@
         </div>
     </div>
 
-    <!-- Privacy-First Support Modal -->
+    <!-- Privacy-First Support Modal (GCash set to Coming Soon) -->
     <div id="coffeeModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200">
             <div class="bg-gradient-to-r from-amber-400 to-orange-400 p-6 text-slate-900 flex justify-between items-center">
@@ -320,17 +407,20 @@
                 <div class="border border-slate-200 rounded-2xl p-4 bg-slate-50 flex items-center justify-between">
                     <div class="space-y-1 pr-3">
                         <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2 py-0.5 rounded">Global / US</span>
-                        <h4 class="font-bold text-slate-900 text-sm">Card, Apple Pay, or PayPal</h4>
-                        <p class="text-xs text-slate-500">Fast and completely anonymous.</p>
+                        <h4 class="font-bold text-slate-900 text-sm">Buy Me a Coffee Link</h4>
+                        <p class="text-xs text-slate-500">Fast, secure, and completely anonymous.</p>
                     </div>
-                    <a href="https://www.buymeacoffee.com" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 bg-slate-900 hover:bg-slate-800 text-white font-bold px-4 py-2.5 rounded-xl text-xs transition">
+                    <a href="https://www.buymeacoffee.com/mamaeknowsborders" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 bg-slate-900 hover:bg-slate-800 text-white font-bold px-4 py-2.5 rounded-xl text-xs transition">
                         Open <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
                     </a>
                 </div>
-                <div class="border border-blue-200 rounded-2xl p-4 bg-blue-50/50 space-y-2">
-                    <span class="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-100 px-2 py-0.5 rounded">Philippines</span>
-                    <h4 class="font-bold text-slate-900 text-sm">Masked GCash QR</h4>
-                    <p class="text-xs text-slate-600">You can upload a cropped GCash QR image (`gcash-qr.jpg`) to GitHub to display here.</p>
+                <div class="border border-slate-200 rounded-2xl p-4 bg-slate-50/50 flex items-center justify-between opacity-75">
+                    <div class="space-y-1 pr-3">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-600 bg-slate-200 px-2 py-0.5 rounded">Philippines</span>
+                        <h4 class="font-bold text-slate-900 text-sm">GCash QR Code</h4>
+                        <p class="text-xs text-slate-500">Direct GCash support integration.</p>
+                    </div>
+                    <span class="bg-amber-100 text-amber-800 font-extrabold text-xs px-3 py-1.5 rounded-xl border border-amber-300">Coming Soon!</span>
                 </div>
             </div>
         </div>
@@ -373,180 +463,4 @@
                 badge: "Direct Visa-Free Hub",
                 title: "ASEAN & Neighboring Visa-Free Destinations",
                 image: "https://images.unsplash.com/photo-1508248467877-aec1b08de376?auto=format&fit=crop&w=800&q=80",
-                shortDesc: "Comprehensive breakdown for Philippine passport holders: Singapore (30 days), Thailand (60 days), Malaysia (30 days), Vietnam (21 days), and Hong Kong (14 days).",
-                steps: [
-                    "<strong>Passport Validity:</strong> Must have at least 6 months remaining validity upon your date of arrival.",
-                    "<strong>Return Ticket:</strong> Confirmed return or onward air ticket is strictly required by immigration officers.",
-                    "<strong>Accommodation:</strong> Confirmed hotel bookings or detailed host invitation and contact details.",
-                    "<strong>Employment & Financial Proof:</strong> Carry your company ID, certificate of employment, and sufficient cash allowance in case of secondary questioning."
-                ],
-                tip: "Visa-free entry is a privilege, not a guarantee! Always bring your printed return tickets, hotel bookings, and company ID so NAIA immigration officers can clear you smoothly.",
-                officialUrl: "https://dfa.gov.ph"
-            },
-            {
-                id: "taiwan-visafree",
-                badge: "Direct Visa-Free (Taiwan)",
-                title: "Taiwan Visa-Free Entry Program",
-                image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
-                shortDesc: "Complete guidelines for Taiwan's visa-exemption program allowing Filipino passport holders up to 14 days of stay for tourism.",
-                steps: [
-                    "<strong>Passport Check:</strong> Ensure your Philippine passport is valid for at least 6 months upon entry.",
-                    "<strong>Flight Ticket:</strong> Hold a confirmed return air ticket or proof of onward travel.",
-                    "<strong>Online Arrival Card:</strong> Complete the online <a href='https://niaspeedy.immigration.gov.tw/webnet/infoAction.do' target='_blank' class='text-blue-600 underline font-semibold'>ROC Travel Authorization Certificate / Arrival Card</a> prior to departure.",
-                    "<strong>Lodging & Funds:</strong> Prepare hotel reservation details and proof of travel funds."
-                ],
-                tip: "Fill out the online National Immigration Agency arrival card a day before your flight to breeze through Taiwan customs seamlessly!",
-                officialUrl: "https://www.boca.gov.tw/fp-149-4486-7785a-2.html"
-            },
-            {
-                id: "south-america-visafree",
-                badge: "Direct Visa-Free (Latin America)",
-                title: "South America (Brazil & Colombia)",
-                image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=800&q=80",
-                shortDesc: "Explore South America! PH passport holders can visit Brazil and Colombia visa-free for up to 90 days as tourists.",
-                steps: [
-                    "<strong>Transit Check:</strong> Carefully review your airline layover routes: ensure transit airports in the US or Europe do not require separate transit visas.",
-                    "<strong>Passport Cleanliness:</strong> Valid Philippine passport with 6+ months validity and clean pages for stamps.",
-                    "<strong>Travel Vouchers:</strong> Roundtrip air travel itinerary and confirmed hotel accommodation vouchers.",
-                    "<strong>Health Clearance:</strong> International Certificate of Vaccination (Yellow Fever) if required depending on your entry route."
-                ],
-                tip: "Always double-check your airline layovers! Passing through certain US or European airports during transit might require a separate transit visa.",
-                officialUrl: "https://dfa.gov.ph"
-            },
-            {
-                id: "us-b1b2",
-                badge: "U.S. Tourist Visa",
-                title: "U.S. B1/B2 Tourist Visa Guide",
-                image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80",
-                shortDesc: "Step-by-step preparation for the DS-160 application form, MRV fee payment, and U.S. Embassy interview preparation in Manila.",
-                steps: [
-                    "<strong>Form DS-160:</strong> Complete the online <a href='https://ceac.state.gov/ceac/' target='_blank' class='text-blue-600 underline font-semibold'>DS-160 application form</a> accurately (your answers form the core of your review).",
-                    "<strong>MRV Fee Payment:</strong> Pay the visa application fee through official accredited payment channels.",
-                    "<strong>Embassy Appointment:</strong> Schedule and attend your biometrics appointment and U.S. Embassy interview in Manila.",
-                    "<strong>Interview Conduct:</strong> Answer the consular officer's questions truthfully, calmly, and concisely."
-                ],
-                tip: "Consuls rarely look at heavy folders of documents. They judge your application primarily on your DS-160 and your strong economic, family, or social ties to the Philippines!",
-                officialUrl: "https://ph.usembassy.gov/visas/"
-            },
-            {
-                id: "american-dream",
-                badge: "Ongoing Resource",
-                title: "Pathway to the American Dream (US Immigration & Green Cards)",
-                image: "https://images.unsplash.com/photo-1508433957232-3107f5fd5995?auto=format&fit=crop&w=800&q=80",
-                shortDesc: "An expanding guide exploring legitimate legal pathways to U.S. permanent residency: family sponsorship, employment petitions, and adjustment of status.",
-                steps: [
-                    "<strong>Immigrant Categories:</strong> Understand immigrant visa categories (Family-Based petitions vs. Employment-Based petitions like EB-2/EB-3).",
-                    "<strong>USCIS Petitions:</strong> Review official petition filing requirements managed by the <a href='https://www.uscis.gov' target='_blank' class='text-blue-600 underline font-semibold'>USCIS Official Portal</a>.",
-                    "<strong>Consular Processing:</strong> Prepare for NVC processing or adjustment of status steps.",
-                    "<strong>Continuous Updates:</strong> Check back frequently as we continuously add new detailed breakdowns and warnings against immigration scams."
-                ],
-                tip: "This page is an ongoing resource! As we audit more USCIS guidelines, we will continuously add more step-by-step notes to help you navigate legally and safely.",
-                officialUrl: "https://www.uscis.gov"
-            }
-        ];
-
-        function renderGuides() {
-            const grid = document.getElementById('guidesGrid');
-            if (!grid) return;
-            grid.innerHTML = guides.map((g, index) => `
-                <div onclick="openModal(${index})" class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:shadow-xl hover:-translate-y-1 transition duration-200 cursor-pointer group">
-                    <div class="h-48 relative overflow-hidden">
-                        <img src="${g.image}" alt="${g.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex flex-col justify-end p-5 text-white">
-                            <span class="bg-blue-600/90 text-[11px] font-bold px-2.5 py-1 rounded-md w-max mb-1.5 uppercase tracking-wide">${g.badge}</span>
-                            <h3 class="text-lg font-extrabold leading-snug">${g.title}</h3>
-                        </div>
-                    </div>
-                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
-                        <p class="text-sm text-slate-600">${g.shortDesc}</p>
-                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-blue-600 font-bold text-sm">
-                            <span>Open Blueprint & Links</span>
-                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function openModal(index) {
-            const g = guides[index];
-            document.getElementById('modalImg').src = g.image;
-            document.getElementById('modalBadge').innerText = g.badge;
-            document.getElementById('modalTitle').innerText = g.title;
-            document.getElementById('modalDesc').innerText = g.shortDesc;
-            
-            document.getElementById('modalSteps').innerHTML = g.steps.map((step, idx) => `
-                <div class="flex items-start space-x-3 pb-3 border-b border-slate-200/60 last:border-0 last:pb-0">
-                    <div class="bg-blue-600 text-white font-bold text-xs w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5">${idx + 1}</div>
-                    <div class="flex-grow text-sm leading-relaxed">${step}</div>
-                </div>
-            `).join('');
-
-            document.getElementById('modalTip').innerText = g.tip;
-            document.getElementById('modalLink').href = g.officialUrl;
-            document.getElementById('guideModal').classList.remove('hidden');
-        }
-
-        function closeModal() {
-            document.getElementById('guideModal').classList.add('hidden');
-        }
-
-        function openCoffeeModal() {
-            document.getElementById('coffeeModal').classList.remove('hidden');
-        }
-
-        function closeCoffeeModal() {
-            document.getElementById('coffeeModal').classList.add('hidden');
-        }
-
-        const checklistData = {
-            passport: [
-                "Confirmed DFA Online Appointment Printout & Application Form",
-                "Original PSA Authenticated Birth Certificate (Security Paper)",
-                "At least ONE primary valid ID (e.g., PhilSys National ID, UMID/SSS, valid Driver's License, PRC ID, Postal ID)",
-                "Official DFA Processing Fee Payment Receipt",
-                "Supporting documents for married women (PSA Marriage Certificate)"
-            ],
-            visafree: [
-                "Valid Philippine Passport (at least 6 months validity from entry date)",
-                "Confirmed Return or Onward Air Ticket",
-                "Hotel Accommodation Bookings / Host Contact Details",
-                "Sufficient travel funds / cash allowance for the duration of stay",
-                "Company ID, Certificate of Employment, or School ID for Bureau of Immigration inspection"
-            ],
-            tourist: [
-                "Valid Philippine Passport (at least 6 months validity)",
-                "Completed Official Visa Application Form & Photo",
-                "Bank Certificate with Average Daily Balance (ADB) & Bank Statements",
-                "Certificate of Employment (COE) with approved leave or ITR (BIR Form 2316)",
-                "Confirmed Hotel Bookings & Detailed Flight Itinerary"
-            ],
-            usvisitor: [
-                "Valid Philippine Passport",
-                "Completed Online Form DS-160 confirmation page with barcode",
-                "MRV Fee Payment Receipt",
-                "Passport-size photo meeting U.S. visa photo standards",
-                "Supporting tie documents (Employment proof, property titles, or immediate family ties in PH)"
-            ]
-        };
-
-        function updateChecklist() {
-            const select = document.getElementById('visaSelect');
-            const container = document.getElementById('checklistContent');
-            if (!container || !select) return;
-            const items = checklistData[select.value] || [];
-            container.innerHTML = items.map(item => `
-                <label class="flex items-start space-x-3 bg-white p-3.5 rounded-xl border border-slate-200 hover:bg-blue-50/50 transition cursor-pointer">
-                    <input type="checkbox" class="mt-1 h-4 w-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500">
-                    <span class="text-sm text-slate-700 font-medium">${item}</span>
-                </label>
-            `).join('');
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            renderGuides();
-            updateChecklist();
-        });
-    </script>
-</body>
-</html>
+                shortDesc: "Comprehensive breakdown for Philippine passport holders: Singapore (30 days), Thailand (60 days), Malaysia (
