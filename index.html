@@ -57,7 +57,7 @@
                 Official Process Repository & Hub
             </span>
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
-                Explore the World with a <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">PH Passport</span>
+                Navigating Global Borders with a <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">PH Passport</span>
             </h1>
             <p class="text-lg sm:text-xl text-slate-200 font-normal max-w-2xl mx-auto">
                 Verified step-by-step processes, date-stamped directives, and official links built so you don't have to keep searching elsewhere.
@@ -82,7 +82,7 @@
         <div id="guidesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
     </section>
 
-    <!-- NEW: Official Process Repository Section (No More Endless Searching) -->
+    <!-- Official Process Repository Section -->
     <section id="processes" class="py-16 bg-white border-t border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
@@ -189,87 +189,44 @@
         </div>
     </section>
 
-    <!-- Interactive Document Checklist Section -->
-    <section id="checklist" class="py-16 bg-white border-t border-b border-slate-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Interactive Document & Requirement Checklist</h2>
-                <p class="text-slate-600 mt-2">Select your category below and check off your requirements before heading out.</p>
-            </div>
-
-            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
-                <div class="mb-6">
-                    <label class="block text-sm font-bold text-slate-700 mb-2">Select Category:</label>
-                    <select id="visaSelect" onchange="updateChecklist()" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-3 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <option value="passport">Philippine Passport Application & Valid IDs</option>
-                        <option value="visafree">Visa-Free Destinations (ASEAN, Taiwan, South America)</option>
-                        <option value="tourist">Standard Tourist Visa (Japan, Korea, Schengen)</option>
-                        <option value="usvisitor">U.S. B1/B2 Tourist Visa Prep</option>
-                    </select>
-                </div>
-                <div id="checklistContent" class="space-y-3"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Official Government Portals Section -->
-    <section id="official-links" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto mb-12">
-            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Official Government Portals</h2>
-            <p class="text-slate-600 mt-2">Strictly verified information. Always check official agency websites directly.</p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <a href="https://dfa.gov.ph" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
-                <div class="text-blue-700 text-xl mb-3"><i class="fa-solid fa-passport"></i></div>
-                <h3 class="font-bold text-slate-900">DFA Philippines</h3>
-                <p class="text-xs text-slate-500 mt-1">Official passport appointments and authentication portals.</p>
-                <span class="text-xs text-blue-600 font-semibold mt-3 inline-block">Official Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
-            </a>
-
-            <a href="https://national-id.gov.ph" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
-                <div class="text-teal-600 text-xl mb-3"><i class="fa-solid fa-id-card"></i></div>
-                <h3 class="font-bold text-slate-900">PhilSys National ID</h3>
-                <p class="text-xs text-slate-500 mt-1">Official National ID portal and digital ePhilID tracking.</p>
-                <span class="text-xs text-blue-600 font-semibold mt-3 inline-block">Official Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
-            </a>
-
-            <a href="https://ph.usembassy.gov/visas/" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
-                <div class="text-indigo-600 text-xl mb-3"><i class="fa-solid fa-flag-usa"></i></div>
-                <h3 class="font-bold text-slate-900">U.S. Embassy in PH</h3>
-                <p class="text-xs text-slate-500 mt-1">Official U.S. tourist and immigrant visa information.</p>
-                <span class="text-xs text-blue-600 font-semibold mt-3 inline-block">Official Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
-            </a>
-
-            <a href="https://www.uscis.gov" target="_blank" rel="noopener noreferrer" class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-500 transition group">
-                <div class="text-blue-600 text-xl mb-3"><i class="fa-solid fa-building-columns"></i></div>
-                <h3 class="font-bold text-slate-900">USCIS Official Site</h3>
-                <p class="text-xs text-slate-500 mt-1">Immigration, petitions, green cards, and citizenship.</p>
-                <span class="text-xs text-blue-600 font-semibold mt-3 inline-block">Official Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i></span>
-            </a>
-        </div>
-    </section>
-
-    <!-- About Me / Founder Story Section -->
+    <!-- About Me / Founder Story Section (Updated with User Text & Glacier Photo Vibe) -->
     <section id="about" class="py-16 bg-white border-b border-slate-200">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-sm flex flex-col md:flex-row gap-8 items-center">
                 <div class="w-48 h-48 sm:w-64 sm:h-64 flex-shrink-0 rounded-2xl overflow-hidden shadow-md border-4 border-white relative group">
-                    <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=600&q=80" alt="Mamae Travel Story" class="w-full h-full object-cover">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Bulacan to Global Borders" class="w-full h-full object-cover">
                     <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-3 text-white text-xs text-center font-semibold">
                         Bulacan to Global Borders
                     </div>
                 </div>
                 <div class="space-y-4 text-slate-700 leading-relaxed text-sm sm:text-base">
-                    <div class="flex items-center space-x-2 text-blue-600">
+                    <div class="flex items-center space-x-2 text-pink-600">
                         <i class="fa-solid fa-heart text-xl"></i>
-                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Hi, I'm Mamae!</h2>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Hi, I’m Mamae!</h2>
                     </div>
                     <p>
-                        I grew up in a small town in <strong>Bulacan, Philippines</strong> dreaming of Middle Earth and stamping my passport until it begged for mercy. At 20 years old, I survived the legendary 3:00 AM Manila stampede just to process my old green Philippine passport all by myself. At 21, I braved life as an OFW in Taiwan—learning early on that bureaucracy loves paperwork more than Filipinos love a good *chismis*.
+                        I grew up in a small town in Bulacan, Philippines, dreaming of Middle-earth and collecting passport stamps until my passport begged for mercy.
                     </p>
                     <p>
-                        Fast forward to today: even with a <strong>US Green Card</strong> in hand, I’ve learned firsthand that holding foreign status doesn't magically exempt you from the endless loops of travel documentation. I built <em>Mamae Knows Borders</em> because I’ve stood in those confusing lines and paid those unnecessary fees so you don't have to walk in blind. <em>Hindi madali, pero kaya natin!</em>
+                        At 20, I survived the legendary 3:00 AM Manila stampede just to process my good old green Philippine passport—all on my own. By 21, I was already navigating life as an OFW (Overseas Filipino Worker), learning one important lesson early: bureaucracy loves paperwork almost as much as Filipinos love a good serving of adobo and lumpia.
+                    </p>
+                    <p>
+                        Fast-forward to today: even with a US Green Card in hand, I’ve learned that having foreign residency status doesn’t magically spare you from the endless maze of travel requirements, confusing documentation, and fees that sometimes leave you wondering, <em>“Kailangan pa ba talaga ito?”</em>
+                    </p>
+                    <p>
+                        That’s why I created <strong>Mamae Knows Borders</strong>.
+                    </p>
+                    <p>
+                        I’ve stood in those long lines, wrestled with confusing requirements, and paid fees I wish I’d understood better. Now, I’m here to share what I’ve learned, simplify the complicated, and help fellow travelers—especially Filipinos navigating life across borders—make informed decisions before they spend their time, money, and sanity.
+                    </p>
+                    <p>
+                        Because crossing borders shouldn’t mean crossing your fingers and hoping for the best.
+                    </p>
+                    <p class="font-bold text-slate-900">
+                        Hindi madali, pero kaya natin! Let’s navigate the world one passport stamp at a time.
+                    </p>
+                    <p class="text-blue-600 font-extrabold italic tracking-wide">
+                        This is the Way.
                     </p>
                 </div>
             </div>
