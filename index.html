@@ -651,18 +651,108 @@
                 lastUpdated: "October 27, 2026",
                 title: "Philippine Passport Application Guide",
                 image: "pasaporte.jpeg",
-                shortDesc: "Comprehensive step-by-step guide for first-time adult applications, renewals, minors, special cases, and overseas procedures.",
+                shortDesc: "Complete step-by-step instructions for first-time adult applications, renewals, supporting documents, and appointment rules.",
                 steps: [
-                    "<strong>1. Purpose & Scope:</strong> Prepare documents, schedule appointments, and secure regular Philippine passports. Always verify current guidelines via the <a href='https://www.passport.gov.ph/' target='_blank' class='text-blue-600 underline font-semibold'>DFA Passport Appointment System</a>[cite: 1].",
-                    "<strong>2. Adult First Application:</strong> Secure an original PSA-authenticated Certificate of Live Birth and valid government-issued IDs[cite: 2, 3]. <em>Need an ID?</em> Check the <a href='https://psa.gov.ph/' target='_blank' class='text-blue-600 underline font-semibold'>PSA Civil Registry</a> or official agency portals for PhilID/UMID/Driver's License acquisition steps[cite: 3].",
-                    "<strong>3. Booking & Confirmation:</strong> Book securely via the <a href='https://www.passport.gov.ph/' target='_blank' class='text-blue-600 underline font-semibold'>Official DFA Portal</a>[cite: 1]. Standard processing is PHP 950 and expedited is PHP 1,200. Beware of slot sellers; appointments are free (only processing fees apply)[cite: 1].",
-                    "<strong>4. Processing & Biometrics:</strong> Arrive 30 minutes early with your printed packet and sorted photocopies. Complete verification, data encoding, and digital photo/biometric capture.",
-                    "<strong>5. Renewals & Personal Details:</strong> ePassports require the old booklet and data-page copy[cite: 7]. Married women may adopt spouse surnames (with PSA Marriage Certificate) or retain maiden names[cite: 2].",
-                    "<strong>6. Minor Applications (Under 18):</strong> Minors require a separate passport, birth record, and eligible parental/guardian accompaniment with ID documentation.",
-                    "<strong>7. Special Cases & Problems:</strong> Lost passports require a notarized Affidavit of Loss and police report. Unreadable PSA records require Local Civil Registrar (LCR) copies[cite: 2].",
-                    "<strong>8. Applying from Abroad & New York:</strong> Overseas applicants follow local post rules. The Philippine Consulate General in New York (556 Fifth Ave) handles local ePassport renewals, dual citizenship under RA 9225, and requires a self-addressed USPS return envelope."
+                    "<strong>Quick Overview:</strong> Review application categories, verify civil registry records, and schedule appointments through official channels[cite: 1, 2].",
+                    "<strong>Appointments & Fees:</strong> Book via the official DFA portal[cite: 1]. Regular processing is PHP 950 and expedited is PHP 1,200.",
+                    "<strong>Processing & Biometrics:</strong> Attend personal appearance for photo capture and biometrics."
                 ],
-                tip: "Mamae's Real-Talk Tip: Always double-check that your name spelling, birth date, and civil status match perfectly across your PSA birth record and IDs before booking. Never buy outbound travel tickets until your physical passport is safely in your hands[cite: 1]!"
+                tip: "Always double-check that your first name, surname, birth date, and spelling match perfectly across your birth certificate, ID, and application form before booking your slot to avoid rejection at the counter!",
+                categories: [
+                    {
+                        name: "1. Adult First Application",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Core Requirements for Adult First-Time Applications</h4>
+                            <p class='text-slate-700 mb-3'>Prepare a confirmed appointment, a completed application form, personal appearance, an original PSA-issued Certificate of Live Birth with a photocopy, and an accepted ID with a photocopy[cite: 2]. If born abroad, use the appropriate Report of Birth[cite: 2].</p>
+                            <h5 class='font-bold text-slate-800 mt-3 mb-1'>Accepted IDs & Acquisition Guidance:</h5>
+                            <ul class='list-disc pl-5 space-y-1 text-slate-700 mb-3'>
+                                <li><strong>PhilID / ePhilID / Digital National ID:</strong> Requires a printed copy and live generation through the official National ID website or eGovPH app[cite: 3].</li>
+                                <li><strong>Government-issued cards:</strong> SSS, GSIS, UMID, LTO Driver's License, PRC ID, OWWA E-Card, Senior Citizen ID[cite: 3].</li>
+                                <li><strong>Students:</strong> School ID together with a Certificate of Registration[cite: 3].</li>
+                                <li><em>Note:</em> Company IDs, barangay certificates, PhilHealth records, or NBI clearances do not substitute for primary passport IDs[cite: 3].</li>
+                            </ul>
+                            <h5 class='font-bold text-slate-800 mt-3 mb-1'>Personal Information Check:</h5>
+                            <p class='text-slate-700'>Compare first name, middle name, surname, suffix, birth date, birthplace, and sex across your form, PSA record, and ID[cite: 2]. Resolve discrepancies before booking.</p>
+                        `
+                    },
+                    {
+                        name: "2. Booking & Appointment",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Official Appointment Workflow</h4>
+                            <ol class='list-decimal pl-5 space-y-2 text-slate-700 mb-3'>
+                                <li><strong>Select Receiving Office:</strong> Access the official <a href='https://www.passport.gov.ph/' target='_blank' class='text-blue-600 underline font-semibold'>DFA Passport Appointment System</a>[cite: 1]. Choose your location and application category[cite: 1].</li>
+                                <li><strong>Prepare Details:</strong> Have PSA documents, existing passport, and active email ready[cite: 1].</li>
+                                <li><strong>Choose Slot & Review:</strong> Pick an available date and time. Review spelling and details carefully[cite: 1].</li>
+                                <li><strong>Payment & Confirmation:</strong> Pay via official system channels only[cite: 1]. Appointments are free; processing carries fees[cite: 1]. Avoid slot sellers[cite: 1].</li>
+                            </ol>
+                        `
+                    },
+                    {
+                        name: "3. Processing & Claiming",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Processing Day & Release</h4>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-3'>
+                                <li><strong>Document Folder:</strong> Arrange printed appointment packet first, followed by originals and matching photocopies[cite: 3]. Bring your old passport for renewals[cite: 7].</li>
+                                <li><strong>Biometric Capture:</strong> Arrive 30 minutes early. Attend personal appearance for photo and fingerprint capture. Follow attire and grooming guidelines (no colored contact lenses, earrings removed during capture).</li>
+                                <li><strong>Final Inspection:</strong> Check your biographical page immediately upon release. Do not book outbound flights until your passport is physically in your possession[cite: 1].</li>
+                            </ul>
+                        `
+                    },
+                    {
+                        name: "4. Renewals & Name Changes",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Passport Renewals & Surname Guidelines</h4>
+                            <p class='text-slate-700 mb-2'>ePassports feature an electronic chip symbol on the cover[cite: 7]. Prepare your current/latest ePassport and data-page copy[cite: 7].</p>
+                            <h5 class='font-bold text-slate-800 mt-3 mb-1'>Married Surnames & Reversion:</h5>
+                            <p class='text-slate-700 mb-2'>Married women may retain their maiden name or adopt their husband's surname using a PSA-issued Marriage Certificate or Report of Marriage[cite: 2]. Reverting to a maiden name follows specific legal routes (widowhood, annulment, or one-time reversion with notarized explanation)[cite: 4].</p>
+                        `
+                    },
+                    {
+                        name: "5. Minors (Below 18)",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Minor Applications & Accompaniment</h4>
+                            <p class='text-slate-700 mb-2'>Minors require a separate passport, birth record, and valid adult ID.</p>
+                            <ul class='list-disc pl-5 space-y-1 text-slate-700 mb-3'>
+                                <li><strong>Married Parents:</strong> Either parent may accompany with ID copies.</li>
+                                <li><strong>Unmarried Parents:</strong> Mother normally accompanies; maternal authorization required if another adult attends.</li>
+                                <li><strong>Authorized Companion:</strong> Requires Special Power of Attorney (SPA) and parent ID copies.</li>
+                            </ul>
+                        `
+                    },
+                    {
+                        name: "6. Special Cases & Problems",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Lost, Damaged, or Unregistered Records</h4>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-3'>
+                                <li><strong>Lost Passport:</strong> Requires a notarized Affidavit of Loss, police report (where applicable), and data-page copies.</li>
+                                <li><strong>Damaged Passport:</strong> Present the booklet for assessment with an affidavit explaining the damage. Do not attempt DIY repairs.</li>
+                                <li><strong>Late Birth Registration & Unreadable Records:</strong> Secure Local Civil Registrar (LCR) records if PSA copies are unreadable[cite: 2, 5].</li>
+                            </ul>
+                        `
+                    },
+                    {
+                        name: "7. Abroad & New York",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Overseas Applications & New York Consulate</h4>
+                            <p class='text-slate-700 mb-2'>Former Filipinos must reacquire citizenship under RA 9225 before applying.</p>
+                            <h5 class='font-bold text-slate-800 mt-3 mb-1'>Philippine Consulate General in New York:</h5>
+                            <p class='text-slate-700 mb-2'>Located at <strong>556 Fifth Avenue, New York, NY 10036</strong>. Processing takes roughly 4 to 6 weeks. Applicants must provide a self-addressed stamped USPS return envelope. For inquiries, contact <a href='mailto:newyorkpcg.passport@dfa.gov.ph' class='text-blue-600 underline'>newyorkpcg.passport@dfa.gov.ph</a>.</p>
+                        `
+                    },
+                    {
+                        name: "8. Fees & Timeline",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Costs and Planning Timeline</h4>
+                            <table class='w-full border-collapse border border-slate-300 text-sm mb-4'>
+                                <tr class='bg-slate-100'><th class='border border-slate-300 p-2'>Service / Location</th><th class='border border-slate-300 p-2'>Fee / Instruction</th></tr>
+                                <tr><td class='border border-slate-300 p-2'>Philippines Regular Processing</td><td class='border border-slate-300 p-2'>PHP 950</td></tr>
+                                <tr><td class='border border-slate-300 p-2'>Philippines Expedited Processing</td><td class='border border-slate-300 p-2'>PHP 1,200</td></tr>
+                                <tr><td class='border border-slate-300 p-2'>New York Regular Passport</td><td class='border border-slate-300 p-2'>USD 60 (verify collection method)</td></tr>
+                            </table>
+                            <p class='text-slate-700'>Always plan ahead: count document prep, appointment waiting times, processing, and delivery before booking any travel[cite: 1].</p>
+                        `
+                    }
+                ]
             },
             {
                 id: "visa-free-asean",
@@ -888,12 +978,28 @@
             document.getElementById('fullPageUpdated').innerText = 'Last Updated: ' + g.lastUpdated;
             document.getElementById('fullPageTip').innerText = g.tip;
             
-            document.getElementById('fullPageSteps').innerHTML = g.steps.map((step, idx) => `
-                <div class="flex items-start space-x-3 pb-3 border-b border-slate-200/60 last:border-0 last:pb-0">
-                    <div class="bg-blue-600 text-white font-bold text-xs w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5">${idx + 1}</div>
-                    <div class="flex-grow text-sm sm:text-base leading-relaxed">${step}</div>
-                </div>
-            `).join('');
+            if (g.categories && g.categories.length > 0) {
+                // Render category navigation tabs and content display area
+                document.getElementById('fullPageSteps').innerHTML = `
+                    <div class="mb-6 flex flex-wrap gap-2 border-b border-slate-200 pb-4">
+                        ${g.categories.map((cat, idx) => `
+                            <button onclick="switchGuideCategory(${index}, ${idx})" id="catBtn-${idx}" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition ${idx === 0 ? 'bg-blue-600 text-white shadow-md' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'}">
+                                ${cat.name}
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div id="guideCategoryContent" class="bg-slate-50 p-6 rounded-2xl border border-slate-200 text-slate-800">
+                        ${g.categories[0].content}
+                    </div>
+                `;
+            } else {
+                document.getElementById('fullPageSteps').innerHTML = g.steps.map((step, idx) => `
+                    <div class="flex items-start space-x-3 pb-3 border-b border-slate-200/60 last:border-0 last:pb-0">
+                        <div class="bg-blue-600 text-white font-bold text-xs w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5">${idx + 1}</div>
+                        <div class="flex-grow text-sm sm:text-base leading-relaxed">${step}</div>
+                    </div>
+                `).join('');
+            }
 
             // Hide main sections, show full page view, scroll to top
             document.getElementById('categories').classList.add('hidden');
@@ -911,6 +1017,21 @@
             document.getElementById('processes').classList.remove('hidden');
             document.getElementById('directory').classList.remove('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }function switchGuideCategory(guideIndex, catIndex) {
+            const cat = guides[guideIndex].categories[catIndex];
+            document.getElementById('guideCategoryContent').innerHTML = cat.content;
+            
+            // Update tab styles
+            guides[guideIndex].categories.forEach((_, idx) => {
+                const btn = document.getElementById(`catBtn-${idx}`);
+                if (btn) {
+                    if (idx === catIndex) {
+                        btn.className = "px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition bg-blue-600 text-white shadow-md";
+                    } else {
+                        btn.className = "px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition bg-slate-100 hover:bg-slate-200 text-slate-700";
+                    }
+                }
+            });
         }
     </script>
 </body>
