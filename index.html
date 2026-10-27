@@ -580,9 +580,16 @@
                             <p class="text-xs text-slate-500">Scan or save to pay via GCash</p>
                         </div>
                     </div>
-                    <div class="bg-white p-3 rounded-xl border border-slate-200 flex justify-center">
-                        <img src="mamae-qr.jpeg" alt="Mamae GCash QR" class="w-48 h-auto rounded-lg shadow-xs object-contain">
-                    </div>
+                   <div class="bg-white p-3 rounded-xl border border-slate-200 flex flex-col items-center justify-center space-y-2">
+    <a href="mamae-qr.jpeg" target="_blank" rel="noopener noreferrer" class="group relative block overflow-hidden rounded-lg transition transform hover:scale-[1.02]" title="Click to view full size">
+        <img src="mamae-qr.jpeg" alt="Mamae GCash QR" class="w-48 h-auto object-contain shadow-xs">
+        <div class="absolute inset-0 bg-blue-900/10 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+            <span class="bg-slate-900/80 text-white text-[10px] font-bold px-2.5 py-1 rounded-full backdrop-blur-sm">
+                <i class="fa-solid fa-magnifying-glass-plus mr-1"></i> Click to Zoom / Save
+            </span>
+        </div>
+    </a>
+</div>
                 </div>
             </div>
         </div>
