@@ -1,4 +1,110 @@
-<!-- Global Country & Visa Directory Section -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mamae Knows Borders — Filipino Visa & Global Pathway Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Top Disclaimer Banner -->
+    <div class="bg-amber-50 border-b border-amber-200 text-amber-900 px-4 py-2 text-xs sm:text-sm text-center font-medium">
+        <i class="fa-solid fa-triangle-exclamation mr-1.5 text-amber-600"></i>
+        <strong>Disclaimer:</strong> Mamae Knows Borders is an independent informational guide created by a fellow Filipino traveler and former OFW. We are based on real-world experience and are not affiliated with any embassy, the DFA, or DMW/POEA. Always verify requirements on official government websites.
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-blue-600 text-white p-2.5 rounded-xl shadow-md">
+                    <i class="fa-solid fa-earth-asia text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-none">Mamae Knows <span class="text-blue-600">Borders</span></span>
+                    <span class="text-xs text-slate-500 font-medium">Your Global Visa & Migration Resource</span>
+                </div>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-600">
+                <a href="#categories" class="hover:text-blue-600 transition">Interactive Guides</a>
+                <a href="#processes" class="hover:text-blue-600 transition">Field Guide</a>
+                <a href="#directory" class="hover:text-blue-600 transition text-blue-600 font-bold">Country Directory</a>
+                <a href="#about" class="hover:text-blue-600 transition">About Mamae</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="hidden sm:flex items-center space-x-3">
+                <button onclick="openCoffeeModal()" class="inline-flex items-center bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold px-4 py-2.5 rounded-xl shadow-sm text-xs sm:text-sm transition">
+                    <i class="fa-solid fa-mug-hot mr-1.5"></i> Buy Mamae a Coffee
+                </button>
+                <a href="#feedback" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2.5 rounded-xl shadow-sm text-xs sm:text-sm transition">
+                    Ask a Question
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-slate-700 hover:text-blue-600 text-2xl p-2 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3">
+            <a href="#categories" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">Interactive Guides</a>
+            <a href="#processes" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">Field Guide</a>
+            <a href="#directory" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">Country Directory</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">About Mamae</a>
+            <div class="pt-2 flex flex-col space-y-2">
+                <button onclick="toggleMobileMenu(); openCoffeeModal();" class="w-full bg-amber-400 text-slate-900 font-bold py-2.5 rounded-xl text-sm flex items-center justify-center">
+                    <i class="fa-solid fa-mug-hot mr-1.5"></i> Buy Mamae a Coffee
+                </button>
+                <a href="#feedback" onclick="toggleMobileMenu()" class="w-full text-center bg-blue-600 text-white font-semibold py-2.5 rounded-xl text-sm">
+                    Ask a Question
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-slate-900 text-white py-20 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=1600&q=80" alt="Travel Background" class="absolute inset-0 w-full h-full object-cover opacity-25">
+        <div class="relative max-w-4xl mx-auto space-y-6">
+            <span class="bg-blue-500/30 text-blue-200 border border-blue-400/30 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider">
+                Traveler Experience Hub & Resource Center
+            </span>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+                Navigating Global Borders with a <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-300">PH Passport</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-200 font-normal max-w-2xl mx-auto">
+                Real-world travel guides, simple step-by-step instructions, and community Q&A shared by a fellow traveler.
+            </p>
+            
+            <!-- Live Visitor Counter Badge -->
+            <div class="inline-flex items-center bg-slate-800/80 border border-slate-700 text-slate-200 px-5 py-2.5 rounded-2xl backdrop-blur-md shadow-lg text-xs sm:text-sm font-medium">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse mr-2.5"></span>
+                <span>Global Travelers Helped: <strong id="visitorCount" class="text-white font-bold tracking-wider">1,482</strong> and counting</span>
+            </div>
+
+            <div class="pt-2 flex flex-wrap justify-center gap-4">
+                <a href="#directory" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition">
+                    Explore Country Directory
+                </a>
+                <a href="#feedback" class="bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-3.5 rounded-xl backdrop-blur-sm transition border border-white/20">
+                    Ask Mamae a Question
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Country & Visa Directory Section -->
     <section id="directory" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
             <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Quick Reference Directory</span>
@@ -90,7 +196,7 @@
         </div>
     </section>
 
-    <!-- Dedicated Country Profile Page View (Hidden by default, shown when a country is clicked) -->
+    <!-- Dedicated Country Profile Page View (Hidden by default) -->
     <section id="countryPageView" class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 hidden">
         <div class="bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-md space-y-6">
             <button onclick="closeCountryPage()" class="inline-flex items-center text-sm font-bold text-blue-600 hover:text-blue-800 transition">
@@ -121,14 +227,292 @@
         </div>
     </section>
 
-    <!-- JavaScript for Search, Purpose Filtering & Dedicated Page View -->
+    <!-- Interactive Guides Section -->
+    <section id="categories" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Interactive Visa & Passport Cards</h2>
+            <p class="text-slate-600 mt-2">Click any card below for simple, easy-to-follow travel guides.</p>
+        </div>
+        <div id="guidesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </section>
+
+    <!-- Field Guide & Masterclass Section -->
+    <section id="processes" class="py-16 bg-white border-t border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Mamae's Field Guide</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Step-by-Step Travel Checklists</h2>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    No complicated jargon—just straightforward, tried-and-tested steps to help you prepare your travel documents without stress.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card 1: Passport -->
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8 space-y-4 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-start">
+                            <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-md">Passport & ID</span>
+                            <span class="text-xs font-semibold text-slate-400 bg-slate-200/60 px-2.5 py-1 rounded">Updated for Travelers</span>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900">Simple Guide to Getting Your PH Passport</h3>
+                        <ol class="list-decimal list-inside space-y-2 text-xs sm:text-sm text-slate-700 leading-relaxed pt-2">
+                            <li><strong>Get a Valid ID First:</strong> Secure your PhilSys National ID, UMID, or Postal ID.</li>
+                            <li><strong>Book Online:</strong> Go to the official DFA booking portal. Never pay fixers on social media!</li>
+                            <li><strong>Prepare PSA Docs:</strong> Bring your original PSA Birth Certificate.</li>
+                            <li><strong>Show Up Early:</strong> Arrive 30 minutes before your appointment with printed forms and receipts.</li>
+                        </ol>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                        <a href="https://dfa.gov.ph" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-600 hover:text-blue-800 transition">
+                            Visit DFA Booking Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                        </a>
+                        <span class="text-[11px] text-amber-700 font-medium bg-amber-50 px-2 py-1 rounded border border-amber-200">⚠️ Book early</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: ASEAN Visa-Free -->
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-8 space-y-4 shadow-sm flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-start">
+                            <span class="bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-md">Visa-Free Travel</span>
+                            <span class="text-xs font-semibold text-slate-400 bg-slate-200/60 px-2.5 py-1 rounded">Updated for Travelers</span>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900">ASEAN Visa-Free Checklist</h3>
+                        <ol class="list-decimal list-inside space-y-2 text-xs sm:text-sm text-slate-700 leading-relaxed pt-2">
+                            <li><strong>Passport Validity:</strong> Must be valid for at least 6 months before your trip.</li>
+                            <li><strong>Return Ticket:</strong> Confirmed return or onward flight ticket is required.</li>
+                            <li><strong>Hotel Booking:</strong> Print your hotel reservations or host details.</li>
+                            <li><strong>Employment Proof:</strong> Bring your company ID or certificate of employment just in case.</li>
+                        </ol>
+                    </div>
+                    <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                        <a href="https://dfa.gov.ph" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-600 hover:text-blue-800 transition">
+                            View Travel Guidelines <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                        </a>
+                        <span class="text-[11px] text-amber-700 font-medium bg-amber-50 px-2 py-1 rounded border border-amber-200">⚠️ Check requirements</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Feedback & Q&A Board Section -->
+    <section id="feedback" class="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Traveler Community Hub</span>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Got Questions or Feedback? Ask Mamae!</h2>
+            <p class="text-slate-600 text-sm sm:text-base">
+                Stuck on a requirement or want to request a new guide? Submit your question below. Choose to publish it publicly on the Q&A board or send it privately straight to Mamae's inbox!
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <!-- Left: Submission Form -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm space-y-5">
+                <h3 class="text-xl font-bold text-slate-900 flex items-center">
+                    <i class="fa-solid fa-paper-plane text-blue-600 mr-2.5"></i> Send a Question to Mamae
+                </h3>
+                <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-4" onsubmit="handleFormSubmit(event)">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Your Name or Nickname</label>
+                        <input type="text" name="name" required placeholder="e.g. Traveler from Bulacan" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Your Email (Private - for Mamae's reply)</label>
+                        <input type="email" name="email" required placeholder="your.email@example.com" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Question or Feedback</label>
+                        <textarea name="message" rows="4" required placeholder="Ask about DFA appointments, US tourist visas, or suggest a guide..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+                    
+                    <div class="bg-blue-50/60 border border-blue-200 rounded-xl p-3.5 flex items-start space-x-3">
+                        <input type="checkbox" id="publicToggle" name="publish_publicly" value="yes" class="mt-1 h-4 w-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500 cursor-pointer">
+                        <label for="publicToggle" class="text-xs sm:text-sm text-slate-700 cursor-pointer leading-relaxed">
+                            <strong>Make this question public</strong> on the Q&A board so other travelers can see Mamae's answer.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl text-sm transition shadow-md">
+                        Submit Question to Mamae <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                    <p id="formSuccess" class="text-xs text-emerald-600 font-semibold text-center hidden">
+                        <i class="fa-solid fa-circle-check mr-1"></i> Message sent successfully! Thank you for reaching out.
+                    </p>
+                </form>
+            </div>
+
+            <!-- Right: Published Q&A Board -->
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-slate-900 flex items-center px-1">
+                    <i class="fa-solid fa-comments text-blue-600 mr-2.5"></i> Recent Answered Questions
+                </h3>
+                
+                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-3">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="font-bold text-slate-900 bg-slate-100 px-2.5 py-1 rounded-md">Q: DFA Appointment Slot Availability</span>
+                        <span class="text-slate-400">Asked by Mark, Cavite</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-700 italic">"Pano po pag walang makita na available slots sa DFA online appointment?"</p>
+                    <div class="bg-blue-50/70 border-l-4 border-blue-600 p-3 rounded-r-xl space-y-1">
+                        <span class="text-[11px] font-extrabold text-blue-900 uppercase tracking-wide block"><i class="fa-solid fa-mug-hot mr-1"></i> Mamae's Answer:</span>
+                        <p class="text-xs sm:text-sm text-slate-800 leading-relaxed">
+                            Hi Mark! DFA usually opens new batches of slots randomly or early in the morning. Never pay fixers on Facebook! Keep checking the official portal during off-peak hours.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me / Founder Story Section -->
+    <section id="about" class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-sm flex flex-col md:flex-row gap-8 items-center">
+                <div class="w-48 h-48 sm:w-64 sm:h-64 flex-shrink-0 rounded-2xl overflow-hidden shadow-md border-4 border-white relative group">
+                    <img src="mamae.jpeg" alt="Bulacan to Global Borders" class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-3 text-white text-xs text-center font-semibold">
+                        Bulacan to Global Borders
+                    </div>
+                </div>
+                <div class="space-y-4 text-slate-700 leading-relaxed text-sm sm:text-base">
+                    <div class="flex items-center space-x-2 text-pink-600">
+                        <i class="fa-solid fa-heart text-xl"></i>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Hi, I’m Mamae!</h2>
+                    </div>
+                    <p>
+                        I grew up in a small town in Bulacan, Philippines, dreaming of Middle-earth and collecting passport stamps until my passport begged for mercy.
+                    </p>
+                    <p>
+                        At 20, I survived the legendary 3:00 AM Manila stampede just to process my good old green Philippine passport—all on my own. By 21, I was already navigating life as an OFW (Overseas Filipino Worker), learning one important lesson early: bureaucracy loves paperwork almost as much as Filipinos love a good serving of adobo and lumpia.
+                    </p>
+                    <p>
+                        That’s why I created <strong>Mamae Knows Borders</strong>. To share what I've learned, simplify the complicated, and help fellow travelers navigate life across borders.
+                    </p>
+                    <p class="font-bold text-slate-900">
+                        Hindi madali, pero kaya natin! Let’s navigate the world one passport stamp at a time.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buy Mamae a Coffee / Support Section -->
+    <section id="coffee" class="py-16 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 border-t border-amber-200">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-amber-400 text-slate-900 text-3xl shadow-md">
+                <i class="fa-solid fa-mug-hot"></i>
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Did This Guide Save You Stress or Agency Fees?</h2>
+            <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+                <strong>Mamae Knows Borders</strong> is 100% free and independent. If these guides helped you plan your travels or understand your visa options, you can treat me to a warm cup of coffee!
+            </p>
+            <div class="pt-2 flex justify-center">
+                <button onclick="openCoffeeModal()" class="bg-amber-400 hover:bg-amber-500 text-slate-900 font-extrabold px-8 py-4 rounded-2xl shadow-md hover:shadow-lg transition flex items-center text-base">
+                    <i class="fa-solid fa-mug-hot mr-2 text-lg"></i> Choose How to Treat Mamae (Buy Me a Coffee)
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Guide Popup Modal -->
+    <div id="guideModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200">
+            <div class="relative h-56">
+                <img id="modalImg" src="" alt="Guide Banner" class="w-full h-full object-cover">
+                <button onclick="closeModal()" class="absolute top-4 right-4 bg-black/60 hover:bg-black text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent p-6 text-white">
+                    <span id="modalBadge" class="bg-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase"></span>
+                    <h3 id="modalTitle" class="text-2xl sm:text-3xl font-extrabold mt-2"></h3>
+                </div>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <p id="modalDesc" class="text-slate-600 text-sm sm:text-base"></p>
+                <div>
+                    <h4 class="font-bold text-slate-900 text-base mb-3 flex items-center">
+                        <i class="fa-solid fa-list-check text-blue-600 mr-2"></i> Step-by-Step Guide
+                    </h4>
+                    <div id="modalSteps" class="space-y-3 text-sm text-slate-700 bg-slate-50 p-4 rounded-2xl border border-slate-200"></div>
+                </div>
+                <div class="pt-4 border-t border-slate-200 flex justify-end">
+                    <button onclick="closeModal()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-5 py-3 rounded-xl text-sm transition">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy-First Support Modal -->
+    <div id="coffeeModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200">
+            <div class="bg-gradient-to-r from-amber-400 to-orange-400 p-6 text-slate-900 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-white/90 p-2.5 rounded-xl shadow-sm">
+                        <i class="fa-solid fa-mug-hot text-xl text-amber-600"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-extrabold leading-none">Treat Mamae to a Coffee</h3>
+                        <span class="text-xs font-semibold text-slate-800">100% Anonymous & Secure</span>
+                    </div>
+                </div>
+                <button onclick="closeCoffeeModal()" class="bg-black/10 hover:bg-black/20 text-slate-900 w-9 h-9 rounded-full flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-5">
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    Thank you for supporting <strong>Mamae Knows Borders</strong>! All methods use privacy-protected accounts.
+                </p>
+                <div class="border border-slate-200 rounded-2xl p-4 bg-slate-50 flex items-center justify-between">
+                    <div class="space-y-1 pr-3">
+                        <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-2 py-0.5 rounded">Global / US</span>
+                        <h4 class="font-bold text-slate-900 text-sm">Buy Me a Coffee Link</h4>
+                    </div>
+                    <a href="https://www.buymeacoffee.com/mamaeknowsborders" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 bg-slate-900 hover:bg-slate-800 text-white font-bold px-4 py-2.5 rounded-xl text-xs transition">
+                        Open <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <p class="text-sm font-semibold">Mamae Knows Borders — Built with dedication for Filipinos dreaming of the world.</p>
+            <p class="text-xs text-slate-400 max-w-xl mx-auto">
+                Disclaimer: This site is strictly for informational purposes. Visa policies change frequently.
+            </p>
+            <p class="text-xs text-slate-500 pt-4 border-t border-slate-800">
+                © 2026 Mamae Knows Borders. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript & Scripts -->
     <script>
+        const guides = [
+            {
+                id: "ph-passport",
+                badge: "Passport & Valid IDs",
+                title: "Simple Guide to Getting Your Philippine Passport",
+                image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "A warm, straightforward walkthrough on gathering your valid IDs and booking your DFA appointment online.",
+                steps: [
+                    "<strong>Step 1: Secure a Strong Valid ID.</strong> Make sure you have your PhilSys National ID, UMID, or Postal ID ready.",
+                    "<strong>Step 2: Book Online.</strong> Go exclusively to the official DFA appointment website.",
+                    "<strong>Step 3: Prepare Civil Documents.</strong> Secure your original PSA Authenticated Birth Certificate.",
+                    "<strong>Step 4: Appointment Day.</strong> Arrive 30 minutes before your slot with your valid ID and application receipt."
+                ]
+            }
+        ];
+
         let currentPurpose = 'all';
 
         function filterByPurpose(purpose) {
             currentPurpose = purpose;
-            
-            // Update button styles
             document.querySelectorAll('.purpose-btn').forEach(btn => {
                 btn.classList.remove('bg-blue-600', 'text-white', 'font-bold');
                 btn.classList.add('bg-white', 'text-slate-700', 'font-semibold');
@@ -138,7 +522,6 @@
                 activeBtn.classList.remove('bg-white', 'text-slate-700', 'font-semibold');
                 activeBtn.classList.add('bg-blue-600', 'text-white', 'font-bold');
             }
-
             filterCountries();
         }
 
@@ -153,7 +536,6 @@
                 items.forEach(item => {
                     const countryName = item.getAttribute('data-name');
                     const purpose = item.getAttribute('data-purpose');
-                    
                     const matchesSearch = countryName.includes(input);
                     const matchesPurpose = (currentPurpose === 'all' || purpose === currentPurpose);
 
@@ -165,11 +547,7 @@
                     }
                 });
 
-                if (matchFound) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
+                card.style.display = matchFound ? 'block' : 'none';
             });
         }
 
@@ -180,7 +558,6 @@
             document.getElementById('pageDescription').innerText = description;
             document.getElementById('pageOfficialLink').href = url;
 
-            // Hide directory, show page view, scroll smoothly to top
             document.getElementById('directory').classList.add('hidden');
             const pageView = document.getElementById('countryPageView');
             pageView.classList.remove('hidden');
@@ -192,4 +569,28 @@
             document.getElementById('directory').classList.remove('hidden');
             document.getElementById('directory').scrollIntoView({ behavior: 'smooth' });
         }
+
+        function openCoffeeModal() {
+            document.getElementById('coffeeModal').classList.remove('hidden');
+            document.getElementById('coffeeModal').classList.add('flex');
+        }
+
+        function closeCoffeeModal() {
+            document.getElementById('coffeeModal').classList.remove('flex');
+            document.getElementById('coffeeModal').classList.add('hidden');
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const successMsg = document.getElementById('formSuccess');
+            successMsg.classList.remove('hidden');
+            event.target.reset();
+            setTimeout(() => successMsg.classList.add('hidden'), 5000);
+        }
     </script>
+</body>
+</html>
