@@ -246,7 +246,41 @@
             </div>
         </div>
     </section>
-
+<!-- Dedicated Guide Full Page View (Hidden by default) -->
+<section id="guideFullPageView" class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 hidden">
+    <div class="bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-md space-y-6">
+        <button onclick="closeGuideFullPage()" class="inline-flex items-center text-sm font-bold text-blue-600 hover:text-blue-800 transition">
+            <i class="fa-solid fa-arrow-left mr-2"></i> Back to Featured Guides
+        </button>
+        <div class="relative h-64 rounded-2xl overflow-hidden shadow-sm">
+            <img id="fullPageImg" src="" alt="Guide Banner" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-6 text-white">
+                <span id="fullPageBadge" class="bg-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase w-max mb-2"></span>
+                <h2 id="fullPageTitle" class="text-2xl sm:text-3xl font-extrabold"></h2>
+                <span id="fullPageUpdated" class="text-xs text-slate-300 mt-1"></span>
+            </div>
+        </div>
+        <div class="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
+            <h3 class="font-bold text-slate-950 text-lg">Detailed Step-by-Step Instructions</h3>
+            <div id="fullPageSteps" class="space-y-3 bg-slate-50 p-6 rounded-2xl border border-slate-200"></div>
+            
+            <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4">
+                <h4 class="font-bold text-amber-900 text-sm mb-1 flex items-center">
+                    <i class="fa-solid fa-lightbulb text-amber-600 mr-2"></i> Mamae's Real-Talk Tip:
+                </h4>
+                <p id="fullPageTip" class="text-xs sm:text-sm text-amber-800 leading-relaxed"></p>
+            </div>
+        </div>
+        <div class="pt-4 border-t border-slate-200 flex flex-wrap gap-4 items-center justify-between">
+            <button onclick="closeGuideFullPage()" class="bg-slate-900 hover:bg-slate-800 text-white font-bold px-6 py-3 rounded-xl text-sm transition">
+                Return to Homepage Guides
+            </button>
+            <button onclick="openCoffeeModal()" class="bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold px-6 py-3 rounded-xl text-sm transition">
+                <i class="fa-solid fa-mug-hot mr-1"></i> Buy Mamae a Coffee
+            </button>
+        </div>
+    </div>
+</section>
     <!-- Featured Guides Section -->
     <section id="categories" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div class="text-center max-w-2xl mx-auto mb-12">
@@ -704,8 +738,8 @@
             const grid = document.getElementById('guidesGrid');
             if (!grid) return;
             grid.innerHTML = guides.map((g, index) => `
-                <div onclick="openGuideModal(${index})" class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:shadow-xl hover:-translate-y-1 transition duration-200 cursor-pointer group">
-                    <div class="h-48 relative overflow-hidden">
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:shadow-xl transition duration-200 group">
+                    <div class="h-48 relative overflow-hidden cursor-pointer" onclick="openGuideModal(${index})">
                         <img src="${g.image}" alt="${g.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex flex-col justify-end p-5 text-white">
                             <div class="flex justify-between items-center mb-1.5">
@@ -717,9 +751,13 @@
                     </div>
                     <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
                         <p class="text-sm text-slate-600">${g.shortDesc}</p>
-                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-blue-600 font-bold text-sm">
-                            <span>Read Step-by-Step Guide</span>
-                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                        <div class="pt-3 border-t border-slate-100 grid grid-cols-2 gap-2">
+                            <button onclick="openGuideModal(${index})" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2 px-3 rounded-xl text-xs transition text-center">
+                                <i class="fa-solid fa-window-maximize mr-1"></i> Quick Popup
+                            </button>
+                            <button onclick="openGuideFullPage(${index})" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded-xl text-xs transition text-center">
+                                <i class="fa-solid fa-book-open mr-1"></i> Full Page Guide
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -838,7 +876,38 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             renderGuides();
-        });
+        });function openGuideFullPage(index) {
+            const g = guides[index];
+            document.getElementById('fullPageImg').src = g.image;
+            document.getElementById('fullPageBadge').innerText = g.badge;
+            document.getElementById('fullPageTitle').innerText = g.title;
+            document.getElementById('fullPageUpdated').innerText = 'Last Updated: ' + g.lastUpdated;
+            document.getElementById('fullPageTip').innerText = g.tip;
+            
+            document.getElementById('fullPageSteps').innerHTML = g.steps.map((step, idx) => `
+                <div class="flex items-start space-x-3 pb-3 border-b border-slate-200/60 last:border-0 last:pb-0">
+                    <div class="bg-blue-600 text-white font-bold text-xs w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5">${idx + 1}</div>
+                    <div class="flex-grow text-sm sm:text-base leading-relaxed">${step}</div>
+                </div>
+            `).join('');
+
+            // Hide main sections, show full page view, scroll to top
+            document.getElementById('categories').classList.add('hidden');
+            document.getElementById('processes').classList.add('hidden');
+            document.getElementById('directory').classList.add('hidden');
+            
+            const fullPage = document.getElementById('guideFullPageView');
+            fullPage.classList.remove('hidden');
+            fullPage.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function closeGuideFullPage() {
+            document.getElementById('guideFullPageView').classList.add('hidden');
+            document.getElementById('categories').classList.remove('hidden');
+            document.getElementById('processes').classList.remove('hidden');
+            document.getElementById('directory').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>
