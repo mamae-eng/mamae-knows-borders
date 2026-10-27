@@ -34,8 +34,8 @@
 
             <!-- Desktop Nav -->
             <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-600">
-                <a href="#categories" class="hover:text-blue-600 transition">Interactive Guides</a>
-                <a href="#processes" class="hover:text-blue-600 transition">Field Guide</a>
+                <a href="#categories" class="hover:text-blue-600 transition">Featured Guides</a>
+                <a href="#processes" class="hover:text-blue-600 transition">Essential Checklists</a>
                 <a href="#directory" class="hover:text-blue-600 transition text-blue-600 font-bold">Country Directory</a>
                 <a href="#about" class="hover:text-blue-600 transition">About Mamae</a>
             </nav>
@@ -58,8 +58,8 @@
 
         <!-- Mobile Dropdown Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3">
-            <a href="#categories" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">Interactive Guides</a>
-            <a href="#processes" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">Field Guide</a>
+            <a href="#categories" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">Featured Guides</a>
+            <a href="#processes" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">Essential Checklists</a>
             <a href="#directory" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">Country Directory</a>
             <a href="#about" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">About Mamae</a>
             <div class="pt-2 flex flex-col space-y-2">
@@ -87,7 +87,6 @@
                 Real-world travel guides, simple step-by-step instructions, and community Q&A shared by a fellow traveler.
             </p>
             
-            <!-- Live Visitor Counter Badge -->
             <div class="inline-flex items-center bg-slate-800/80 border border-slate-700 text-slate-200 px-5 py-2.5 rounded-2xl backdrop-blur-md shadow-lg text-xs sm:text-sm font-medium">
                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse mr-2.5"></span>
                 <span>Global Travelers Helped: <strong id="visitorCount" class="text-white font-bold tracking-wider">1,482</strong> and counting</span>
@@ -136,26 +135,32 @@
             <!-- Asia -->
             <div class="continent-card bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-4">
                 <h3 class="text-lg font-bold text-slate-900 flex items-center border-b border-slate-100 pb-3">
-                    <i class="fa-solid fa-earth-asia text-blue-600 mr-2"></i> Asia (Alphabetical)
+                    <i class="fa-solid fa-earth-asia text-blue-600 mr-2"></i> Asia
                 </h3>
                 <ul class="country-list space-y-2.5 text-xs sm:text-sm text-slate-700">
-                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="japan" data-purpose="tourist" onclick="openCountryPage('Japan', '🇯🇵', 'Visa Required (Tourist Visa / e-Visa)', 'Japan offers incredible tourism experiences. Philippine passport holders require a tourist visa processed through accredited agencies, or e-Visas if eligible.', 'https://www.ph.emb-japan.go.jp')">
-                        <span>🇯🇵 Japan</span> <span class="bg-blue-100 text-blue-800 font-bold px-2 py-0.5 rounded text-[11px]">Visa Required</span>
+                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="japan" data-purpose="tourist" onclick="openCountryPage('Japan', 'https://flagcdn.com/w40/jp.png', 'Visa Required (Tourist Visa / e-Visa)', 'Japan offers incredible tourism experiences. Philippine passport holders require a tourist visa processed through accredited agencies, or e-Visas if eligible.', 'https://www.ph.emb-japan.go.jp')">
+                        <span class="flex items-center space-x-2.5"><img src="https://flagcdn.com/w40/jp.png" alt="Japan Flag" class="w-6 h-4 object-cover rounded shadow-xs"> <strong>Japan</strong></span> 
+                        <span class="bg-blue-100 text-blue-800 font-bold px-2.5 py-1 rounded-md text-[11px]">Visa Required</span>
                     </li>
-                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="singapore" data-purpose="tourist" onclick="openCountryPage('Singapore', '🇸🇬', 'Visa-Free (30 Days)', 'Enjoy up to 30 days of visa-free entry for tourism. Ensure your passport has 6 months validity and a confirmed return ticket.', 'https://www.ica.gov.sg')">
-                        <span>🇸🇬 Singapore</span> <span class="bg-teal-100 text-teal-800 font-bold px-2 py-0.5 rounded text-[11px]">Visa-Free (30d)</span>
+                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="singapore" data-purpose="tourist" onclick="openCountryPage('Singapore', 'https://flagcdn.com/w40/sg.png', 'Visa-Free (30 Days)', 'Enjoy up to 30 days of visa-free entry for tourism. Ensure your passport has 6 months validity and a confirmed return ticket.', 'https://www.ica.gov.sg')">
+                        <span class="flex items-center space-x-2.5"><img src="https://flagcdn.com/w40/sg.png" alt="Singapore Flag" class="w-6 h-4 object-cover rounded shadow-xs"> <strong>Singapore</strong></span> 
+                        <span class="bg-teal-100 text-teal-800 font-bold px-2.5 py-1 rounded-md text-[11px]">Visa-Free (30d)</span>
                     </li>
-                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="south korea" data-purpose="tourist" onclick="openCountryPage('South Korea', '🇰🇷', 'Tourist Visa Required', 'Explore Seoul and Busan! PH passport holders require a tourist visa, except for direct entry to Jeju Island under specific conditions.', 'https://overseas.mofa.go.kr')">
-                        <span>🇰🇷 South Korea</span> <span class="bg-blue-100 text-blue-800 font-bold px-2 py-0.5 rounded text-[11px]">Visa Required</span>
+                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="south korea" data-purpose="tourist" onclick="openCountryPage('South Korea', 'https://flagcdn.com/w40/kr.png', 'Tourist Visa Required', 'Explore Seoul and Busan! PH passport holders require a tourist visa, except for direct entry to Jeju Island under specific conditions.', 'https://overseas.mofa.go.kr')">
+                        <span class="flex items-center space-x-2.5"><img src="https://flagcdn.com/w40/kr.png" alt="South Korea Flag" class="w-6 h-4 object-cover rounded shadow-xs"> <strong>South Korea</strong></span> 
+                        <span class="bg-blue-100 text-blue-800 font-bold px-2.5 py-1 rounded-md text-[11px]">Visa Required</span>
                     </li>
-                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="taiwan" data-purpose="tourist" onclick="openCountryPage('Taiwan', '🇹🇼', 'Visa-Free / ROC Cert (14 Days)', 'Enjoy up to 14 days visa-free entry. Complete the online ROC Travel Authorization Certificate prior to your flight.', 'https://www.boca.gov.tw')">
-                        <span>🇹🇼 Taiwan</span> <span class="bg-teal-100 text-teal-800 font-bold px-2 py-0.5 rounded text-[11px]">Visa-Free (14d)</span>
+                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="taiwan" data-purpose="tourist" onclick="openCountryPage('Taiwan', 'https://flagcdn.com/w40/tw.png', 'Visa-Free / ROC Cert (14 Days)', 'Enjoy up to 14 days visa-free entry. Complete the online ROC Travel Authorization Certificate prior to your flight.', 'https://www.boca.gov.tw')">
+                        <span class="flex items-center space-x-2.5"><img src="https://flagcdn.com/w40/tw.png" alt="Taiwan Flag" class="w-6 h-4 object-cover rounded shadow-xs"> <strong>Taiwan</strong></span> 
+                        <span class="bg-teal-100 text-teal-800 font-bold px-2.5 py-1 rounded-md text-[11px]">Visa-Free (14d)</span>
                     </li>
-                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="thailand" data-purpose="tourist" onclick="openCountryPage('Thailand', '🇹🇭', 'Visa-Free (60 Days)', 'Thailand offers up to 60 days visa-free entry for Philippine passport holders traveling for tourism.', 'https://mfa.go.th')">
-                        <span>🇹🇭 Thailand</span> <span class="bg-teal-100 text-teal-800 font-bold px-2 py-0.5 rounded text-[11px]">Visa-Free (60d)</span>
+                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="thailand" data-purpose="tourist" onclick="openCountryPage('Thailand', 'https://flagcdn.com/w40/th.png', 'Visa-Free (60 Days)', 'Thailand offers up to 60 days visa-free entry for Philippine passport holders traveling for tourism.', 'https://mfa.go.th')">
+                        <span class="flex items-center space-x-2.5"><img src="https://flagcdn.com/w40/th.png" alt="Thailand Flag" class="w-6 h-4 object-cover rounded shadow-xs"> <strong>Thailand</strong></span> 
+                        <span class="bg-teal-100 text-teal-800 font-bold px-2.5 py-1 rounded-md text-[11px]">Visa-Free (60d)</span>
                     </li>
-                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="united arab emirates uae" data-purpose="immigration" onclick="openCountryPage('United Arab Emirates', '🇦🇪', 'Employment Visa / Tourist Visa Required', 'A major hub for Overseas Filipino Workers (OFWs). Requires proper employment contract verification via DMW/Migrant Workers Office or tourist visa.', 'https://u.ae')">
-                        <span>🇦🇪 United Arab Emirates</span> <span class="bg-purple-100 text-purple-800 font-bold px-2 py-0.5 rounded text-[11px]">Employment / Visa</span>
+                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="united arab emirates uae" data-purpose="immigration" onclick="openCountryPage('United Arab Emirates', 'https://flagcdn.com/w40/ae.png', 'Employment Visa / Tourist Visa Required', 'A major hub for Overseas Filipino Workers (OFWs). Requires proper employment contract verification via DMW/Migrant Workers Office or tourist visa.', 'https://u.ae')">
+                        <span class="flex items-center space-x-2.5"><img src="https://flagcdn.com/w40/ae.png" alt="UAE Flag" class="w-6 h-4 object-cover rounded shadow-xs"> <strong>United Arab Emirates</strong></span> 
+                        <span class="bg-purple-100 text-purple-800 font-bold px-2.5 py-1 rounded-md text-[11px]">Employment / Visa</span>
                     </li>
                 </ul>
             </div>
@@ -163,17 +168,20 @@
             <!-- Europe -->
             <div class="continent-card bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-4">
                 <h3 class="text-lg font-bold text-slate-900 flex items-center border-b border-slate-100 pb-3">
-                    <i class="fa-solid fa-earth-europe text-blue-600 mr-2"></i> Europe (Alphabetical)
+                    <i class="fa-solid fa-earth-europe text-blue-600 mr-2"></i> Europe
                 </h3>
                 <ul class="country-list space-y-2.5 text-xs sm:text-sm text-slate-700">
-                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="france" data-purpose="tourist" onclick="openCountryPage('France', '🇫🇷', 'Schengen Visa Required', 'Visit Paris and the French Riviera. Requires a Schengen tourist visa with comprehensive travel insurance and flight itineraries.', 'https://france-visas.gouv.fr')">
-                        <span>🇫🇷 France</span> <span class="bg-purple-100 text-purple-800 font-bold px-2 py-0.5 rounded text-[11px]">Schengen Visa</span>
+                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="france" data-purpose="tourist" onclick="openCountryPage('France', 'https://flagcdn.com/w40/fr.png', 'Schengen Visa Required', 'Visit Paris and the French Riviera. Requires a Schengen tourist visa with comprehensive travel insurance and flight itineraries.', 'https://france-visas.gouv.fr')">
+                        <span class="flex items-center space-x-2.5"><img src="https://flagcdn.com/w40/fr.png" alt="France Flag" class="w-6 h-4 object-cover rounded shadow-xs"> <strong>France</strong></span> 
+                        <span class="bg-purple-100 text-purple-800 font-bold px-2.5 py-1 rounded-md text-[11px]">Schengen Visa</span>
                     </li>
-                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="spain" data-purpose="tourist" onclick="openCountryPage('Spain', '🇪🇸', 'Schengen Visa Required', 'Explore rich history and culture in Spain. PH passport holders apply via BLS International for a Schengen visa.', 'https://exteriores.gob.es')">
-                        <span>🇪🇸 Spain</span> <span class="bg-purple-100 text-purple-800 font-bold px-2 py-0.5 rounded text-[11px]">Schengen Visa</span>
+                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="spain" data-purpose="tourist" onclick="openCountryPage('Spain', 'https://flagcdn.com/w40/es.png', 'Schengen Visa Required', 'Explore rich history and culture in Spain. PH passport holders apply via BLS International for a Schengen visa.', 'https://exteriores.gob.es')">
+                        <span class="flex items-center space-x-2.5"><img src="https://flagcdn.com/w40/es.png" alt="Spain Flag" class="w-6 h-4 object-cover rounded shadow-xs"> <strong>Spain</strong></span> 
+                        <span class="bg-purple-100 text-purple-800 font-bold px-2.5 py-1 rounded-md text-[11px]">Schengen Visa</span>
                     </li>
-                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="united kingdom uk" data-purpose="tourist" onclick="openCountryPage('United Kingdom', '🇬🇧', 'Standard Visitor Visa Required', 'Visit London and the UK countryside. Requires an online Standard Visitor Visa application and biometrics appointment.', 'https://gov.uk/standard-visitor')">
-                        <span>🇬🇧 United Kingdom</span> <span class="bg-blue-100 text-blue-800 font-bold px-2 py-0.5 rounded text-[11px]">Visitor Visa</span>
+                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="united kingdom uk" data-purpose="tourist" onclick="openCountryPage('United Kingdom', 'https://flagcdn.com/w40/gb.png', 'Standard Visitor Visa Required', 'Visit London and the UK countryside. Requires an online Standard Visitor Visa application and biometrics appointment.', 'https://gov.uk/standard-visitor')">
+                        <span class="flex items-center space-x-2.5"><img src="https://flagcdn.com/w40/gb.png" alt="UK Flag" class="w-6 h-4 object-cover rounded shadow-xs"> <strong>United Kingdom</strong></span> 
+                        <span class="bg-blue-100 text-blue-800 font-bold px-2.5 py-1 rounded-md text-[11px]">Visitor Visa</span>
                     </li>
                 </ul>
             </div>
@@ -181,14 +189,16 @@
             <!-- Americas -->
             <div class="continent-card bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-4">
                 <h3 class="text-lg font-bold text-slate-900 flex items-center border-b border-slate-100 pb-3">
-                    <i class="fa-solid fa-earth-americas text-blue-600 mr-2"></i> Americas (Alphabetical)
+                    <i class="fa-solid fa-earth-americas text-blue-600 mr-2"></i> Americas
                 </h3>
                 <ul class="country-list space-y-2.5 text-xs sm:text-sm text-slate-700">
-                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="canada" data-purpose="immigration" onclick="openCountryPage('Canada', '🇨🇦', 'Visitor Visa / Express Entry / Work Permit', 'Popular destination for permanent residency and work. Explore Express Entry pathways and visitor visas via the IRCC portal.', 'https://canada.ca')">
-                        <span>🇨🇦 Canada</span> <span class="bg-blue-100 text-blue-800 font-bold px-2 py-0.5 rounded text-[11px]">Visa / Immigration</span>
+                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="canada" data-purpose="immigration" onclick="openCountryPage('Canada', 'https://flagcdn.com/w40/ca.png', 'Visitor Visa / Express Entry / Work Permit', 'Popular destination for permanent residency and work. Explore Express Entry pathways and visitor visas via the IRCC portal.', 'https://canada.ca')">
+                        <span class="flex items-center space-x-2.5"><img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag" class="w-6 h-4 object-cover rounded shadow-xs"> <strong>Canada</strong></span> 
+                        <span class="bg-blue-100 text-blue-800 font-bold px-2.5 py-1 rounded-md text-[11px]">Visa / Immigration</span>
                     </li>
-                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="united states us usa" data-purpose="immigration" onclick="openCountryPage('United States', '🇺🇸', 'B1/B2 Tourist Visa or Immigrant Pathways', 'Requires a B1/B2 tourist visa or legal immigrant visa petitions (family or employment-based) managed via USCIS.', 'https://uscis.gov')">
-                        <span>🇺🇸 United States</span> <span class="bg-blue-100 text-blue-800 font-bold px-2 py-0.5 rounded text-[11px]">B1/B2 / Green Card</span>
+                    <li class="country-item flex justify-between items-center cursor-pointer hover:bg-blue-50 p-2 rounded-xl transition" data-name="united states us usa" data-purpose="immigration" onclick="openCountryPage('United States', 'https://flagcdn.com/w40/us.png', 'B1/B2 Tourist Visa or Immigrant Pathways', 'Requires a B1/B2 tourist visa or legal immigrant visa petitions (family or employment-based) managed via USCIS.', 'https://uscis.gov')">
+                        <span class="flex items-center space-x-2.5"><img src="https://flagcdn.com/w40/us.png" alt="US Flag" class="w-6 h-4 object-cover rounded shadow-xs"> <strong>United States</strong></span> 
+                        <span class="bg-blue-100 text-blue-800 font-bold px-2.5 py-1 rounded-md text-[11px]">B1/B2 / Green Card</span>
                     </li>
                 </ul>
             </div>
@@ -203,7 +213,7 @@
                 <i class="fa-solid fa-arrow-left mr-2"></i> Back to Global Directory
             </button>
             <div class="flex items-center space-x-4 border-b border-slate-200 pb-6">
-                <span id="pageFlag" class="text-5xl"></span>
+                <img id="pageFlagImg" src="" alt="Flag" class="w-16 h-11 object-cover rounded-lg shadow-sm border border-slate-200">
                 <div>
                     <h2 id="pageCountryName" class="text-3xl font-extrabold text-slate-900"></h2>
                     <span id="pageBadge" class="inline-block mt-2 bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full"></span>
@@ -227,16 +237,16 @@
         </div>
     </section>
 
-    <!-- Interactive Guides Section -->
+    <!-- Featured Guides Section (Renamed from Interactive Guides) -->
     <section id="categories" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div class="text-center max-w-2xl mx-auto mb-12">
-            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Interactive Visa & Passport Cards</h2>
+            <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Featured Visa & Passport Guides</h2>
             <p class="text-slate-600 mt-2">Click any card below for simple, easy-to-follow travel guides.</p>
         </div>
         <div id="guidesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
     </section>
 
-    <!-- Field Guide & Masterclass Section -->
+    <!-- Essential Checklists Section (Renamed from Field Guide) -->
     <section id="processes" class="py-16 bg-white border-t border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
@@ -416,7 +426,7 @@
         </div>
     </section>
 
-    <!-- Interactive Guide Popup Modal -->
+    <!-- Featured Guide Popup Modal -->
     <div id="guideModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200">
             <div class="relative h-56">
@@ -506,8 +516,69 @@
                     "<strong>Step 3: Prepare Civil Documents.</strong> Secure your original PSA Authenticated Birth Certificate.",
                     "<strong>Step 4: Appointment Day.</strong> Arrive 30 minutes before your slot with your valid ID and application receipt."
                 ]
+            },
+            {
+                id: "visa-free-asean",
+                badge: "Visa-Free Travel",
+                title: "ASEAN Visa-Free Checklist for Filipinos",
+                image: "https://images.unsplash.com/photo-1508248467877-aec1b08de376?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "Easy checklist for traveling visa-free to Singapore, Thailand, Malaysia, Vietnam, and Hong Kong.",
+                steps: [
+                    "<strong>Passport Expiry:</strong> Must be valid for at least 6 months before your trip.",
+                    "<strong>Return Ticket:</strong> Confirmed return or onward flight ticket is required.",
+                    "<strong>Hotel Booking:</strong> Print your hotel reservations or host details.",
+                    "<strong>Employment Proof:</strong> Bring your company ID or certificate of employment."
+                ]
             }
         ];
+
+        function renderGuides() {
+            const grid = document.getElementById('guidesGrid');
+            if (!grid) return;
+            grid.innerHTML = guides.map((g, index) => `
+                <div onclick="openGuideModal(${index})" class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:shadow-xl hover:-translate-y-1 transition duration-200 cursor-pointer group">
+                    <div class="h-48 relative overflow-hidden">
+                        <img src="${g.image}" alt="${g.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex flex-col justify-end p-5 text-white">
+                            <span class="bg-blue-600/95 text-[11px] font-bold px-2.5 py-1 rounded-md w-max mb-1.5 uppercase tracking-wide">${g.badge}</span>
+                            <h3 class="text-lg font-extrabold leading-snug">${g.title}</h3>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                        <p class="text-sm text-slate-600">${g.shortDesc}</p>
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-blue-600 font-bold text-sm">
+                            <span>Read Step-by-Step Guide</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openGuideModal(index) {
+            const g = guides[index];
+            document.getElementById('modalImg').src = g.image;
+            document.getElementById('modalBadge সন্ত্রাসী' in g ? '' : 'modalBadge').innerText = g.badge;
+            document.getElementById('modalTitle').innerText = g.title;
+            document.getElementById('modalDesc').innerText = g.shortDesc;
+            
+            document.getElementById('modalSteps').innerHTML = g.steps.map((step, idx) => `
+                <div class="flex items-start space-x-3 pb-3 border-b border-slate-200/60 last:border-0 last:pb-0">
+                    <div class="bg-blue-600 text-white font-bold text-xs w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5">${idx + 1}</div>
+                    <div class="flex-grow text-sm leading-relaxed">${step}</div>
+                </div>
+            `).join('');
+
+            const modal = document.getElementById('guideModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('guideModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
 
         let currentPurpose = 'all';
 
@@ -551,8 +622,8 @@
             });
         }
 
-        function openCountryPage(name, flag, badgeText, description, url) {
-            document.getElementById('pageFlag').innerText = flag;
+        function openCountryPage(name, flagUrl, badgeText, description, url) {
+            document.getElementById('pageFlagImg').src = flagUrl;
             document.getElementById('pageCountryName').innerText = name;
             document.getElementById('pageBadge').innerText = badgeText;
             document.getElementById('pageDescription').innerText = description;
@@ -591,6 +662,10 @@
             event.target.reset();
             setTimeout(() => successMsg.classList.add('hidden'), 5000);
         }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderGuides();
+        });
     </script>
 </body>
 </html>
