@@ -519,11 +519,20 @@
                     </h4>
                     <div id="modalSteps" class="space-y-3 text-sm text-slate-700 bg-slate-50 p-4 rounded-2xl border border-slate-200"></div>
                 </div>
-                <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4 text-amber-900 text-xs sm:text-sm">
+                
+                <!-- Mamae's Real-Talk Tip Restored Here -->
+                <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4">
+                    <h4 class="font-bold text-amber-900 text-sm mb-1 flex items-center">
+                        <i class="fa-solid fa-lightbulb text-amber-600 mr-2"></i> Mamae's Real-Talk Tip:
+                    </h4>
+                    <p id="modalTip" class="text-xs sm:text-sm text-amber-800 leading-relaxed"></p>
+                </div>
+
+                <div class="bg-slate-100 border border-slate-200 rounded-2xl p-4 text-slate-700 text-xs">
                     <strong>⚠️ Policy Disclaimer:</strong> Immigration and visa policies change frequently without notice. Always verify live rules and fee updates on the official government website before booking travel or submitting applications.
                 </div>
                 <div class="pt-4 border-t border-slate-200 flex justify-end">
-                    <button onclick="closeModal()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-5 py-3 rounded-xl text-sm transition">Close</button>
+                    <button onclick="closeModal()" class="bg-slate-900 hover:bg-slate-800 text-white font-semibold px-6 py-3 rounded-xl text-sm transition">Close Guide</button>
                 </div>
             </div>
         </div>
@@ -591,7 +600,8 @@
                     "<strong>Step 2: Book Online.</strong> Go exclusively to the official DFA appointment website.",
                     "<strong>Step 3: Prepare Civil Documents.</strong> Secure your original PSA Authenticated Birth Certificate.",
                     "<strong>Step 4: Appointment Day.</strong> Arrive 30 minutes before your slot with your valid ID and application receipt."
-                ]
+                ],
+                tip: "Back when I was 20, I had to travel from Bulacan to Manila at 3:00 AM just to line up for my old green passport. Today, everything is booked online—protect your data and never pay fixers!"
             },
             {
                 id: "visa-free-asean",
@@ -605,7 +615,8 @@
                     "<strong>Return Ticket:</strong> Confirmed return or onward flight ticket is required.",
                     "<strong>Hotel Booking:</strong> Print your hotel reservations or host details.",
                     "<strong>Employment Proof:</strong> Bring your company ID or certificate of employment."
-                ]
+                ],
+                tip: "Visa-free entry is a privilege, not a guarantee! Always bring your printed return tickets, hotel bookings, and company ID so NAIA immigration officers can clear you smoothly."
             },
             {
                 id: "taiwan-visafree",
@@ -619,7 +630,8 @@
                     "<strong>Return Air Ticket:</strong> Hold a confirmed return flight booking.",
                     "<strong>Online Arrival Card:</strong> Fill out the online ROC Travel Authorization Certificate prior to flying.",
                     "<strong>Hotel & Funds:</strong> Have your hotel booking details and travel money ready."
-                ]
+                ],
+                tip: "Fill out your Taiwan online arrival card a day before your flight so you breeze right through customs!"
             },
             {
                 id: "south-america-visafree",
@@ -632,7 +644,8 @@
                     "<strong>Review Layover Routes:</strong> Make sure your transit airports in the US or Europe do not require separate transit visas.",
                     "<strong>Passport Cleanliness:</strong> Ensure your passport has clean pages for stamps and 6+ months validity.",
                     "<strong>Travel Itinerary:</strong> Bring roundtrip flight itineraries and hotel bookings."
-                ]
+                ],
+                tip: "Always double-check where your plane is stopping for layovers. Some countries require a transit visa even if you never leave the airport!"
             },
             {
                 id: "us-b1b2",
@@ -645,7 +658,8 @@
                     "<strong>Fill Out Form DS-160:</strong> Complete the online application carefully—this is the core of your application.",
                     "<strong>Pay MRV Fee:</strong> Pay your visa application fee through official channels.",
                     "<strong>Embassy Interview:</strong> Attend your interview appointment at the U.S. Embassy in Manila with confidence and honesty."
-                ]
+                ],
+                tip: "Consuls rarely look at heavy folders of documents. They judge your application primarily on your DS-160 and your strong ties to the Philippines. Be calm and confident!"
             },
             {
                 id: "american-dream",
@@ -658,7 +672,8 @@
                     "<strong>Understand Categories:</strong> Learn the difference between family-based petitions and employment-based visas.",
                     "<strong>USCIS Guidance:</strong> Review official guidelines directly on the USCIS portal.",
                     "<strong>Stay Updated:</strong> Check back as we continuously add helpful notes and warnings against immigration scams."
-                ]
+                ],
+                tip: "Take your time and always verify legal procedures through official government portals like USCIS. Never trust anyone promising guaranteed visas!"
             }
         ];
 
@@ -695,6 +710,7 @@
             document.getElementById('modalUpdated').innerText = 'Updated: ' + g.lastUpdated;
             document.getElementById('modalTitle').innerText = g.title;
             document.getElementById('modalDesc').innerText = g.shortDesc;
+            document.getElementById('modalTip').innerText = g.tip; // Connects the Real-Talk Tip!
             
             document.getElementById('modalSteps').innerHTML = g.steps.map((step, idx) => `
                 <div class="flex items-start space-x-3 pb-3 border-b border-slate-200/60 last:border-0 last:pb-0">
