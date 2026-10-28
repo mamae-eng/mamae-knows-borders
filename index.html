@@ -1235,16 +1235,17 @@
                 lastUpdated: "October 2026",
                 title: "Pathway to the American Dream (US Immigration)",
                 image: "IMG_6797.jpeg",
-                shortDesc: "Exploring legitimate legal pathways to U.S. permanent residency: family sponsorship and employment petitions.",
+                shortDesc: "Exploring legitimate legal pathways to U.S. permanent residency: family sponsorship, Form I-130 Complete Guide, and employment petitions.",
                 quickBadges: [
                     "🇺🇸 Goal: U.S. Permanent Residency (Green Card)",
                     "👨‍👩‍👧 Primary Routes: Family & Employment",
                     "⚠️ Warning: Beware of Immigration Scams"
                 ],
                 steps: [
-                    { title: "Understand Categories", body: "Learn the core difference between family-based petitions (such as Form I-130) and employment-based visa sponsorship (such as EB-2 or EB-3)." },
-                    { title: "Review Official USCIS Guidance", body: 'Always verify petition requirements, forms, and filing fees directly on the official <a href="https://www.uscis.gov" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline font-semibold">USCIS Portal</a>.' },
-                    { title: "Avoid Immigration Fraud", body: "Protect yourself from unauthorized fixers or agencies promising guaranteed visas, fast-track green cards, or jobs without proper legal petitions." }
+                    { title: "Determine Eligibility & Gather Documents", body: "Before filling out any paperwork, verify your qualifying family relationship and assemble all necessary supporting records (proof of petitioner status, civil marriage certificate, prior marriage terminations, and bona fide marriage evidence)." },
+                    { title: "Download & Fill Official Forms", body: "Complete Form I-130 (Petition for Alien Relative) and Form I-130A (Supplemental Information for Spouse Beneficiary) accurately without erasures." },
+                    { title: "Submit Petition & Pay Fees", body: "File your petition online via a secure USCIS account ($625) or by mail to the correct Lockbox facility ($675) with Form G-1145 for electronic updates." },
+                    { title: "USCIS Review & Adjudication", body: "Track your case status using your 13-character receipt number (IOE...) from Form I-797C, respond to any RFEs, and await approval." }
                 ],
                 tip: "Walang shortcut sa U.S. immigration! Magtiwala lamang sa mga lisensyadong immigration attorney o accredited representatives ng DOJ/EOIR.",
                 categories: [
@@ -1261,7 +1262,73 @@
                         `
                     },
                     {
-                        name: "2. Official Processing & Visa Bulletin",
+                        name: "2. Form I-130 Complete Guide & Checklist",
+                        tip: "Accuracy is critical! Minor errors or using outdated form editions can lead to immediate rejections.",
+                        content: `
+                            <div class="space-y-6">
+                                <div class="bg-gradient-to-r from-indigo-800 to-indigo-950 rounded-2xl p-6 text-white shadow-md">
+                                    <span class="bg-amber-400 text-indigo-950 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider inline-block mb-2">Form I-130 Masterclass Guide</span>
+                                    <h3 class="text-2xl font-extrabold mb-2">Petition for Alien Relative Made Easy</h3>
+                                    <p class="text-indigo-200 text-sm leading-relaxed">
+                                        Navigate the family-based immigration journey with confidence. Check off your required documents below in real-time, and review the official step-by-step instructions.
+                                    </p>
+                                </div>
+
+                                <!-- Interactive Checklist Box -->
+                                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                                    <div class="flex justify-between items-center mb-4 pb-4 border-b border-slate-100">
+                                        <h4 class="font-bold text-slate-900 text-base"><i class="fa-solid fa-clipboard-list text-indigo-600 mr-2"></i> Interactive Document Checklist</h4>
+                                        <span class="bg-indigo-50 text-indigo-900 px-3 py-1 rounded-lg font-bold text-xs border border-indigo-100">
+                                            Completed: <span id="guideProgressText">0</span> / 12 items
+                                        </span>
+                                    </div>
+                                    <div class="grid grid-cols-1 gap-3" id="embeddedChecklistGrid"></div>
+                                    <div class="mt-4 pt-4 border-t border-slate-100 flex justify-between items-center">
+                                        <button onclick="resetEmbeddedChecklist()" class="text-slate-500 hover:text-slate-800 text-xs font-medium flex items-center gap-1.5 transition">
+                                            <i class="fa-solid fa-rotate-right"></i> Reset Checklist
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Detailed Steps Breakdown -->
+                                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                                    <h4 class="font-bold text-slate-900 text-lg mb-4"><i class="fa-solid fa-list-check text-indigo-600 mr-2"></i> Step-by-Step Filing Walkthrough</h4>
+                                    
+                                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+                                        <h5 class="font-bold text-indigo-900 text-sm">Step 1: Determine Eligibility & Gather Documents</h5>
+                                        <p class="text-xs text-slate-700 leading-relaxed">Before filling out any paperwork, verify your qualifying family relationship and assemble supporting records: U.S. birth certificate/passport or Green Card (front & back), official civil marriage certificate, divorce/annulment decrees for prior marriages, beneficiary birth certificate, passport-style photos, and joint lease/bank statements or utility bills for bona fide marriage evidence.</p>
+                                    </div>
+
+                                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+                                        <h5 class="font-bold text-indigo-900 text-sm">Step 2: Download and Fill Out Official Forms</h5>
+                                        <p class="text-xs text-slate-700 leading-relaxed">Accuracy is critical. Double-check that all names, dates of birth, and employment entries match identically across forms and supporting documents. Do not leave signature fields blank.</p>
+                                        <div class="flex flex-wrap gap-2 pt-2">
+                                            <a href="https://www.uscis.gov/i-130" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs px-3.5 py-2 rounded-lg font-bold transition flex items-center gap-1.5 shadow-xs">
+                                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Official Form I-130
+                                            </a>
+                                     
+                                            </a>
+                                            <a href="https://www.uscis.gov/sites/default/files/document/forms/i-130instr.pdf" target="_blank" rel="noopener noreferrer" class="bg-amber-500 hover:bg-amber-600 text-slate-950 text-xs px-3.5 py-2 rounded-lg font-bold transition flex items-center gap-1.5 shadow-xs">
+                                                <i class="fa-solid fa-file-pdf"></i> Instructions for Form I-130 (PDF)
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+                                        <h5 class="font-bold text-indigo-900 text-sm">Step 3: Submit the Petition & Pay Fees</h5>
+                                        <p class="text-xs text-slate-700 leading-relaxed">File online through your secure USCIS account ($625) for fastest receipt, or mail your complete physical packet to the correct Lockbox facility ($675 fee). Include Form G-1145 to receive text and email notifications when your case is accepted.</p>
+                                    </div>
+
+                                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-2">
+                                        <h5 class="font-bold text-indigo-900 text-sm">Step 4: USCIS Review, Adjudication & Next Steps</h5>
+                                        <p class="text-xs text-slate-700 leading-relaxed">Track your case status using your 13-character tracking number (IOE...) from Form I-797C. Promptly respond if USCIS issues a Request for Evidence (RFE). Upon approval, proceed to consular processing via the NVC or adjustment of status.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        `
+                    },
+                    {
+                        name: "3. Official Processing & Visa Bulletin",
                         tip: "Mabagal ang proseso ng family petition dahil sa Visa Bulletin quota. Mag-ingat sa mga taong nangangakong mapapabilis nila ang priority date mo sa pera.",
                         content: `
                             <h4 class='text-lg font-bold text-slate-900 mb-2'>Navigating Processing Times & Priority Dates</h4>
@@ -1273,7 +1340,7 @@
                         `
                     },
                     {
-                        name: "3. Avoiding Immigration Fraud",
+                        name: "4. Avoiding Immigration Fraud",
                         tip: "Laging i-verify kung ang kumakatawan sa iyo ay lisensyadong abogado. Huwag magpadala ng bayad sa mga social media agents na walang physical office o legal credentials.",
                         content: `
                             <h4 class='text-lg font-bold text-slate-900 mb-2'>Protecting Yourself from Visa Scams</h4>
@@ -1622,6 +1689,69 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Embedded Checklist Data & State Logic for American Dream Guide
+        const embeddedChecklistItems = [
+            { id: 1, title: "Petitioner U.S. Birth Certificate or Passport", desc: "Proof of U.S. citizenship (if petitioner is a citizen)" },
+            { id: 2, title: "Petitioner Green Card (Front & Back)", desc: "Proof of lawful permanent residence status (if green card holder)" },
+            { id: 3, title: "Official Civil Marriage Certificate", desc: "Government-issued marriage certificate showing legal union" },
+            { id: 4, title: "Proof of Termination of Prior Marriages", desc: "Divorce decrees, annulment papers, or death certificates for prior marriages" },
+            { id: 5, title: "Beneficiary Birth Certificate", desc: "Official birth certificate of the relative being sponsored" },
+            { id: 6, title: "Passport-Style Photos (Petitioner & Beneficiary)", desc: "Two identical color photos taken within the last 30 days (if mailing)" },
+            { id: 7, title: "Evidence of Bona Fide Marriage (Joint Lease/Mortgage)", desc: "Shared housing documents proving a shared life together" },
+            { id: 8, title: "Joint Bank Statements & Utility Bills", desc: "Financial commingling records showing shared accounts or bills" },
+            { id: 9, title: "Birth Certificates of Children Born Together", desc: "If you share children, include their birth certificates" },
+            { id: 10, title: "Affidavit Letters from Friends or Family", desc: "Sworn letters from people with personal knowledge of your marriage" },
+            { id: 11, title: "Certified English Translations", desc: "Certified professional translation for any document not in English" },
+            { id: 12, title: "Form G-1145 (Optional for Mail Filing)", desc: "E-Notification of Application/Petition Acceptance" }
+        ];
+
+        let embeddedChecklistState = JSON.parse(localStorage.getItem('mamaeknows_embedded_i130_checklist')) || {};
+
+        function renderEmbeddedChecklist() {
+            const grid = document.getElementById('embeddedChecklistGrid');
+            if (!grid) return;
+            grid.innerHTML = '';
+            
+            let completedCount = 0;
+
+            embeddedChecklistItems.forEach(item => {
+                const isChecked = embeddedChecklistState[item.id] || false;
+                if (isChecked) completedCount++;
+
+                const div = document.createElement('div');
+                div.className = `p-3.5 rounded-xl border transition flex items-start gap-3 cursor-pointer ${isChecked ? 'bg-emerald-50/50 border-emerald-200' : 'bg-slate-50 border-slate-200 hover:border-indigo-300'}`;
+                div.onclick = () => toggleEmbeddedCheck(item.id);
+
+                div.innerHTML = `
+                    <div class="mt-0.5 shrink-0">
+                        <div class="w-5 h-5 rounded-md border flex items-center justify-center transition ${isChecked ? 'bg-emerald-600 border-emerald-600 text-white' : 'bg-white border-slate-300'}">
+                            ${isChecked ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+                        </div>
+                    </div>
+                    <div>
+                        <h5 class="font-semibold text-xs sm:text-sm ${isChecked ? 'text-emerald-950 line-through opacity-80' : 'text-slate-900'}">${item.title}</h5>
+                        <p class="text-[11px] text-slate-500 mt-0.5">${item.desc}</p>
+                    </div>
+                `;
+                grid.appendChild(div);
+            });
+
+            const progText = document.getElementById('guideProgressText');
+            if (progText) progText.innerText = completedCount;
+            localStorage.setItem('mamaeknows_embedded_i130_checklist', JSON.stringify(embeddedChecklistState));
+        }
+
+        function toggleEmbeddedCheck(id) {
+            embeddedChecklistState[id] = !embeddedChecklistState[id];
+            renderEmbeddedChecklist();
+        }
+
+        function resetEmbeddedChecklist() {
+            embeddedChecklistState = {};
+            localStorage.removeItem('mamaeknows_embedded_i130_checklist');
+            renderEmbeddedChecklist();
+        }
+
         function openGuideFullPage(index) {
             const g = guides[index];
             document.getElementById('fullPageImg').src = g.image;
@@ -1648,12 +1778,19 @@
                     </div>
                 `;
             } else {
-                stepsEl.innerHTML = g.steps.map((step, idx) => `
-                    <div class="flex items-start space-x-3 pb-3 border-b border-slate-200/60 last:border-0 last:pb-0">
-                        <div class="bg-blue-600 text-white font-bold text-xs w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5">${idx + 1}</div>
-                        <div class="flex-grow text-sm sm:text-base leading-relaxed">${step}</div>
-                    </div>
-                `).join('');
+                stepsEl.innerHTML = g.steps.map((step, idx) => {
+                    const title = typeof step === 'object' ? step.title : `Step ${idx + 1}`;
+                    const body = typeof step === 'object' ? step.body : step;
+                    return `
+                        <div class="flex items-start space-x-3 pb-3 border-b border-slate-200/60 last:border-0 last:pb-0">
+                            <div class="bg-blue-600 text-white font-bold text-xs w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5">${idx + 1}</div>
+                            <div class="flex-grow text-sm sm:text-base leading-relaxed">
+                                <strong class="text-slate-900 block mb-0.5">${title}</strong>
+                                <span>${body}</span>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
             }
 
             document.querySelector('section.relative.bg-slate-900').classList.add('hidden');
@@ -1663,6 +1800,11 @@
             const fullPage = document.getElementById('guideFullPageView');
             fullPage.classList.remove('hidden');
             fullPage.scrollIntoView({ behavior: 'smooth' });
+
+            // Render embedded checklist if opening the American Dream guide (index 7)
+            if (index === 7) {
+                setTimeout(renderEmbeddedChecklist, 50);
+            }
         }
 
         function closeGuideFullPage() {
@@ -1686,6 +1828,11 @@
                         : "flex-shrink-0 whitespace-nowrap px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition bg-white sm:bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 sm:border-0";
                 }
             });
+
+            // If switching to the I-130 checklist tab inside the American Dream guide
+            if (guideIndex === 7 && catIndex === 1) {
+                setTimeout(renderEmbeddedChecklist, 50);
+            }
         }
 
         window.addEventListener('DOMContentLoaded', () => {
