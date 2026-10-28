@@ -321,7 +321,7 @@
                         </ol>
                     </div>
                     <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
-                        <a href="https://dfa.gov.ph" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-600 hover:text-blue-800 transition">
+                        <a href="https://www.passport.gov.ph/" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-600 hover:text-blue-800 transition">
                             Visit DFA Booking Portal <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
                         </a>
                         <span class="text-[11px] text-amber-800 font-medium bg-amber-50 px-2 py-1 rounded border border-amber-200">⚠️ Rules subject to change</span>
@@ -364,7 +364,7 @@
                     Disclaimer: Immigration rules and visa policies change frequently. Always cross-check requirements directly with official government agencies before finalizing your travel or visa commitments:
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 pt-2">
-                    <a href="https://dfa.gov.ph" target="_blank" rel="noopener noreferrer" class="bg-white border border-slate-200 hover:border-blue-400 p-4 rounded-2xl shadow-xs transition flex items-center justify-between group">
+                    <a href="https://www.passport.gov.ph/" target="_blank" rel="noopener noreferrer" class="bg-white border border-slate-200 hover:border-blue-400 p-4 rounded-2xl shadow-xs transition flex items-center justify-between group">
                         <div>
                             <span class="text-xs font-bold text-blue-600 block uppercase">Department of Foreign Affairs</span>
                             <span class="text-sm font-extrabold text-slate-900">PH Passport & DFA Portal</span>
@@ -655,103 +655,178 @@
                 image: "pasaporte.jpeg",
                 shortDesc: "Complete step-by-step instructions for first-time adult applications, renewals, supporting documents, and appointment rules.",
                 steps: [
-                    "<strong>Quick Overview:</strong> Review application categories, verify civil registry records, and schedule appointments through official channels.",
-                    "<strong>Appointments & Fees:</strong> Book via the official DFA portal. Regular processing is PHP 950 and expedited is PHP 1,200.",
-                    "<strong>Processing & Biometrics:</strong> Attend personal appearance for photo capture and biometrics."
+                    "<strong>1. Prepare Civil Records & IDs:</strong> Order your official birth certificate via <a href='https://psaserbilis.com.ph/' target='_blank' class='text-blue-600 underline font-semibold'>PSA Serbilis</a> or <a href='https://www.psahelpline.ph/' target='_blank' class='text-blue-600 underline font-semibold'>PSAHelpline.ph</a>. Prepare 1 valid primary government ID. Make sure your first name, surname, and birth date match across all documents.",
+                    "<strong>2. Book Your Official Appointment:</strong> Book exclusively on the official <a href='https://www.passport.gov.ph/' target='_blank' class='text-blue-600 underline font-semibold'>DFA Passport Appointment System</a> (in the Philippines) or your designated consular portal abroad. Complete payment through official channels. Appointment slots are free; fees pay for passport production and are non-refundable.",
+                    "<strong>3. Personal Appearance & Biometrics:</strong> Arrive 15–30 minutes early with your printed appointment packet, originals, and photocopies. Wear collared/modest attire (no colored contact lenses, piercings, or heavy makeup) for live digital photo capture and fingerprint enrollment.",
+                    "<strong>4. Encoder Check & Claiming:</strong> Review the encoder’s screen letter-by-letter before confirming. Track your delivery or pickup status online. Never book non-refundable flights until the physical passport is in your hands."
                 ],
-                tip: "Always double-check that your first name, surname, birth date, and spelling match perfectly across your birth certificate, ID, and application form before booking your slot to avoid rejection at the counter!",
+                tip: "“Wag na wag magpapaloko sa Facebook appointment fixers! Walang VIP express slots—libre ang appointment system. Kung kailangan mo ng slot, mag-check sa DFA Passport Portal tuwing madaling araw o off-peak hours.”",
                 categories: [
                     {
                         name: "1. Adult First Application",
                         content: `
-                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Core Requirements for Adult First-Time Applications</h4>
-                            <p class='text-slate-700 mb-3'>Prepare a confirmed appointment, a completed application form, personal appearance, an original PSA-issued Certificate of Live Birth with a photocopy, and an accepted ID with a photocopy. If born abroad, use the appropriate Report of Birth.</p>
-                            <h5 class='font-bold text-slate-800 mt-3 mb-1'>Accepted IDs & Acquisition Guidance:</h5>
-                            <ul class='list-disc pl-5 space-y-1 text-slate-700 mb-3'>
-                                <li><strong>PhilID / ePhilID / Digital National ID:</strong> Requires a printed copy and live generation through the official National ID website or eGovPH app.</li>
-                                <li><strong>Government-issued cards:</strong> SSS, GSIS, UMID, LTO Driver's License, PRC ID, OWWA E-Card, Senior Citizen ID.</li>
-                                <li><strong>Students:</strong> School ID together with a Certificate of Registration.</li>
-                                <li><em>Note:</em> Company IDs, barangay certificates, PhilHealth records, or NBI clearances do not substitute for primary passport IDs.</li>
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Core Requirements for First-Time Adult Applicants (18+)</h4>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li>Confirmed appointment packet & completed form</li>
+                                <li>Original PSA-issued Certificate of Live Birth on Security Paper + 1 clear photocopy (Order online via <a href='https://psaserbilis.com.ph/' target='_blank' class='text-blue-600 underline font-semibold'>PSA Serbilis</a> or <a href='https://www.psahelpline.ph/' target='_blank' class='text-blue-600 underline font-semibold'>PSAHelpline.ph</a>)</li>
+                                <li>1 Accepted Primary Government ID + 1 clear photocopy</li>
+                                <li>For married women adopting husband’s surname: Original PSA Marriage Certificate or Report of Marriage + 1 photocopy</li>
                             </ul>
-                            <h5 class='font-bold text-slate-800 mt-3 mb-1'>Personal Information Check:</h5>
-                            <p class='text-slate-700'>Compare first name, middle name, surname, suffix, birth date, birthplace, and sex across your form, PSA record, and ID. Resolve discrepancies before booking.</p>
+                            <h5 class='font-bold text-slate-800 mt-4 mb-2'>Accepted Primary IDs:</h5>
+                            <ul class='list-disc pl-5 space-y-1.5 text-slate-700 mb-4'>
+                                <li><strong>PhilID / ePhilID / Digital National ID:</strong> Must be printed and verified live via <a href='https://national-id.gov.ph' target='_blank' class='text-blue-600 underline font-semibold'>National ID Portal</a> or <a href='https://www.gov.ph/' target='_blank' class='text-blue-600 underline font-semibold'>eGovPH App</a></li>
+                                <li>LTO Driver’s License</li>
+                                <li>UMID / SSS Card</li>
+                                <li>PRC ID / OWWA E-Card / Senior Citizen ID</li>
+                                <li><strong>Students:</strong> Valid School ID + Certificate of Registration (COR)</li>
+                                <li><span class='text-red-600 font-bold'>⚠️ Not Accepted as Primary IDs:</span> Company ID, Barangay Clearance, Police Clearance, PhilHealth ID, Postal ID, or NBI Clearance alone.</li>
+                            </ul>
+                            <div class='bg-amber-50 border border-amber-200 rounded-2xl p-4 mt-4'>
+                                <h5 class='font-bold text-amber-900 text-sm mb-1'>Mamae’s Real-Talk Tip:</h5>
+                                <p class='text-xs sm:text-sm text-amber-800 italic'>“Kung unreadable, kupas, o malabo ang PSA Birth Certificate mo, wag mo nang ipilit sa counter—irereject lang yan! Pumunta agad sa Local Civil Registrar (LCR) kung saan ka ipinanganak at kumuha ng certified true copy (Form 1A) para isabay sa PSA copy mo.”</p>
+                            </div>
                         `
                     },
                     {
                         name: "2. Booking & Appointment",
                         content: `
-                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Official Appointment Workflow</h4>
-                            <ol class='list-decimal pl-5 space-y-2 text-slate-700 mb-3'>
-                                <li><strong>Select Receiving Office:</strong> Access the official <a href='https://www.passport.gov.ph/' target='_blank' class='text-blue-600 underline font-semibold'>DFA Passport Appointment System</a>. Choose your location and application category.</li>
-                                <li><strong>Prepare Details:</strong> Have PSA documents, existing passport, and active email ready.</li>
-                                <li><strong>Choose Slot & Review:</strong> Pick an available date and time. Review spelling and details carefully.</li>
-                                <li><strong>Payment & Confirmation:</strong> Pay via official system channels only. Appointments are free; processing carries fees. Avoid slot sellers.</li>
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Official Appointment Workflow & Rules</h4>
+                            <ol class='list-decimal pl-5 space-y-3 text-slate-700 mb-4'>
+                                <li><strong>Official Portal Only:</strong> Book exclusively through the <a href='https://www.passport.gov.ph/' target='_blank' class='text-blue-600 underline font-semibold'>DFA Passport Appointment System</a>.</li>
+                                <li><strong>Prepare Details in Advance:</strong> Have your PSA documents, contact details, valid email address, and old passport number (if renewal) ready before opening the booking portal.</li>
+                                <li><strong>Review Letter-by-Letter:</strong> Verify names, birth date, birthplace, and parents' details before submitting. You cannot edit these online once booked.</li>
+                                <li><strong>Strict Payment Window:</strong> Pay within the reference deadline using authorized payment channels. Appointments are strictly non-refundable, non-transferable, and non-reusable if you miss your schedule.</li>
+                                <li><strong>Courtesy Lane (No Online Slot Needed in PH):</strong> Available for seniors (60+), PWDs, pregnant women, solo parents, OFWs, and children 7 years old and below (with immediate parents).</li>
                             </ol>
+                            <div class='bg-amber-50 border border-amber-200 rounded-2xl p-4 mt-4'>
+                                <h5 class='font-bold text-amber-900 text-sm mb-1'>Mamae’s Real-Talk Tip:</h5>
+                                <p class='text-xs sm:text-sm text-amber-800 italic'>“Gamitin ang personal email na ikaw mismo ang may hawak ng password! Huwag gamitin ang email ng kapitbahay o internet shop dahil doon ipadadala ang PDF confirmation at barcode na kailangan mong iprint.”</p>
+                            </div>
                         `
                     },
                     {
                         name: "3. Processing & Claiming",
                         content: `
-                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Processing Day & Release</h4>
-                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-3'>
-                                <li><strong>Document Folder:</strong> Arrange printed appointment packet first, followed by originals and matching photocopies. Bring your old passport for renewals.</li>
-                                <li><strong>Biometric Capture:</strong> Arrive 30 minutes early. Attend personal appearance for photo and fingerprint capture. Follow attire and grooming guidelines (no colored contact lenses, earrings removed during capture).</li>
-                                <li><strong>Final Inspection:</strong> Check your biographical page immediately upon release. Do not book outbound flights until your passport is physically in your possession.</li>
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Processing Day, Biometrics & Passport Release</h4>
+                            <ul class='list-disc pl-5 space-y-3 text-slate-700 mb-4'>
+                                <li><strong>Folder Setup:</strong> Organize documents before arriving: printed appointment packet & payment receipt on top, followed by original documents, and photocopies neatly grouped.</li>
+                                <li><strong>Arrival & Dress Code:</strong> Arrive 15–30 minutes ahead of your slot. Collared or smart-casual shirt is recommended. Eyeglasses, earrings, necklaces, and colored contact lenses must be removed during biometric capture.</li>
+                                <li><strong>Encoder Review (Critical):</strong> Before stepping away from the photo booth, the encoder will ask you to review your data on screen. Check every single letter of your name, birthplace, and birth date. Once printed, corrections require a brand new application and fee!</li>
+                                <li><strong>Claiming & Tracking:</strong> Keep your Claim Stub and Official Receipt safe. For courier deliveries, ensure an authorized adult is at home with your valid ID and authorization letter.</li>
                             </ul>
+                            <div class='bg-amber-50 border border-amber-200 rounded-2xl p-4 mt-4'>
+                                <h5 class='font-bold text-amber-900 text-sm mb-1'>Mamae’s Real-Talk Tip:</h5>
+                                <p class='text-xs sm:text-sm text-amber-800 italic'>“Wag munang bumili ng plane ticket habang wala pa sa kamay mo ang physical passport booklet! Maski expedited pa yan, pwedeng magka-delay sa printing o courier delivery.”</p>
+                            </div>
                         `
                     },
                     {
                         name: "4. Renewals & Name Changes",
                         content: `
-                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Passport Renewals & Surname Guidelines</h4>
-                            <p class='text-slate-700 mb-2'>ePassports feature an electronic chip symbol on the cover. Prepare your current/latest ePassport and data-page copy.</p>
-                            <h5 class='font-bold text-slate-800 mt-3 mb-1'>Married Surnames & Reversion:</h5>
-                            <p class='text-slate-700 mb-2'>Married women may retain their maiden name or adopt their husband's surname using a PSA-issued Marriage Certificate or Report of Marriage. Reverting to a maiden name follows specific legal routes (widowhood, annulment, or one-time reversion with notarized explanation).</p>
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>ePassport Renewals & Surname Guidelines</h4>
+                            <ul class='list-disc pl-5 space-y-3 text-slate-700 mb-4'>
+                                <li><strong>Standard ePassport Renewal:</strong> If your current passport has the electronic chip icon on the cover, you only need:
+                                    <ul class='list-disc pl-5 mt-1 space-y-1'>
+                                        <li>Printed appointment confirmation packet</li>
+                                        <li>Original current ePassport</li>
+                                        <li>Clear photocopy of the passport data (biographical) page</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Older Passports (Brown, Green, or Non-Chip Machine-Readable):</strong> Treated as First-Time Applications; you must bring your PSA Birth Certificate and primary ID alongside the old booklet.</li>
+                                <li><strong>Adopting Husband’s Surname:</strong> A married woman is not legally required to take her husband’s surname. If you choose to adopt it, present your original PSA Marriage Certificate or Report of Marriage.</li>
+                                <li><strong>Reverting to Maiden Name:</strong> Permitted under RA 11983 due to death of spouse (submit PSA Death Certificate), annulment/divorce (submit annotated PSA Marriage Certificate), or through a one-time notarized affidavit requesting reversion.</li>
+                            </ul>
+                            <div class='bg-amber-50 border border-amber-200 rounded-2xl p-4 mt-4'>
+                                <h5 class='font-bold text-amber-900 text-sm mb-1'>Mamae’s Real-Talk Tip:</h5>
+                                <p class='text-xs sm:text-sm text-amber-800 italic'>“Expired na ba ang passport mo nang ilang taon? No problem! Walang penalty ang late renewal. Kahit 5 taon nang expired ang ePassport mo, standard renewal process pa rin basta walang physical damage at may chip icon.”</p>
+                            </div>
                         `
                     },
                     {
                         name: "5. Minors (Below 18)",
                         content: `
-                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Minor Applications & Accompaniment</h4>
-                            <p class='text-slate-700 mb-2'>Minors require a separate passport, birth record, and valid adult ID.</p>
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Minor Applications & Legal Accompaniment</h4>
+                            <p class='text-slate-700 mb-2'><strong>Key Rule:</strong> All minors (including newborn babies) require personal appearance and a confirmed appointment. Passports for minors are valid for 5 years only.</p>
+                            <h5 class='font-bold text-slate-800 mt-3 mb-1'>Required Core Documents:</h5>
                             <ul class='list-disc pl-5 space-y-1 text-slate-700 mb-3'>
-                                <li><strong>Married Parents:</strong> Either parent may accompany with ID copies.</li>
-                                <li><strong>Unmarried Parents:</strong> Mother normally accompanies; maternal authorization required if another adult attends.</li>
-                                <li><strong>Authorized Companion:</strong> Requires Special Power of Attorney (SPA) and parent ID copies.</li>
+                                <li>PSA Certificate of Live Birth or Report of Birth</li>
+                                <li>Valid School ID (for school-age children) or Certificate of Enrollment with photo</li>
+                                <li>Original valid passport (if renewal) + data page photocopy</li>
                             </ul>
+                            <h5 class='font-bold text-slate-800 mt-3 mb-1'>Accompaniment Rules:</h5>
+                            <ul class='list-disc pl-5 space-y-1 text-slate-700 mb-4'>
+                                <li><strong>Married Parents:</strong> Either parent may accompany the child, presenting their valid primary ID + copy of the marriage certificate.</li>
+                                <li><strong>Unmarried Parents:</strong> Philippine law grants sole parental authority to the mother. The mother must accompany the child. If someone else accompanies the child, they must present a notarized Special Power of Attorney (SPA) executed by the mother.</li>
+                                <li><strong>Authorized Representative:</strong> Requires a notarized SPA, valid government ID of the companion, and copy of parent’s valid ID.</li>
+                            </ul>
+                            <div class='bg-amber-50 border border-amber-200 rounded-2xl p-4 mt-4'>
+                                <h5 class='font-bold text-amber-900 text-sm mb-1'>Mamae’s Real-Talk Tip:</h5>
+                                <p class='text-xs sm:text-sm text-amber-800 italic'>“Iba ang passport application sa DSWD Travel Clearance! Ang passport ay identity document lang. Kung bibiyahe ang bata abroad nang walang kasamang magulang (halimbawa, kasama si lola o tita), kailangan kumuha ng hiwalay na DSWD Travel Clearance for Minors bago ang flight.”</p>
+                            </div>
                         `
                     },
                     {
                         name: "6. Special Cases & Problems",
                         content: `
-                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Lost, Damaged, or Unregistered Records</h4>
-                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-3'>
-                                <li><strong>Lost Passport:</strong> Requires a notarized Affidavit of Loss, police report (where applicable), and data-page copies.</li>
-                                <li><strong>Damaged Passport:</strong> Present the booklet for assessment with an affidavit explaining the damage. Do not attempt DIY repairs.</li>
-                                <li><strong>Late Birth Registration & Unreadable Records:</strong> Secure Local Civil Registrar (LCR) records if PSA copies are unreadable.</li>
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Lost, Damaged, or Inconsistent Records</h4>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li><strong>Lost Valid ePassport:</strong> Submit a Notarized Affidavit of Loss, Police Report, and clear copies of the lost passport (if available). There is a 15-day clearing/verification period and an additional clearing fee of ₱350.</li>
+                                <li><strong>Lost Expired Passport:</strong> Requires a Notarized Affidavit of Loss; treated as a first-time application requiring a PSA birth certificate.</li>
+                                <li><strong>Mutilated or Damaged Passport:</strong> Present the damaged passport booklet and submit a notarized Affidavit of Explanation. Do not attempt DIY repairs (no tape, glue, or re-stapling).</li>
+                                <li><strong>Late Registered Birth Certificate:</strong> If registered late, DFA may ask for 2 supporting documents (e.g., Form 137 / school records, baptismal certificate, or voter's registration record) to confirm identity.</li>
+                                <li><strong>Discrepancies in Name/Birthplace:</strong> Must be resolved through a formal annotated PSA certificate (e.g., clerical error correction under RA 9048/RA 10172) before applying.</li>
                             </ul>
+                            <div class='bg-amber-50 border border-amber-200 rounded-2xl p-4 mt-4'>
+                                <h5 class='font-bold text-amber-900 text-sm mb-1'>Mamae’s Real-Talk Tip:</h5>
+                                <p class='text-xs sm:text-sm text-amber-800 italic'>“Nabasâ o napunit ba ang passport mo? Huwag mong subukang idikit ng tape o plantsahin! Considered mutilated passport na yan at posibleng harangin ka ng airline sa airport. I-declare agad as damaged at kumuha ng replacement bago mag-book ng trip.”</p>
+                            </div>
                         `
                     },
                     {
                         name: "7. Abroad & New York",
                         content: `
-                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Overseas Applications & New York Consulate</h4>
-                            <p class='text-slate-700 mb-2'>Former Filipinos must reacquire citizenship under RA 9225 before applying.</p>
-                            <h5 class='font-bold text-slate-800 mt-3 mb-1'>Philippine Consulate General in New York:</h5>
-                            <p class='text-slate-700 mb-2'>Located at <strong>556 Fifth Avenue, New York, NY 10036</strong>. Processing takes roughly 4 to 6 weeks. Applicants must provide a self-addressed stamped USPS return envelope. For inquiries, contact <a href='mailto:newyorkpcg.passport@dfa.gov.ph' class='text-blue-600 underline'>newyorkpcg.passport@dfa.gov.ph</a>.</p>
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Overseas Processing & PCG New York Procedures</h4>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li><strong>Consulate Location:</strong> Philippine Consulate General in New York at <strong>556 Fifth Avenue, New York, NY 10036</strong>.</li>
+                                <li><strong>Appointment Booking:</strong> Book via the official <a href='https://newyorkpcg.org/' target='_blank' class='text-blue-600 underline font-semibold'>PCG New York Online Appointment Portal</a>. Arrive 5 to 15 minutes before your scheduled slot.</li>
+                                <li><strong>Proof of Philippine Citizenship (Mandatory for Overseas):</strong>
+                                    <ul class='list-disc pl-5 mt-1 space-y-1'>
+                                        <li>Valid Philippine passport</li>
+                                        <li>Green Card / Permanent Resident Card</li>
+                                        <li>Valid US Visa or work permit</li>
+                                        <li>For Dual Citizens (RA 9225): Original and photocopies of Identification Certificate, Order of Approval, and Oath of Allegiance.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Passport Mailing Return Requirements:</strong> Applicants must bring their own self-addressed, stamped USPS Priority Mail or Priority Mail Express Flat Rate envelope with tracking number. (Track status later via the PCG New York Passport Tracker).</li>
+                                <li><strong>Timeline:</strong> Consular passport applications take 4 to 6 weeks (or 6 to 8 weeks in some posts) because booklets are printed at the central DFA facility in the Philippines and dispatched via diplomatic pouch.</li>
+                            </ul>
+                            <div class='bg-amber-50 border border-amber-200 rounded-2xl p-4 mt-4'>
+                                <h5 class='font-bold text-amber-900 text-sm mb-1'>Mamae’s Real-Talk Tip:</h5>
+                                <p class='text-xs sm:text-sm text-amber-800 italic'>“Kung sa PCG New York ka mag-aapply, dumaan muna sa US Post Office bago pumunta sa Fifth Avenue! Bilhin ang USPS Priority Mail Flat Rate envelope na may tracking number at postage stamp. Hindi nagbebenta ng stamp o sobre sa loob ng konsulado.”</p>
+                            </div>
                         `
                     },
                     {
                         name: "8. Fees & Timeline",
                         content: `
-                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Costs and Planning Timeline</h4>
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Costs, Planning Timeline & Validity</h4>
                             <table class='w-full border-collapse border border-slate-300 text-sm mb-4'>
-                                <tr class='bg-slate-100'><th class='border border-slate-300 p-2'>Service / Location</th><th class='border border-slate-300 p-2'>Fee / Instruction</th></tr>
-                                <tr><td class='border border-slate-300 p-2'>Philippines Regular Processing</td><td class='border border-slate-300 p-2'>PHP 950</td></tr>
-                                <tr><td class='border border-slate-300 p-2'>Philippines Expedited Processing</td><td class='border border-slate-300 p-2'>PHP 1,200</td></tr>
-                                <tr><td class='border border-slate-300 p-2'>New York Regular Passport</td><td class='border border-slate-300 p-2'>USD 60 (verify collection method)</td></tr>
+                                <tr class='bg-slate-100'><th class='border border-slate-300 p-2 text-left'>Application Location / Type</th><th class='border border-slate-300 p-2 text-left'>Official Fee</th><th class='border border-slate-300 p-2 text-left'>Processing Estimate</th></tr>
+                                <tr><td class='border border-slate-300 p-2'>Philippines — Regular</td><td class='border border-slate-300 p-2'>₱950</td><td class='border border-slate-300 p-2'>10–12 working days</td></tr>
+                                <tr><td class='border border-slate-300 p-2'>Philippines — Expedited</td><td class='border border-slate-300 p-2'>₱1,200</td><td class='border border-slate-300 p-2'>5–7 working days</td></tr>
+                                <tr><td class='border border-slate-300 p-2'>Lost Valid Passport Penalty Fee</td><td class='border border-slate-300 p-2'>+₱350</td><td class='border border-slate-300 p-2'>+15 days verification</td></tr>
+                                <tr><td class='border border-slate-300 p-2'>PCG New York / US Consulates</td><td class='border border-slate-300 p-2'>$60 USD</td><td class='border border-slate-300 p-2'>4–6 weeks</td></tr>
+                                <tr><td class='border border-slate-300 p-2'>Lost Valid Passport Fee (Overseas)</td><td class='border border-slate-300 p-2'>~$150 USD</td><td class='border border-slate-300 p-2'>Case-by-case clearance</td></tr>
                             </table>
-                            <p class='text-slate-700'>Always plan ahead: count document prep, appointment waiting times, processing, and delivery before booking any travel.</p>
+                            <h5 class='font-bold text-slate-800 mt-4 mb-1'>Passport Validity Period:</h5>
+                            <ul class='list-disc pl-5 space-y-1 text-slate-700 mb-4'>
+                                <li><strong>10 Years:</strong> For all Filipino citizens aged 18 and older at the time of issuance.</li>
+                                <li><strong>5 Years:</strong> For all applicants under 18 years of age.</li>
+                            </ul>
+                            <div class='bg-amber-50 border border-amber-200 rounded-2xl p-4 mt-4'>
+                                <h5 class='font-bold text-amber-900 text-sm mb-1'>Mamae’s Real-Talk Tip:</h5>
+                                <p class='text-xs sm:text-sm text-amber-800 italic'>“Tandaan ang 6-Month Passport Validity Rule ng mga airline at immigration! Karamihan sa mga bansa ay hindi magpapasakay kung less than 6 months na lang ang natitira sa passport mo. Mag-renew na agad kapag 8 hanggang 10 months na lang ang validity.”</p>
+                            </div>
                         `
                     }
                 ]
@@ -764,12 +839,39 @@
                 image: "https://images.unsplash.com/photo-1508248467877-aec1b08de376?auto=format&fit=crop&w=800&q=80",
                 shortDesc: "Easy checklist for traveling visa-free to Singapore, Thailand, Malaysia, Vietnam, and Hong Kong.",
                 steps: [
-                    "<strong>Passport Expiry:</strong> Must be valid for at least 6 months before your trip.",
-                    "<strong>Return Ticket:</strong> Confirmed return or onward flight ticket is required.",
-                    "<strong>Hotel Booking:</strong> Print your hotel reservations or host details.",
-                    "<strong>Employment Proof:</strong> Bring your company ID or certificate of employment."
+                    "<strong>1. Passport Expiry Check:</strong> Ensure your passport is valid for at least 6 months before your departure date.",
+                    "<strong>2. Onward & Return Travel:</strong> Have confirmed return or onward flight tickets ready for immigration inspection.",
+                    "<strong>3. Accommodation Proof:</strong> Print your hotel bookings, Airbnb reservations, or host invitation letters.",
+                    "<strong>4. Employment Ties:</strong> Bring your company ID, Certificate of Employment (COE), or approved leave form for smooth NAIA clearance."
                 ],
-                tip: "Visa-free entry is a privilege, not a guarantee! Always bring your printed return tickets, hotel bookings, and company ID so NAIA immigration officers can clear you smoothly."
+                tip: "Visa-free entry is a privilege, not a guarantee! Always bring your printed return tickets, hotel bookings, and company ID so NAIA immigration officers can clear you smoothly.",
+                categories: [
+                    {
+                        name: "1. Core Requirements",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Essential Documents for ASEAN Travel</h4>
+                            <p class='text-slate-700 mb-3'>Filipino passport holders enjoy visa-free entry to major ASEAN destinations like Singapore (30 days), Thailand (60 days), Malaysia (30 days), and Vietnam (21 days).</p>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li><strong>Valid PH Passport:</strong> Minimum 6 months validity from arrival date.</li>
+                                <li><strong>Confirmed Return Ticket:</strong> Strict requirement across all ASEAN immigration desks.</li>
+                                <li><strong>Hotel Bookings:</strong> Printed confirmation showing exact dates and address.</li>
+                                <li><strong>Pocket Money:</strong> Sufficient cash or credit cards for your duration of stay.</li>
+                            </ul>
+                        `
+                    },
+                    {
+                        name: "2. Bureau of Immigration Tips",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Passing NAIA Immigration with Confidence</h4>
+                            <p class='text-slate-700 mb-3'>Philippine Bureau of Immigration officers inspect outbound passengers closely to combat human trafficking. Be prepared and confident.</p>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li>Bring your company ID and COE if employed. Freelancers should bring business registration or client contracts.</li>
+                                <li>Answer questions directly and truthfully without over-explaining.</li>
+                                <li>Always cross-check live entry policies on official tourism portals before your flight.</li>
+                            </ul>
+                        `
+                    }
+                ]
             },
             {
                 id: "taiwan-visafree",
@@ -779,12 +881,26 @@
                 image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
                 shortDesc: "Simple steps for Philippine passport holders visiting Taiwan visa-free for up to 14 days.",
                 steps: [
-                    "<strong>Passport Check:</strong> Ensure your passport is valid for at least 6 months upon arrival.",
-                    "<strong>Return Air Ticket:</strong> Hold a confirmed return flight booking.",
-                    "<strong>Online Arrival Card:</strong> Fill out the online ROC Travel Authorization Certificate prior to flying.",
-                    "<strong>Hotel & Funds:</strong> Have your hotel booking details and travel money ready."
+                    "<strong>1. Passport Check:</strong> Ensure your passport is valid for at least 6 months upon arrival.",
+                    "<strong>2. Return Air Ticket:</strong> Hold a confirmed return flight booking.",
+                    "<strong>3. Online Arrival Card:</strong> Fill out the online ROC Travel Authorization Certificate prior to flying via the <a href='https://niaspeedy.immigration.gov.tw/nia_online/app/index.action' target='_blank' class='text-blue-600 underline font-semibold'>National Immigration Agency Portal</a>.",
+                    "<strong>4. Hotel & Funds:</strong> Have your hotel booking details and travel money ready."
                 ],
-                tip: "Fill out your Taiwan online arrival card a day before your flight so you breeze right through customs!"
+                tip: "Fill out your Taiwan online arrival card a day before your flight so you breeze right through customs!",
+                categories: [
+                    {
+                        name: "1. Entry Conditions",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Taiwan Visa-Free Program Guidelines</h4>
+                            <p class='text-slate-700 mb-3'>Philippine passport holders can enter Taiwan visa-free for up to 14 days under specific tourism promotion schemes.</p>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li>Passport must have at least 6 months validity.</li>
+                                <li>Must hold confirmed return or onward air tickets.</li>
+                                <li>Must complete the <a href='https://niaspeedy.immigration.gov.tw/nia_online/app/index.action' target='_blank' class='text-blue-600 underline font-semibold'>ROC Travel Authorization Certificate</a> online prior to departure.</li>
+                            </ul>
+                        `
+                    }
+                ]
             },
             {
                 id: "south-america-visafree",
@@ -794,11 +910,24 @@
                 image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=800&q=80",
                 shortDesc: "Explore South America! How PH passport holders can visit Brazil and Colombia visa-free as tourists.",
                 steps: [
-                    "<strong>Review Layover Routes:</strong> Make sure your transit airports in the US or Europe do not require separate transit visas.",
-                    "<strong>Passport Cleanliness:</strong> Ensure your passport has clean pages for stamps and 6+ months validity.",
-                    "<strong>Travel Itinerary:</strong> Bring roundtrip flight itineraries and hotel bookings."
+                    "<strong>1. Review Layover Routes:</strong> Make sure your transit airports in the US, Europe, or Canada do not require separate transit visas.",
+                    "<strong>2. Passport Cleanliness:</strong> Ensure your passport has clean pages for entry stamps and 6+ months validity.",
+                    "<strong>3. Travel Itinerary:</strong> Bring roundtrip flight itineraries, hotel bookings, and proof of financial capacity."
                 ],
-                tip: "Always double-check where your plane is stopping for layovers. Some countries require a transit visa even if you never leave the airport!"
+                tip: "Always double-check where your plane is stopping for layovers. Some countries require a transit visa even if you never leave the airport!",
+                categories: [
+                    {
+                        name: "1. Visa-Free Entry",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Visiting Brazil and Colombia</h4>
+                            <p class='text-slate-700 mb-3'>Filipino tourists enjoy visa-free entry to Brazil and Colombia for up to 90 days.</p>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li>Prepare international travel insurance covering medical emergencies.</li>
+                                <li>Confirm transit visa rules for stopover countries (e.g., US C1/D or Schengen transit rules).</li>
+                            </ul>
+                        `
+                    }
+                ]
             },
             {
                 id: "us-b1b2",
@@ -808,11 +937,27 @@
                 image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80",
                 shortDesc: "A friendly breakdown of filling out the DS-160, paying fees, and preparing for your interview in Manila.",
                 steps: [
-                    "<strong>Fill Out Form DS-160:</strong> Complete the online application carefully—this is the core of your application.",
-                    "<strong>Pay MRV Fee:</strong> Pay your visa application fee through official channels.",
-                    "<strong>Embassy Interview:</strong> Attend your interview appointment at the U.S. Embassy in Manila with confidence and honesty."
+                    "<strong>1. Complete DS-160 Online:</strong> Fill out the <a href='https://ceac.state.gov/ceac/' target='_blank' class='text-blue-600 underline font-semibold'>DS-160 Application Form</a> carefully—this is the core document reviewed by the consular officer.",
+                    "<strong>2. Pay MRV Fee:</strong> Create an account on the official <a href='https://www.ustraveldocs.com/ph/' target='_blank' class='text-blue-600 underline font-semibold'>US Travel Docs Portal</a> and pay the non-refundable MRV fee.",
+                    "<strong>3. Book & Attend Interview:</strong> Schedule and attend your interview at the <a href='https://ph.usembassy.gov/visas/' target='_blank' class='text-blue-600 underline font-semibold'>U.S. Embassy in Manila</a> with honesty and strong ties to the Philippines."
                 ],
-                tip: "Consuls rarely look at heavy folders of documents. They judge your application primarily on your DS-160 and your strong ties to the Philippines. Be calm and confident!"
+                tip: "Consuls rarely look at heavy folders of documents. They judge your application primarily on your DS-160 and your strong ties to the Philippines. Be calm and confident!",
+                categories: [
+                    {
+                        name: "1. DS-160 Walkthrough",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Mastering Form DS-160</h4>
+                            <p class='text-slate-700 mb-3'>Every answer on your <a href='https://ceac.state.gov/ceac/' target='_blank' class='text-blue-600 underline font-semibold'>DS-160 form</a> must be truthful and accurate. Save your application ID and security answers.</p>
+                        `
+                    },
+                    {
+                        name: "2. Interview Tips",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Consular Interview at U.S. Embassy Manila</h4>
+                            <p class='text-slate-700 mb-3'>Demonstrate strong economic, family, and social ties showing you will return to the Philippines after your temporary visit.</p>
+                        `
+                    }
+                ]
             },
             {
                 id: "american-dream",
@@ -822,11 +967,20 @@
                 image: "https://images.unsplash.com/photo-1508433957232-3107f5fd5995?auto=format&fit=crop&w=800&q=80",
                 shortDesc: "Exploring legitimate legal pathways to U.S. permanent residency: family sponsorship and employment petitions.",
                 steps: [
-                    "<strong>Understand Categories:</strong> Learn the difference between family-based petitions and employment-based visas.",
-                    "<strong>USCIS Guidance:</strong> Review official guidelines directly on the USCIS portal.",
-                    "<strong>Stay Updated:</strong> Check back as we continuously add helpful notes and warnings against immigration scams."
+                    "<strong>1. Understand Categories:</strong> Learn the difference between family-based petitions (I-130) and employment-based visas (EB-2/EB-3).",
+                    "<strong>2. USCIS Guidance:</strong> Review official instructions directly on the <a href='https://www.uscis.gov' target='_blank' class='text-blue-600 underline font-semibold'>USCIS Official Portal</a>.",
+                    "<strong>3. Avoid Fraud:</strong> Beware of unauthorized agents or agencies promising guaranteed green cards."
                 ],
-                tip: "Take your time and always verify legal procedures through official government portals like USCIS. Never trust anyone promising guaranteed visas!"
+                tip: "Take your time and always verify legal procedures through official government portals like USCIS. Never trust anyone promising guaranteed visas!",
+                categories: [
+                    {
+                        name: "1. Legal Pathways",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Immigration Options to the United States</h4>
+                            <p class='text-slate-700 mb-3'>Permanent residency (Green Card) typically requires a qualified petitioner—either an immediate family member or an employer sponsor through <a href='https://www.uscis.gov' target='_blank' class='text-blue-600 underline font-semibold'>USCIS</a>.</p>
+                        `
+                    }
+                ]
             }
         ];
 
