@@ -1431,24 +1431,40 @@
             });
         }
 
-        function openCountryPage(name, flagUrl, badgeText, description, url) {
-            document.getElementById('pageFlagImg').src = flagUrl;
-            document.getElementById('pageCountryName').innerText = name;
-            document.getElementById('pageBadge').innerText = badgeText;
-            document.getElementById('pageDescription').innerText = description;
-            document.getElementById('pageOfficialLink').href = url;
+                function openCountryPage(name, flagUrl, badgeText, description, url) {
+            // Check if we have a matching full guide in our guides array
+            const foundIndex = guides.findIndex(g => g.title.toLowerCase().includes(name.toLowerCase()) || g.badge.toLowerCase().includes(name.toLowerCase()));
+            
+            if (foundIndex !== -1) {
+                // If a full multi-tab guide exists, open it directly!
+                openGuideFullPage(foundIndex);
+            } else {
+                // Fallback to basic view if no full guide exists yet
+                document.getElementById('pageFlagImg').src = flagUrl;
+                document.getElementById('pageCountryName').innerText = name;
+                document.getElementById('pageBadge').innerText = badgeText;
+                document.getElementById('pageDescription').innerText = description;
+                document.getElementById('pageOfficialLink').href = url;
 
-            document.getElementById('directory').classList.add('hidden');
-            const pageView = document.getElementById('countryPageView');
-            pageView.classList.remove('hidden');
-            pageView.scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('directory').classList.add('hidden');
+                document.getElementById('categories').classList.add('hidden');
+                document.getElementById('processes').classList.add('hidden');
+                
+                const pageView = document.getElementById('countryPageView');
+                pageView.classList.remove('hidden');
+                pageView.scrollIntoView({ behavior: 'smooth' });
+            }
         }
 
-        function closeCountryPage() {
+
+                function closeCountryPage() {
             document.getElementById('countryPageView').classList.add('hidden');
             document.getElementById('directory').classList.remove('hidden');
+            document.getElementById('categories').classList.remove('hidden');
+            document.getElementById('processes').classList.remove('hidden');
             document.getElementById('directory').scrollIntoView({ behavior: 'smooth' });
         }
+
 
         function openCoffeeModal() {
             document.getElementById('coffeeModal').classList.remove('hidden');
