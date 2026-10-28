@@ -75,7 +75,6 @@
         Ask a Question
     </button>
 </div>
-                </div>
 
                 <!-- Mobile Hamburger Button -->
                 <button onclick="toggleMobileMenu()" class="md:hidden text-slate-700 hover:text-blue-600 text-2xl p-2 focus:outline-none">
@@ -1633,8 +1632,8 @@
             const board = document.getElementById('publicQABoard');
             if (!board) return;
 
-            // Filter for public items and slice to show only the latest 2
-            const publicItems = communityQuestions.filter(q => q.isPublic).slice(-2).reverse();
+            // Filter for public items and slice to show only the latest 3
+            const publicItems = communityQuestions.filter(q => q.isPublic).slice(-3).reverse();
 
             if (publicItems.length === 0) {
                 board.innerHTML = `<div class="bg-white border border-slate-200 rounded-2xl p-6 text-center text-slate-500 text-xs">No public questions yet. Be the first to ask Mamae!</div>`;
