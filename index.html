@@ -2038,6 +2038,34 @@
                 </div>
             `).join('');
         }
+         function openQAPage() {
+            // Hide main homepage sections
+            const heroSection = document.querySelector('section.relative.bg-slate-900');
+            const categoriesSection = document.getElementById('categories');
+
+            if (heroSection) heroSection.classList.add('hidden');
+            if (categoriesSection) categoriesSection.classList.add('hidden');
+
+            // Show Q&A page view and render items
+            const qaPage = document.getElementById('qaPageView');
+            if (qaPage) {
+                qaPage.classList.remove('hidden');
+                renderPublicQABoard(); // Populates saved questions
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function closeQAPage() {
+            const qaPage = document.getElementById('qaPageView');
+            if (qaPage) qaPage.classList.add('hidden');
+
+            // Restore homepage sections
+            const heroSection = document.querySelector('section.relative.bg-slate-900');
+            const categoriesSection = document.getElementById('categories');
+            if (heroSection) heroSection.classList.remove('hidden');
+            if (categoriesSection) categoriesSection.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>
