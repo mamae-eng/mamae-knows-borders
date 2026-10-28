@@ -1001,59 +1001,169 @@
                     }
                 ]
             },
-            {
+            
+{
                 id: "south-america-visafree",
                 badge: "Latin America Travel",
                 lastUpdated: "October 2026",
-                title: "South America (Brazil & Colombia)",
+                title: "South America Travel Guide for Filipino Travelers",
                 image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=800&q=80",
-                shortDesc: "Explore South America! How PH passport holders can visit Brazil and Colombia visa-free as tourists.",
-                steps: [
-                    "<strong>1. Review Layover Routes:</strong> Make sure your transit airports in the US, Europe, or Canada do not require separate transit visas.",
-                    "<strong>2. Passport Cleanliness:</strong> Ensure your passport has clean pages for entry stamps and 6+ months validity.",
-                    "<strong>3. Travel Itinerary:</strong> Bring roundtrip flight itineraries, hotel bookings, and proof of financial capacity."
+                shortDesc: "Comprehensive guide for PH passport holders visiting visa-free nations, consular visa requirements, and US/Schengen transit rules.",
+                quickBadges: [
+                    "🇧🇷 Brazil, 🇨🇴 Colombia, 🇵🇪 Peru, 🇧🇴 Bolivia: Visa-Free (Up to 90–183 Days)",
+                    "⚠️ Argentina, Chile, Uruguay: Consular Visa Required",
+                    "✈️ Critical Warning: US/Schengen Transit Visas Required for Layovers"
                 ],
-                tip: "Always double-check where your plane is stopping for layovers. Some countries require a transit visa even if you never leave the airport!",
+                steps: [
+                    {
+                        title: "Check Country Visa Requirements",
+                        body: "Know which nations are visa-free (Brazil, Colombia, Peru, Bolivia) versus those requiring consular sticker visas before departure (Argentina, Chile, Uruguay)."
+                    },
+                    {
+                        title: "Review Layover & Transit Routes",
+                        body: "Make sure your transit airports in the US, Europe, or Canada do not require separate transit visas (even if you stay airside)."
+                    },
+                    {
+                        title: "Prepare Yellow Fever & Health Proof",
+                        body: "Secure your International Certificate of Vaccination (ICV) for Yellow Fever from the Bureau of Quarantine if required by your destination."
+                    },
+                    {
+                        title: "Financials & Onward Travel",
+                        body: "Bring confirmed roundtrip flight itineraries, hotel bookings, international travel insurance, and proof of financial capacity."
+                    }
+                ],
+                tip: "Maganda sa Brazil, Colombia, Peru, at Bolivia dahil visa-free tayo! Pero tandaan: visa-free ay hindi automatic na entry—dalhin ang buong travel folder mo.",
                 categories: [
                     {
-                        name: "1. Visa-Free Entry",
+                        name: "1. Visa-Free South American Countries",
+                        tip: "Maganda sa Brazil, Colombia, Peru, at Bolivia dahil visa-free tayo! Pero tandaan: visa-free ay hindi automatic na entry—dalhin ang buong travel folder mo.",
                         content: `
-                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Visiting Brazil and Colombia</h4>
-                            <p class='text-slate-700 mb-3'>Filipino tourists enjoy visa-free entry to Brazil and Colombia for up to 90 days.</p>
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Visa-Free Destinations for Philippine Passport Holders</h4>
+                            <p class='text-slate-700 mb-3'>You can enter the following South American nations without a tourist visa for extended holiday stays:</p>
                             <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
-                                <li>Prepare international travel insurance covering medical emergencies.</li>
-                                <li>Confirm transit visa rules for stopover countries (e.g., US C1/D or Schengen transit rules).</li>
+                                <li><strong>Brazil:</strong> Visa-free for up to 90 days.</li>
+                                <li><strong>Colombia:</strong> Visa-free for up to 90 days.</li>
+                                <li><strong>Peru:</strong> Visa-free for up to 183 days.</li>
+                                <li><strong>Bolivia:</strong> Visa-free for up to 90 days.</li>
+                            </ul>
+                        `
+                    },
+                    {
+                        name: "2. Countries Requiring Consular Visas",
+                        tip: "Para sa Argentina, Chile, at Uruguay, kailangan mo munang kumuha ng visa sa embassy bago mag-book ng non-refundable flights. Huwag umasang may visa-on-arrival!",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Destinations Requiring Prior Embassy Visas</h4>
+                            <p class='text-slate-700 mb-3'>Make sure to secure your visas beforehand for these regional destinations:</p>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li><strong>Argentina:</strong> Tourist visa required ahead of travel. (Note: Holders of valid US B1/B2 visas may be eligible to apply for an electronic travel authorization/eTA).</li>
+                                <li><strong>Chile & Uruguay:</strong> Tourist visas required via respective embassies or consulates prior to booking non-refundable flights.</li>
+                            </ul>
+                        `
+                    },
+                    {
+                        name: "3. US / Schengen Visa Perks & Exemptions",
+                        tip: "Malaking tulong ang may valid US o Schengen visa dahil bukod sa nagpapadali ito ng transit sa US o Europe, pinapadali rin nito ang pagpoproseso ng ilang visa applications sa Americas.",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>The Value of Major Visas for Transatlantic Travel</h4>
+                            <p class='text-slate-700 mb-3'>How holding major visas streamlines your journey:</p>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li>While holding a US or Schengen visa does not automatically bypass entry rules for countries requiring a national visa, it completely solves the massive logistical hurdle of transiting through North American or European aviation hubs on your way across the Atlantic.</li>
+                            </ul>
+                        `
+                    },
+                    {
+                        name: "4. Health & Long-Haul Transit Traps",
+                        tip: "Huwag kalimutan ang Yellow Fever card at ang US o Schengen transit visa mo. Kahit 1 hour lang ang layover mo sa US para sa flight patungong South America, hahanapin yan ng airline!",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Crucial Health and Flight Connection Rules</h4>
+                            <p class='text-slate-700 mb-3'>Pay close attention to these mandatory health and logistical checkpoints:</p>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li><strong>Yellow Fever Certificate (ICV):</strong> Mandatory yellow fever vaccination card from the Bureau of Quarantine when entering or connecting through endemic regions.</li>
+                                <li><strong>Transit Visas:</strong> Most flights from Manila to South America transit through the United States (LAX, SFO, MIA) or Europe (MAD). A valid US or Schengen transit/tourist visa is strictly required just to make the plane connection, even if you never leave the airport.</li>
                             </ul>
                         `
                     }
                 ]
             },
+
             {
                 id: "us-b1b2",
                 badge: "U.S. Tourist Visa",
                 lastUpdated: "October 2026",
                 title: "U.S. B1/B2 Tourist Visa Walkthrough",
-                image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80",
+                image: "IMG_4170.jpeg",
                 shortDesc: "A friendly breakdown of filling out the DS-160, paying fees, and preparing for your interview in Manila.",
-                steps: [
-                    "<strong>1. Complete DS-160 Online:</strong> Fill out the <a href='https://ceac.state.gov/ceac/' target='_blank' class='text-blue-600 underline font-semibold'>DS-160 Application Form</a> carefully—this is the core document reviewed by the consular officer.",
-                    "<strong>2. Pay MRV Fee:</strong> Create an account on the official <a href='https://www.ustraveldocs.com/ph/' target='_blank' class='text-blue-600 underline font-semibold'>US Travel Docs Portal</a> and pay the non-refundable MRV fee.",
-                    "<strong>3. Book & Attend Interview:</strong> Schedule and attend your interview at the <a href='https://ph.usembassy.gov/visas/' target='_blank' class='text-blue-600 underline font-semibold'>U.S. Embassy in Manila</a> with honesty and strong ties to the Philippines."
+                quickBadges: [
+                    "🇺🇸 Visa Type: B1/B2 Tourist & Business",
+                    "💵 MRV Fee: $185 USD (Non-refundable)",
+                    "📍 Interview Location: U.S. Embassy Manila"
                 ],
-                tip: "Consuls rarely look at heavy folders of documents. They judge your application primarily on your DS-160 and your strong ties to the Philippines. Be calm and confident!",
+                steps: [
+                    {
+                        title: "Complete DS-160 Online",
+                        body: "Fill out the online DS-160 Application Form carefully and truthfully. Save your Application ID and security answers immediately."
+                    },
+                    {
+                        title: "Pay MRV Fee & Create Profile",
+                        body: "Register on the official USTravelDocs portal, pay the non-refundable $185 USD MRV application fee through authorized channels, and link your receipt."
+                    },
+                    {
+                        title: "Book Your Interview Slot",
+                        body: "Access the scheduling system to lock in your consular interview date and time at the U.S. Embassy in Manila."
+                    },
+                    {
+                        title: "Attend the Consular Interview",
+                        body: "Appear in person at the U.S. Embassy with your passport, DS-160 confirmation page, and strong proof of economic and family ties to the Philippines."
+                    }
+                ],
+                tip: "Ang DS-160 ang pinakamahalagang dokumento sa buong application mo. Huwag magsinungaling o magtago ng impormasyon dahil nakikita ng consul ang buong history mo.",
                 categories: [
                     {
-                        name: "1. DS-160 Walkthrough",
+                        name: "1. Mastering Form DS-160",
+                        tip: "Ang DS-160 ang pinakamahalagang dokumento sa buong application mo. Huwag magsinungaling o magtago ng impormasyon dahil nakikita ng consul ang buong history mo.",
                         content: `
-                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Mastering Form DS-160</h4>
-                            <p class='text-slate-700 mb-3'>Every answer on your <a href='https://ceac.state.gov/ceac/' target='_blank' class='text-blue-600 underline font-semibold'>DS-160 form</a> must be truthful and accurate. Save your application ID and security answers.</p>
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Essential Rules for the Online Application</h4>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li>Every answer on your DS-160 form must be 100% truthful, consistent, and accurate.</li>
+                                <li>Save your Application ID, security question answers, and print/save the DS-160 confirmation barcode page.</li>
+                                <li>Double-check employment history, travel history (past 5 years), and family details.</li>
+                            </ul>
                         `
                     },
                     {
-                        name: "2. Interview Tips",
+                        name: "2. MRV Fee & Account Setup",
+                        tip: "Tandaan na ang $185 MRV fee ay non-refundable at valid lang sa loob ng isang taon para sa pag-book ng interview sa Pilipinas.",
                         content: `
-                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Consular Interview at U.S. Embassy Manila</h4>
-                            <p class='text-slate-700 mb-3'>Demonstrate strong economic, family, and social ties showing you will return to the Philippines after your temporary visit.</p>
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Managing Payments and Profile Creation</h4>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li>Create your profile on the official <a href='https://www.ustraveldocs.com/ph/' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>ustraveldocs.com portal</a>.</li>
+                                <li>Pay the $185 USD Machine Readable Visa (MRV) fee via authorized payment partners (e.g., BPI or RCBC online/OTC).</li>
+                                <li>Keep your receipt reference number to activate your scheduling account.</li>
+                            </ul>
+                        `
+                    },
+                    {
+                        name: "3. Booking Your Interview",
+                        tip: "Mag-abang ng available slots sa umaga o hapon. Huwag magtiwala sa mga nag-aalok ng 'sure slot' o fixer sa Facebook dahil scam yan!",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Securing Your Schedule at Roxas Boulevard</h4>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li>Log back into the scheduling portal once your payment is reflected.</li>
+                                <li>Choose an available interview slot at the <a href='https://ph.usembassy.gov/visas/' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>U.S. Embassy in Manila</a>.</li>
+                                <li>Print your Appointment Confirmation Package.</li>
+                            </ul>
+                        `
+                    },
+                    {
+                        name: "4. Embassy Interview Tips",
+                        tip: "Hindi titignan ng consul ang mga folders ng litrato o land titles na dala mo. Ang labanan ay kung paano mo patunayan sa loob ng 2 minuto na babalik ka ng Pilipinas!",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Surviving the Window Interview</h4>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li>Consular officers rarely look at heavy folders of documents; they judge your application primarily on your DS-160 and your verbal answers.</li>
+                                <li>Prove strong ties to the Philippines (stable job, property, business, immediate family) demonstrating you will return after temporary travel.</li>
+                                <li>Be calm, concise, and confident.</li>
+                            </ul>
                         `
                     }
                 ]
@@ -1063,24 +1173,67 @@
                 badge: "U.S. Pathways",
                 lastUpdated: "October 2026",
                 title: "Pathway to the American Dream (US Immigration)",
-                image: "https://images.unsplash.com/photo-1508433957232-3107f5fd5995?auto=format&fit=crop&w=800&q=80",
+                image: "IMG_6797.jpeg",
                 shortDesc: "Exploring legitimate legal pathways to U.S. permanent residency: family sponsorship and employment petitions.",
-                steps: [
-                    "<strong>1. Understand Categories:</strong> Learn the difference between family-based petitions (I-130) and employment-based visas (EB-2/EB-3).",
-                    "<strong>2. USCIS Guidance:</strong> Review official instructions directly on the <a href='https://www.uscis.gov' target='_blank' class='text-blue-600 underline font-semibold'>USCIS Official Portal</a>.",
-                    "<strong>3. Avoid Fraud:</strong> Beware of unauthorized agents or agencies promising guaranteed green cards."
+                quickBadges: [
+                    "🇺🇸 Goal: U.S. Permanent Residency (Green Card)",
+                    "👨‍👩‍👧 Primary Routes: Family & Employment",
+                    "⚠️ Warning: Beware of Immigration Scams"
                 ],
-                tip: "Take your time and always verify legal procedures through official government portals like USCIS. Never trust anyone promising guaranteed visas!",
+                steps: [
+                    {
+                        title: "Understand Categories",
+                        body: "Learn the core difference between family-based petitions (such as Form I-130) and employment-based visa sponsorship (such as EB-2 or EB-3)."
+                    },
+                    {
+                        title: "Review Official USCIS Guidance",
+                        body: 'Always verify petition requirements, forms, and filing fees directly on the official <a href="https://www.uscis.gov" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline font-semibold">USCIS Portal</a>.'
+                    },
+                    {
+                        title: "Avoid Immigration Fraud",
+                        body: "Protect yourself from unauthorized fixers or agencies promising guaranteed visas, fast-track green cards, or jobs without proper legal petitions."
+                    }
+                ],
+                tip: "Walang shortcut sa U.S. immigration! Magtiwala lamang sa mga lisensyadong immigration attorney o accredited representatives ng DOJ/EOIR.",
                 categories: [
                     {
-                        name: "1. Legal Pathways",
+                        name: "1. Family & Employment Petitions",
+                        tip: "Walang shortcut sa U.S. immigration! Magtiwala lamang sa mga lisensyadong immigration attorney o accredited representatives ng DOJ/EOIR.",
+                    content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Core Legal Pathways to Permanent Residency</h4>
+                            <p class='text-slate-700 mb-3'>Legitimate U.S. immigration is built on two primary sponsorship pillars managed through <a href='https://www.uscis.gov' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>USCIS</a>:</p>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li><strong>Family-Based Immigration:</strong> Petitions filed by U.S. citizen or Green Card holder immediate relatives (Form I-130).</li>
+                                <li><strong>Employment-Based Visas:</strong> Worker petitions sponsored by U.S. employers requiring specialized labor certification or professional skills (EB-2, EB-3).</li>
+                            </ul>
+                        `
+                    },
+                    {
+                        name: "2. Official Processing & Visa Bulletin",
+                        tip: "Mabagal ang proseso ng family petition dahil sa Visa Bulletin quota. Mag-ingat sa mga taong nangangakong mapapabilis nila ang priority date mo sa pera.",
                         content: `
-                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Immigration Options to the United States</h4>
-                            <p class='text-slate-700 mb-3'>Permanent residency (Green Card) typically requires a qualified petitioner—either an immediate family member or an employer sponsor through <a href='https://www.uscis.gov' target='_blank' class='text-blue-600 underline font-semibold'>USCIS</a>.</p>
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Navigating Processing Times & Priority Dates</h4>
+                            <p class='text-slate-700 mb-3'>Understanding how application queues work:</p>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li><strong>Visa Bulletin:</strong> Monitor priority dates published monthly by the U.S. Department of State to track when your immigrant visa number becomes available.</li>
+                                <li><strong>Processing Centers:</strong> Always check estimated processing timelines directly on official USCIS service center pages before making life adjustments.</li>
+                            </ul>
+                        `
+                    },
+                    {
+                        name: "3. Avoiding Immigration Fraud",
+                        tip: "Laging i-verify kung ang kumakatawan sa iyo ay lisensyadong abogado. Huwag magpadala ng bayad sa mga social media agents na walang physical office o legal credentials.",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Protecting Yourself from Visa Scams</h4>
+                            <p class='text-slate-700 mb-3'>Red flags to watch out for:</p>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li>Beware of individuals or agencies guaranteeing 100% visa approval or bypassing statutory immigration laws.</li>
+                                <li>Ensure any legal assistance comes from a licensed attorney or a DOJ-accredited representative listed on official directories.</li>
+                            </ul>
                         `
                     }
                 ]
-            }
+            },
         ];
 
         function renderGuides() {
