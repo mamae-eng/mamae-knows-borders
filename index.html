@@ -8,12 +8,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        html, body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        /* Mobile-Responsive Horizontal Scrolling Tab Bar */
+        .guide-tabs-scroll {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            gap: 8px;
+            padding-bottom: 8px;
+            width: 100%;
+            max-width: 100%;
+            scrollbar-width: thin;
+            scrollbar-color: #cbd5e1 transparent;
+        }
+        .guide-tabs-scroll::-webkit-scrollbar { height: 4px; }
+        .guide-tabs-scroll::-webkit-scrollbar-track { background: transparent; }
+        .guide-tabs-scroll::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 9999px; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col overflow-x-hidden w-full">
 
     <!-- Top Disclaimer Banner -->
     <div class="bg-amber-50 border-b border-amber-200 text-amber-900 px-4 py-2 text-xs sm:text-sm text-center font-medium">
@@ -250,35 +269,35 @@
     </section>
 
     <!-- Dedicated Guide Full Page View (Hidden by default) -->
-    <section id="guideFullPageView" class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 hidden">
-        <div class="bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-md space-y-6">
+    <section id="guideFullPageView" class="py-6 sm:py-16 w-full max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 hidden">
+        <div class="bg-white border border-slate-200 rounded-2xl sm:rounded-3xl p-4 sm:p-10 shadow-md space-y-5 w-full min-w-0 overflow-hidden">
             <button onclick="closeGuideFullPage()" class="inline-flex items-center text-sm font-bold text-blue-600 hover:text-blue-800 transition">
                 <i class="fa-solid fa-arrow-left mr-2"></i> Back to Featured Guides
             </button>
-            <div class="relative h-64 rounded-2xl overflow-hidden shadow-sm">
+            <div class="relative h-48 sm:h-64 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm">
                 <img id="fullPageImg" src="" alt="Guide Banner" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-6 text-white">
-                    <span id="fullPageBadge" class="bg-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase w-max mb-2"></span>
-                    <h2 id="fullPageTitle" class="text-2xl sm:text-3xl font-extrabold"></h2>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/30 to-transparent flex flex-col justify-end p-4 sm:p-6 text-white">
+                    <span id="fullPageBadge" class="bg-blue-600 text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full uppercase w-max mb-1.5"></span>
+                    <h2 id="fullPageTitle" class="text-xl sm:text-3xl font-extrabold leading-tight"></h2>
                     <span id="fullPageUpdated" class="text-xs text-slate-300 mt-1"></span>
                 </div>
             </div>
-            <div class="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed">
-                <h3 class="font-bold text-slate-950 text-lg">Detailed Step-by-Step Instructions</h3>
-                <div id="fullPageSteps" class="space-y-3 bg-slate-50 p-6 rounded-2xl border border-slate-200"></div>
+            <div class="space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed w-full min-w-0">
+                <h3 class="font-bold text-slate-950 text-base sm:text-lg">Detailed Step-by-Step Instructions</h3>
+                <div id="fullPageSteps" class="space-y-3 bg-slate-50 p-3.5 sm:p-6 rounded-2xl border border-slate-200 w-full min-w-0 overflow-hidden break-words"></div>
                 
-                <div id="fullPageTipContainer" class="bg-amber-50 border border-amber-200 rounded-2xl p-4">
+                <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4">
                     <h4 class="font-bold text-amber-900 text-sm mb-1 flex items-center">
                         <i class="fa-solid fa-lightbulb text-amber-600 mr-2"></i> Mamae's Real-Talk Tip:
                     </h4>
                     <p id="fullPageTip" class="text-xs sm:text-sm text-amber-800 leading-relaxed"></p>
                 </div>
             </div>
-            <div class="pt-4 border-t border-slate-200 flex flex-wrap gap-4 items-center justify-between">
-                <button onclick="closeGuideFullPage()" class="bg-slate-900 hover:bg-slate-800 text-white font-bold px-6 py-3 rounded-xl text-sm transition">
+            <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center justify-between">
+                <button onclick="closeGuideFullPage()" class="bg-slate-900 hover:bg-slate-800 text-white font-bold px-6 py-3 rounded-xl text-sm transition text-center">
                     Return to Homepage Guides
                 </button>
-                <button onclick="openCoffeeModal()" class="bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold px-6 py-3 rounded-xl text-sm transition">
+                <button onclick="openCoffeeModal()" class="bg-amber-400 hover:bg-amber-500 text-slate-900 font-bold px-6 py-3 rounded-xl text-sm transition text-center">
                     <i class="fa-solid fa-mug-hot mr-1"></i> Buy Mamae a Coffee
                 </button>
             </div>
@@ -550,10 +569,11 @@
                 </div>
             </div>
             <div class="p-6 sm:p-8 space-y-6">
-                <!-- Top Quick Badges/Pills -->
-                <div id="modalBadgesContainer" class="flex flex-wrap gap-2"></div>
-
                 <p id="modalDesc" class="text-slate-600 text-sm sm:text-base"></p>
+                
+                <!-- Top Quick Badges/Pills -->
+                <div id="modalBadges" class="hidden flex-wrap gap-2"></div>
+
                 <div>
                     <h4 class="font-bold text-slate-900 text-base mb-3 flex items-center">
                         <i class="fa-solid fa-list-check text-blue-600 mr-2"></i> Step-by-Step Guide
@@ -571,7 +591,7 @@
 
                 <!-- Policy Disclaimer Card -->
                 <div class="bg-slate-100 border border-slate-200 rounded-2xl p-4 text-slate-700 text-xs">
-                    <strong>⚠️ Policy Disclaimer:</strong> Immigration, consular, and passport policies change frequently without prior notice. Always verify live rules, appointment availability, and fee schedules on official government portals before finalizing travel plans or submitting applications.
+                    <strong>⚠️ Policy Disclaimer:</strong> <span id="modalDisclaimer">Immigration, consular, and passport policies change frequently without prior notice. Always verify live rules, appointment availability, and fee schedules on official government portals before finalizing travel plans or submitting applications.</span>
                 </div>
                 <div class="pt-4 border-t border-slate-200 flex justify-end">
                     <button onclick="closeModal()" class="bg-slate-900 hover:bg-slate-800 text-white font-semibold px-6 py-3 rounded-xl text-sm transition">Close Guide</button>
@@ -666,24 +686,12 @@
                     "US / NY Fee: $60 USD"
                 ],
                 steps: [
-                    {
-                        title: "Prepare Civil Records & IDs",
-                        body: 'Order your official birth certificate via <a href="https://www.psaserbilis.com.ph/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline font-semibold">PSA Serbilis</a> or <a href="https://psahelpline.ph/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline font-semibold">PSAHelpline.ph</a>. Prepare 1 valid primary government ID (e.g., PhilID, Driver\'s License, UMID, SSS). Make sure your first name, surname, and birth date match identically across all documents before booking.'
-                    },
-                    {
-                        title: "Book Official Appointment & Pay",
-                        body: 'Book exclusively on the official <a href="https://www.passport.gov.ph/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline font-semibold">DFA Passport Appointment System</a> (in the Philippines) or your designated consular portal abroad. Complete payment through authorized channels. Appointment slots are completely free; fees strictly cover passport processing and booklet production and are non-refundable.'
-                    },
-                    {
-                        title: "Personal Appearance & Biometrics",
-                        body: 'Arrive 15–30 minutes early with your printed appointment packet (on A4 paper), original documents, and photocopies. Wear collared/modest attire (no colored contact lenses, facial piercings, or heavy jewelry) for live digital photo capture and fingerprint enrollment.'
-                    },
-                    {
-                        title: "Encoder Check & Claiming",
-                        body: 'Review the encoder’s screen letter-by-letter before confirming. Track your delivery or pickup status online. Never book non-refundable flights until the physical passport booklet is safely in your hands.'
-                    }
+                    "<strong>Prepare Civil Records & IDs:</strong> Order your official birth certificate via <a href=\"https://www.psaserbilis.com.ph/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 underline font-semibold\">PSA Serbilis</a> or <a href=\"https://psahelpline.ph/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 underline font-semibold\">PSAHelpline.ph</a>. Prepare 1 valid primary government ID (e.g., PhilID, Driver's License, UMID, SSS). Make sure your first name, surname, and birth date match identically across all documents before booking.",
+                    "<strong>Book Official Appointment & Pay:</strong> Book exclusively on the official <a href=\"https://www.passport.gov.ph/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-blue-600 underline font-semibold\">DFA Passport Appointment System</a> (in the Philippines) or your designated consular portal abroad. Complete payment through authorized channels. Appointment slots are completely free; fees strictly cover passport processing and booklet production and are non-refundable.",
+                    "<strong>Personal Appearance & Biometrics:</strong> Arrive 15–30 minutes early with your printed appointment packet (on A4 paper), original documents, and photocopies. Wear collared/modest attire (no colored contact lenses, facial piercings, or heavy jewelry) for live digital photo capture and fingerprint enrollment.",
+                    "<strong>Encoder Check & Claiming:</strong> Review the encoder’s screen letter-by-letter before confirming. Track your delivery or pickup status online. Never book non-refundable flights until the physical passport booklet is safely in your hands."
                 ],
-                tip: "Wag na wag magpapaloko sa Facebook appointment fixers! Walang VIP express slots—libre ang official appointment system. Kung kailangan mo ng slot, mag-check sa <a href='https://www.passport.gov.ph/' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>DFA Passport Portal</a> tuwing madaling araw o off-peak hours. At laging i-double check na tugma ang spelling ng pangalan mo sa PSA at ID bago magbayad!",
+                tip: "Wag na wag magpapaloko sa Facebook appointment fixers! Walang VIP express slots—libre ang official appointment system. Kung kailangan mo ng slot, mag-check sa <a href=\"https://www.passport.gov.ph/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-amber-900 underline font-bold\">DFA Passport Portal</a> tuwing madaling araw o off-peak hours. At laging i-double check na tugma ang spelling ng pangalan mo sa PSA at ID bago magbayad!",
                 categories: [
                     {
                         name: "1. First-Time Adult",
@@ -696,18 +704,6 @@
                                 <li>1 Accepted Primary Government ID + 1 clear photocopy</li>
                                 <li>For married women adopting husband’s surname: Original PSA Marriage Certificate or Report of Marriage + 1 photocopy</li>
                             </ul>
-
-                            <div class='bg-blue-50/80 border border-blue-200 rounded-2xl p-4 mb-4'>
-                                <h5 class='font-bold text-blue-900 text-sm mb-1.5 flex items-center'>
-                                    <i class='fa-solid fa-file-invoice text-blue-600 mr-2'></i> How to Handle Your Appointment Packet & Form:
-                                </h5>
-                                <ul class='list-disc pl-5 space-y-1.5 text-xs sm:text-sm text-slate-700'>
-                                    <li>When you book online, DFA emails your Confirmed Appointment Packet PDF (includes checklist, barcoded application form, and 2 e-Receipt copies).</li>
-                                    <li><strong>Important: DO NOT sign or thumbmark the form at home!</strong> You must sign it in front of the DFA processing officer during your appointment.</li>
-                                    <li><strong>Paper requirement:</strong> Must be printed single-sided on clean A4 bond paper with clear, unsmudged barcodes.</li>
-                                </ul>
-                            </div>
-
                             <h5 class='font-bold text-slate-800 mt-4 mb-2'>Accepted Primary IDs:</h5>
                             <ul class='list-disc pl-5 space-y-1.5 text-slate-700 mb-4'>
                                 <li><strong>PhilID / ePhilID / Digital National ID:</strong> Must be printed and verified live via <a href='https://national-id.gov.ph' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>National ID Portal</a> or <a href='https://www.gov.ph/' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>eGovPH App</a></li>
@@ -717,6 +713,14 @@
                                 <li><strong>Students:</strong> Valid School ID + Certificate of Registration (COR)</li>
                                 <li><span class='text-red-600 font-bold'>⚠️ Not Accepted as Primary IDs:</span> Company ID, Barangay Clearance, Police Clearance, PhilHealth ID, Postal ID, or NBI Clearance alone.</li>
                             </ul>
+                            <div class='bg-blue-50/80 border border-blue-200 rounded-2xl p-4 mt-4'>
+                                <h5 class='font-bold text-blue-950 text-sm mb-2 flex items-center'><i class='fa-solid fa-file-pdf text-blue-600 mr-2'></i> How to Handle Your Appointment Packet & Form</h5>
+                                <ul class='list-disc pl-5 space-y-1.5 text-xs sm:text-sm text-slate-700'>
+                                    <li>When you book online, DFA emails your Confirmed Appointment Packet PDF (includes checklist, barcoded application form, and 2 e-Receipt copies).</li>
+                                    <li><strong>Important:</strong> DO NOT sign or thumbmark the form at home! You must sign it in front of the DFA processing officer during your appointment.</li>
+                                    <li><strong>Paper requirement:</strong> Must be printed single-sided on clean A4 bond paper with clear, unsmudged barcodes.</li>
+                                </ul>
+                            </div>
                         `
                     },
                     {
@@ -731,14 +735,11 @@
                                 <li><strong>Strict Payment Window:</strong> Pay within the reference deadline using authorized payment channels. Appointments are strictly non-refundable, non-transferable, and non-reusable if you miss your schedule.</li>
                                 <li><strong>Courtesy Lane (No Online Slot Needed in PH):</strong> Available for seniors (60+), PWDs, pregnant women, solo parents, OFWs, and children 7 years old and below (with immediate parents).</li>
                             </ol>
-
-                            <div class='bg-blue-50/80 border border-blue-200 rounded-2xl p-4 mb-4'>
-                                <h5 class='font-bold text-blue-900 text-sm mb-1.5 flex items-center'>
-                                    <i class='fa-solid fa-file-invoice text-blue-600 mr-2'></i> How to Handle Your Appointment Packet & Form:
-                                </h5>
+                            <div class='bg-blue-50/80 border border-blue-200 rounded-2xl p-4 mt-4'>
+                                <h5 class='font-bold text-blue-950 text-sm mb-2 flex items-center'><i class='fa-solid fa-file-pdf text-blue-600 mr-2'></i> How to Handle Your Appointment Packet & Form</h5>
                                 <ul class='list-disc pl-5 space-y-1.5 text-xs sm:text-sm text-slate-700'>
                                     <li>When you book online, DFA emails your Confirmed Appointment Packet PDF (includes checklist, barcoded application form, and 2 e-Receipt copies).</li>
-                                    <li><strong>Important: DO NOT sign or thumbmark the form at home!</strong> You must sign it in front of the DFA processing officer during your appointment.</li>
+                                    <li><strong>Important:</strong> DO NOT sign or thumbmark the form at home! You must sign it in front of the DFA processing officer during your appointment.</li>
                                     <li><strong>Paper requirement:</strong> Must be printed single-sided on clean A4 bond paper with clear, unsmudged barcodes.</li>
                                 </ul>
                             </div>
@@ -778,7 +779,7 @@
                     },
                     {
                         name: "5. Minors (Below 18)",
-                        tip: "Iba ang passport application sa DSWD Travel Clearance! Ang passport ay identity document lang. Kung bibiyahe ang bata abroad nang walang kasamang magulang (halimbawa, kasama si lola o tita), kailangan kumuha ng hiwalay na <a href='https://www.dswd.gov.ph/' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>DSWD Minors Traveling Abroad Clearance</a> bago ang flight.",
+                        tip: "Iba ang passport application sa DSWD Travel Clearance! Ang passport ay identity document lang. Kung bibiyahe ang bata abroad nang walang kasamang magulang (halimbawa, kasama si lola o tita), kailangan kumuha ng hiwalay na <a href='https://www.dswd.gov.ph/' target='_blank' rel='noopener noreferrer' class='text-amber-900 underline font-bold'>DSWD Minors Traveling Abroad Clearance</a> bago ang flight.",
                         content: `
                             <h4 class='text-lg font-bold text-slate-900 mb-2'>Minor Applications & Legal Accompaniment</h4>
                             <p class='text-slate-700 mb-2'><strong>Key Rule:</strong> All minors (including newborn babies) require personal appearance and a confirmed appointment. Passports for minors are valid for 5 years only.</p>
@@ -812,12 +813,12 @@
                     },
                     {
                         name: "7. Abroad & New York",
-                        tip: "Kung sa <a href='https://newyorkpcg.org/pcgny/' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>PCG New York</a> ka mag-aapply, dumaan muna sa US Post Office bago pumunta sa Fifth Avenue! Bilhin ang USPS Priority Mail Flat Rate envelope na may tracking number at postage stamp. Hindi nagbebenta ng stamp o sobre sa loob ng konsulado.",
+                        tip: "Kung sa <a href='https://newyorkpcg.org/pcgny/' target='_blank' rel='noopener noreferrer' class='text-amber-900 underline font-bold'>PCG New York</a> ka mag-aapply, dumaan muna sa US Post Office bago pumunta sa Fifth Avenue! Bilhin ang USPS Priority Mail Flat Rate envelope na may tracking number at postage stamp. Hindi nagbebenta ng stamp o sobre sa loob ng konsulado.",
                         content: `
                             <h4 class='text-lg font-bold text-slate-900 mb-2'>Overseas Processing & PCG New York Procedures</h4>
                             <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
                                 <li><strong>Consulate Location:</strong> Philippine Consulate General in New York at <strong>556 Fifth Avenue, New York, NY 10036</strong>.</li>
-                                <li><strong>Appointment Booking:</strong> Book via the official <a href='https://newyorkpcg.org/pcgny/' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>PCG New York Online Appointment Portal</a>. Arrive 5 to 15 minutes before your scheduled slot.</li>
+                                <li><strong>Appointment Booking:</strong> Book via the official <a href='https://newyorkpcg.org/' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>PCG New York Online Appointment Portal</a>. Arrive 5 to 15 minutes before your scheduled slot.</li>
                                 <li><strong>Proof of Philippine Citizenship (Mandatory for Overseas):</strong>
                                     <ul class='list-disc pl-5 mt-1 space-y-1'>
                                         <li>Valid Philippine passport</li>
@@ -836,14 +837,16 @@
                         tip: "Tandaan ang 6-Month Passport Validity Rule ng mga airline at immigration! Karamihan sa mga bansa ay hindi magpapasakay kung less than 6 months na lang ang natitira sa passport mo. Mag-renew na agad kapag 8 hanggang 10 months na lang ang validity.",
                         content: `
                             <h4 class='text-lg font-bold text-slate-900 mb-2'>Costs, Planning Timeline & Validity</h4>
-                            <table class='w-full border-collapse border border-slate-300 text-sm mb-4'>
-                                <tr class='bg-slate-100'><th class='border border-slate-300 p-2 text-left'>Application Location / Type</th><th class='border border-slate-300 p-2 text-left'>Official Fee</th><th class='border border-slate-300 p-2 text-left'>Processing Estimate</th></tr>
-                                <tr><td class='border border-slate-300 p-2'>Philippines — Regular</td><td class='border border-slate-300 p-2'>₱950</td><td class='border border-slate-300 p-2'>10–12 working days</td></tr>
-                                <tr><td class='border border-slate-300 p-2'>Philippines — Expedited</td><td class='border border-slate-300 p-2'>₱1,200</td><td class='border border-slate-300 p-2'>5–7 working days</td></tr>
-                                <tr><td class='border border-slate-300 p-2'>Lost Valid Passport Penalty Fee</td><td class='border border-slate-300 p-2'>+₱350</td><td class='border border-slate-300 p-2'>+15 days verification</td></tr>
-                                <tr><td class='border border-slate-300 p-2'>PCG New York / US Consulates</td><td class='border border-slate-300 p-2'>$60 USD</td><td class='border border-slate-300 p-2'>4–6 weeks</td></tr>
-                                <tr><td class='border border-slate-300 p-2'>Lost Valid Passport Fee (Overseas)</td><td class='border border-slate-300 p-2'>~$150 USD</td><td class='border border-slate-300 p-2'>Case-by-case clearance</td></tr>
-                            </table>
+                            <div class='w-full overflow-x-auto mb-4 rounded-xl border border-slate-300'>
+                                <table class='w-full min-w-[460px] border-collapse text-xs sm:text-sm'>
+                                    <tr class='bg-slate-100'><th class='border-b border-r border-slate-300 p-2.5 text-left'>Application Location / Type</th><th class='border-b border-r border-slate-300 p-2.5 text-left'>Official Fee</th><th class='border-b border-slate-300 p-2.5 text-left'>Processing Estimate</th></tr>
+                                    <tr><td class='border-b border-r border-slate-300 p-2.5'>Philippines — Regular</td><td class='border-b border-r border-slate-300 p-2.5 font-semibold'>₱950</td><td class='border-b border-slate-300 p-2.5'>10–12 working days</td></tr>
+                                    <tr><td class='border-b border-r border-slate-300 p-2.5'>Philippines — Expedited</td><td class='border-b border-r border-slate-300 p-2.5 font-semibold'>₱1,200</td><td class='border-b border-slate-300 p-2.5'>5–7 working days</td></tr>
+                                    <tr><td class='border-b border-r border-slate-300 p-2.5'>Lost Valid Passport Penalty Fee</td><td class='border-b border-r border-slate-300 p-2.5 font-semibold'>+₱350</td><td class='border-b border-slate-300 p-2.5'>+15 days verification</td></tr>
+                                    <tr><td class='border-b border-r border-slate-300 p-2.5'>PCG New York / US Consulates</td><td class='border-b border-r border-slate-300 p-2.5 font-semibold'>$60 USD</td><td class='border-b border-slate-300 p-2.5'>4–6 weeks</td></tr>
+                                    <tr><td class='border-r border-slate-300 p-2.5'>Lost Valid Passport Fee (Overseas)</td><td class='border-r border-slate-300 p-2.5 font-semibold'>~$150 USD</td><td class='p-2.5'>Case-by-case clearance</td></tr>
+                                </table>
+                            </div>
                             <h5 class='font-bold text-slate-800 mt-4 mb-1'>Passport Validity Period:</h5>
                             <ul class='list-disc pl-5 space-y-1 text-slate-700 mb-4'>
                                 <li><strong>10 Years:</strong> For all Filipino citizens aged 18 and older at the time of issuance.</li>
@@ -861,28 +864,15 @@
                 image: "https://images.unsplash.com/photo-1508248467877-aec1b08de376?auto=format&fit=crop&w=800&q=80",
                 shortDesc: "Easy checklist for traveling visa-free to Singapore, Thailand, Malaysia, Vietnam, and Hong Kong.",
                 steps: [
-                    {
-                        title: "Passport Expiry Check",
-                        body: "Ensure your passport is valid for at least 6 months before your departure date."
-                    },
-                    {
-                        title: "Onward & Return Travel",
-                        body: "Have confirmed return or onward flight tickets ready for immigration inspection."
-                    },
-                    {
-                        title: "Accommodation Proof",
-                        body: "Print your hotel bookings, Airbnb reservations, or host invitation letters."
-                    },
-                    {
-                        title: "Employment Ties",
-                        body: "Bring your company ID, Certificate of Employment (COE), or approved leave form for smooth NAIA clearance."
-                    }
+                    "<strong>1. Passport Expiry Check:</strong> Ensure your passport is valid for at least 6 months before your departure date.",
+                    "<strong>2. Onward & Return Travel:</strong> Have confirmed return or onward flight tickets ready for immigration inspection.",
+                    "<strong>3. Accommodation Proof:</strong> Print your hotel bookings, Airbnb reservations, or host invitation letters.",
+                    "<strong>4. Employment Ties:</strong> Bring your company ID, Certificate of Employment (COE), or approved leave form for smooth NAIA clearance."
                 ],
                 tip: "Visa-free entry is a privilege, not a guarantee! Always bring your printed return tickets, hotel bookings, and company ID so NAIA immigration officers can clear you smoothly.",
                 categories: [
                     {
                         name: "1. Core Requirements",
-                        tip: "Laging ihanda ang digital at printed copy ng flight at hotel bookings bago pumila sa immigration counter.",
                         content: `
                             <h4 class='text-lg font-bold text-slate-900 mb-2'>Essential Documents for ASEAN Travel</h4>
                             <p class='text-slate-700 mb-3'>Filipino passport holders enjoy visa-free entry to major ASEAN destinations like Singapore (30 days), Thailand (60 days), Malaysia (30 days), and Vietnam (21 days).</p>
@@ -896,7 +886,6 @@
                     },
                     {
                         name: "2. Bureau of Immigration Tips",
-                        tip: "Huwag magdala ng pekeng dokumento o mag-over-explain sa IO. Sagutin lang ng diretso at kalmado ang mga tanong.",
                         content: `
                             <h4 class='text-lg font-bold text-slate-900 mb-2'>Passing NAIA Immigration with Confidence</h4>
                             <p class='text-slate-700 mb-3'>Philippine Bureau of Immigration officers inspect outbound passengers closely to combat human trafficking. Be prepared and confident.</p>
@@ -917,35 +906,22 @@
                 image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
                 shortDesc: "Simple steps for Philippine passport holders visiting Taiwan visa-free for up to 14 days.",
                 steps: [
-                    {
-                        title: "Passport Check",
-                        body: "Ensure your passport is valid for at least 6 months upon arrival."
-                    },
-                    {
-                        title: "Return Air Ticket",
-                        body: "Hold a confirmed return flight booking."
-                    },
-                    {
-                        title: "Online Arrival Card",
-                        body: 'Fill out the online ROC Travel Authorization Certificate prior to flying via the <a href="https://niaspeedy.immigration.gov.tw/nia_online/app/index.action" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline font-semibold">National Immigration Agency Portal</a>.'
-                    },
-                    {
-                        title: "Hotel & Funds",
-                        body: "Have your hotel booking details and travel money ready."
-                    }
+                    "<strong>1. Passport Check:</strong> Ensure your passport is valid for at least 6 months upon arrival.",
+                    "<strong>2. Return Air Ticket:</strong> Hold a confirmed return flight booking.",
+                    "<strong>3. Online Arrival Card:</strong> Fill out the online ROC Travel Authorization Certificate prior to flying via the <a href='https://niaspeedy.immigration.gov.tw/nia_online/app/index.action' target='_blank' class='text-blue-600 underline font-semibold'>National Immigration Agency Portal</a>.",
+                    "<strong>4. Hotel & Funds:</strong> Have your hotel booking details and travel money ready."
                 ],
                 tip: "Fill out your Taiwan online arrival card a day before your flight so you breeze right through customs!",
                 categories: [
                     {
                         name: "1. Entry Conditions",
-                        tip: "I-fill up ang arrival card online bago lumipad para deretso na sa automated customs inspection paglapag sa Taoyuan.",
                         content: `
                             <h4 class='text-lg font-bold text-slate-900 mb-2'>Taiwan Visa-Free Program Guidelines</h4>
                             <p class='text-slate-700 mb-3'>Philippine passport holders can enter Taiwan visa-free for up to 14 days under specific tourism promotion schemes.</p>
                             <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
                                 <li>Passport must have at least 6 months validity.</li>
                                 <li>Must hold confirmed return or onward air tickets.</li>
-                                <li>Must complete the <a href='https://niaspeedy.immigration.gov.tw/nia_online/app/index.action' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>ROC Travel Authorization Certificate</a> online prior to departure.</li>
+                                <li>Must complete the <a href='https://niaspeedy.immigration.gov.tw/nia_online/app/index.action' target='_blank' class='text-blue-600 underline font-semibold'>ROC Travel Authorization Certificate</a> online prior to departure.</li>
                             </ul>
                         `
                     }
@@ -959,24 +935,14 @@
                 image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=800&q=80",
                 shortDesc: "Explore South America! How PH passport holders can visit Brazil and Colombia visa-free as tourists.",
                 steps: [
-                    {
-                        title: "Review Layover Routes",
-                        body: "Make sure your transit airports in the US, Europe, or Canada do not require separate transit visas."
-                    },
-                    {
-                        title: "Passport Cleanliness",
-                        body: "Ensure your passport has clean pages for entry stamps and 6+ months validity."
-                    },
-                    {
-                        title: "Travel Itinerary",
-                        body: "Bring roundtrip flight itineraries, hotel bookings, and proof of financial capacity."
-                    }
+                    "<strong>1. Review Layover Routes:</strong> Make sure your transit airports in the US, Europe, or Canada do not require separate transit visas.",
+                    "<strong>2. Passport Cleanliness:</strong> Ensure your passport has clean pages for entry stamps and 6+ months validity.",
+                    "<strong>3. Travel Itinerary:</strong> Bring roundtrip flight itineraries, hotel bookings, and proof of financial capacity."
                 ],
                 tip: "Always double-check where your plane is stopping for layovers. Some countries require a transit visa even if you never leave the airport!",
                 categories: [
                     {
                         name: "1. Visa-Free Entry",
-                        tip: "Karamihan sa mura flight pa-South America ay may stopover sa US. Siguraduhing may US Transit o B1/B2 Visa ka kung dadaan doon!",
                         content: `
                             <h4 class='text-lg font-bold text-slate-900 mb-2'>Visiting Brazil and Colombia</h4>
                             <p class='text-slate-700 mb-3'>Filipino tourists enjoy visa-free entry to Brazil and Colombia for up to 90 days.</p>
@@ -996,32 +962,21 @@
                 image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80",
                 shortDesc: "A friendly breakdown of filling out the DS-160, paying fees, and preparing for your interview in Manila.",
                 steps: [
-                    {
-                        title: "Complete DS-160 Online",
-                        body: 'Fill out the <a href="https://ceac.state.gov/ceac/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline font-semibold">DS-160 Application Form</a> carefully—this is the core document reviewed by the consular officer.'
-                    },
-                    {
-                        title: "Pay MRV Fee",
-                        body: 'Create an account on the official <a href="https://www.ustraveldocs.com/ph/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline font-semibold">US Travel Docs Portal</a> and pay the non-refundable MRV fee.'
-                    },
-                    {
-                        title: "Book & Attend Interview",
-                        body: 'Schedule and attend your interview at the <a href="https://ph.usembassy.gov/visas/" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline font-semibold">U.S. Embassy in Manila</a> with honesty and strong ties to the Philippines.'
-                    }
+                    "<strong>1. Complete DS-160 Online:</strong> Fill out the <a href='https://ceac.state.gov/ceac/' target='_blank' class='text-blue-600 underline font-semibold'>DS-160 Application Form</a> carefully—this is the core document reviewed by the consular officer.",
+                    "<strong>2. Pay MRV Fee:</strong> Create an account on the official <a href='https://www.ustraveldocs.com/ph/' target='_blank' class='text-blue-600 underline font-semibold'>US Travel Docs Portal</a> and pay the non-refundable MRV fee.",
+                    "<strong>3. Book & Attend Interview:</strong> Schedule and attend your interview at the <a href='https://ph.usembassy.gov/visas/' target='_blank' class='text-blue-600 underline font-semibold'>U.S. Embassy in Manila</a> with honesty and strong ties to the Philippines."
                 ],
                 tip: "Consuls rarely look at heavy folders of documents. They judge your application primarily on your DS-160 and your strong ties to the Philippines. Be calm and confident!",
                 categories: [
                     {
                         name: "1. DS-160 Walkthrough",
-                        tip: "I-double check ang lahat ng entries sa DS-160 bago mag-submit. Kapag may mali, kailangang gumawa ng bagong form at i-link muli sa appointment.",
                         content: `
                             <h4 class='text-lg font-bold text-slate-900 mb-2'>Mastering Form DS-160</h4>
-                            <p class='text-slate-700 mb-3'>Every answer on your <a href='https://ceac.state.gov/ceac/' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>DS-160 form</a> must be truthful and accurate. Save your application ID and security answers.</p>
+                            <p class='text-slate-700 mb-3'>Every answer on your <a href='https://ceac.state.gov/ceac/' target='_blank' class='text-blue-600 underline font-semibold'>DS-160 form</a> must be truthful and accurate. Save your application ID and security answers.</p>
                         `
                     },
                     {
                         name: "2. Interview Tips",
-                        tip: "Maging tapat, kalmado, at magsalita nang may kumpiyansa. Huwag magbigay ng dokumento kung hindi tahasang hinihingi ng konsul.",
                         content: `
                             <h4 class='text-lg font-bold text-slate-900 mb-2'>Consular Interview at U.S. Embassy Manila</h4>
                             <p class='text-slate-700 mb-3'>Demonstrate strong economic, family, and social ties showing you will return to the Philippines after your temporary visit.</p>
@@ -1037,27 +992,17 @@
                 image: "https://images.unsplash.com/photo-1508433957232-3107f5fd5995?auto=format&fit=crop&w=800&q=80",
                 shortDesc: "Exploring legitimate legal pathways to U.S. permanent residency: family sponsorship and employment petitions.",
                 steps: [
-                    {
-                        title: "Understand Categories",
-                        body: "Learn the difference between family-based petitions (I-130) and employment-based visas (EB-2/EB-3)."
-                    },
-                    {
-                        title: "USCIS Guidance",
-                        body: 'Review official instructions directly on the <a href="https://www.uscis.gov" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline font-semibold">USCIS Official Portal</a>.'
-                    },
-                    {
-                        title: "Avoid Fraud",
-                        body: "Beware of unauthorized agents or agencies promising guaranteed green cards."
-                    }
+                    "<strong>1. Understand Categories:</strong> Learn the difference between family-based petitions (I-130) and employment-based visas (EB-2/EB-3).",
+                    "<strong>2. USCIS Guidance:</strong> Review official instructions directly on the <a href='https://www.uscis.gov' target='_blank' class='text-blue-600 underline font-semibold'>USCIS Official Portal</a>.",
+                    "<strong>3. Avoid Fraud:</strong> Beware of unauthorized agents or agencies promising guaranteed green cards."
                 ],
                 tip: "Take your time and always verify legal procedures through official government portals like USCIS. Never trust anyone promising guaranteed visas!",
                 categories: [
                     {
                         name: "1. Legal Pathways",
-                        tip: "Walang shortcut sa U.S. immigration! Magtiwala lamang sa mga lisensyadong immigration attorney o accredited representatives ng DOJ/EOIR.",
                         content: `
                             <h4 class='text-lg font-bold text-slate-900 mb-2'>Immigration Options to the United States</h4>
-                            <p class='text-slate-700 mb-3'>Permanent residency (Green Card) typically requires a qualified petitioner—either an immediate family member or an employer sponsor through <a href='https://www.uscis.gov' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>USCIS</a>.</p>
+                            <p class='text-slate-700 mb-3'>Permanent residency (Green Card) typically requires a qualified petitioner—either an immediate family member or an employer sponsor through <a href='https://www.uscis.gov' target='_blank' class='text-blue-600 underline font-semibold'>USCIS</a>.</p>
                         `
                     }
                 ]
@@ -1103,34 +1048,26 @@
             document.getElementById('modalDesc').innerText = g.shortDesc;
             document.getElementById('modalTip').innerHTML = g.tip;
 
-            // Render Quick Badges/Pills if present
-            const badgesContainer = document.getElementById('modalBadgesContainer');
+            const badgesContainer = document.getElementById('modalBadges');
             if (g.quickBadges && g.quickBadges.length > 0) {
-                badgesContainer.innerHTML = g.quickBadges.map(b => `
-                    <span class="bg-blue-50 border border-blue-200 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">
-                        ${b}
+                badgesContainer.innerHTML = g.quickBadges.map(badge => `
+                    <span class="bg-blue-50 text-blue-800 border border-blue-200 text-xs font-bold px-3 py-1.5 rounded-full shadow-xs">
+                        ${badge}
                     </span>
                 `).join('');
                 badgesContainer.classList.remove('hidden');
+                badgesContainer.classList.add('flex');
             } else {
-                badgesContainer.innerHTML = '';
                 badgesContainer.classList.add('hidden');
+                badgesContainer.classList.remove('flex');
             }
             
-            // Render Step Cards without duplicate numbering
-            document.getElementById('modalSteps').innerHTML = g.steps.map((step, idx) => {
-                const title = typeof step === 'object' ? step.title : `Step ${idx + 1}`;
-                const body = typeof step === 'object' ? step.body : step;
-                return `
-                    <div class="flex items-start space-x-3 pb-3 border-b border-slate-200/60 last:border-0 last:pb-0">
-                        <div class="bg-blue-600 text-white font-bold text-xs w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5">${idx + 1}</div>
-                        <div class="flex-grow text-sm leading-relaxed">
-                            <strong class="text-slate-900 block mb-0.5">${title}</strong>
-                            <span>${body}</span>
-                        </div>
-                    </div>
-                `;
-            }).join('');
+            document.getElementById('modalSteps').innerHTML = g.steps.map((step, idx) => `
+                <div class="flex items-start space-x-3 pb-3 border-b border-slate-200/60 last:border-0 last:pb-0">
+                    <div class="bg-blue-600 text-white font-bold text-xs w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5">${idx + 1}</div>
+                    <div class="flex-grow text-sm leading-relaxed">${step}</div>
+                </div>
+            `).join('');
 
             const modal = document.getElementById('guideModal');
             modal.classList.remove('hidden');
@@ -1236,38 +1173,31 @@
             document.getElementById('fullPageBadge').innerText = g.badge;
             document.getElementById('fullPageTitle').innerText = g.title;
             document.getElementById('fullPageUpdated').innerText = 'Last Updated: ' + g.lastUpdated;
+            document.getElementById('fullPageTip').innerHTML = (g.categories && g.categories[0] && g.categories[0].tip) ? g.categories[0].tip : g.tip;
             
             if (g.categories && g.categories.length > 0) {
-                // Initialize first category's dynamic tip
-                document.getElementById('fullPageTip').innerHTML = g.categories[0].tip || g.tip;
-
                 document.getElementById('fullPageSteps').innerHTML = `
-                    <div class="mb-6 flex flex-nowrap overflow-x-auto no-scrollbar gap-2 border-b border-slate-200 pb-3" style="-webkit-overflow-scrolling: touch;">
+                    <div class="text-[11px] font-semibold text-slate-400 mb-1.5 sm:hidden flex items-center">
+                        <i class="fa-solid fa-arrows-left-right mr-1.5 text-blue-500"></i> Swipe tabs left or right to view all 8 sections
+                    </div>
+                    <div class="mb-4 sm:mb-6 guide-tabs-scroll border-b border-slate-200">
                         ${g.categories.map((cat, idx) => `
-                            <button onclick="switchGuideCategory(${index}, ${idx})" id="catBtn-${idx}" class="whitespace-nowrap px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex-shrink-0 ${idx === 0 ? 'bg-blue-600 text-white shadow-md' : 'bg-slate-100 hover:bg-slate-200 text-slate-700'}">
+                            <button onclick="switchGuideCategory(${index}, ${idx})" id="catBtn-${idx}" class="flex-shrink-0 whitespace-nowrap px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition ${idx === 0 ? 'bg-blue-600 text-white shadow-md' : 'bg-white sm:bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 sm:border-0'}">
                                 ${cat.name}
                             </button>
                         `).join('')}
                     </div>
-                    <div id="guideCategoryContent" class="bg-slate-50 p-6 rounded-2xl border border-slate-200 text-slate-800">
+                    <div id="guideCategoryContent" class="bg-white sm:bg-slate-50 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-slate-200 text-slate-800 text-xs sm:text-sm leading-relaxed break-words overflow-hidden">
                         ${g.categories[0].content}
                     </div>
                 `;
             } else {
-                document.getElementById('fullPageTip').innerHTML = g.tip;
-                document.getElementById('fullPageSteps').innerHTML = g.steps.map((step, idx) => {
-                    const title = typeof step === 'object' ? step.title : `Step ${idx + 1}`;
-                    const body = typeof step === 'object' ? step.body : step;
-                    return `
-                        <div class="flex items-start space-x-3 pb-3 border-b border-slate-200/60 last:border-0 last:pb-0">
-                            <div class="bg-blue-600 text-white font-bold text-xs w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5">${idx + 1}</div>
-                            <div class="flex-grow text-sm sm:text-base leading-relaxed">
-                                <strong class="text-slate-900 block mb-0.5">${title}</strong>
-                                <span>${body}</span>
-                            </div>
-                        </div>
-                    `;
-                }).join('');
+                document.getElementById('fullPageSteps').innerHTML = g.steps.map((step, idx) => `
+                    <div class="flex items-start space-x-3 pb-3 border-b border-slate-200/60 last:border-0 last:pb-0">
+                        <div class="bg-blue-600 text-white font-bold text-xs w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5">${idx + 1}</div>
+                        <div class="flex-grow text-sm sm:text-base leading-relaxed">${step}</div>
+                    </div>
+                `).join('');
             }
 
             document.getElementById('categories').classList.add('hidden');
@@ -1290,17 +1220,19 @@
         function switchGuideCategory(guideIndex, catIndex) {
             const cat = guides[guideIndex].categories[catIndex];
             document.getElementById('guideCategoryContent').innerHTML = cat.content;
-            
-            // Update Dynamic Tip per Category
-            document.getElementById('fullPageTip').innerHTML = cat.tip || guides[guideIndex].tip;
 
+            const tipEl = document.getElementById('fullPageTip');
+            if (tipEl) {
+                tipEl.innerHTML = cat.tip || guides[guideIndex].tip;
+            }
+            
             guides[guideIndex].categories.forEach((_, idx) => {
                 const btn = document.getElementById(`catBtn-${idx}`);
                 if (btn) {
                     if (idx === catIndex) {
-                        btn.className = "whitespace-nowrap px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex-shrink-0 bg-blue-600 text-white shadow-md";
+                        btn.className = "flex-shrink-0 whitespace-nowrap px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition bg-blue-600 text-white shadow-md";
                     } else {
-                        btn.className = "whitespace-nowrap px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex-shrink-0 bg-slate-100 hover:bg-slate-200 text-slate-700";
+                        btn.className = "flex-shrink-0 whitespace-nowrap px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition bg-white sm:bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 sm:border-0";
                     }
                 }
             });
