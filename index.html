@@ -399,29 +399,53 @@
                     <h4 class="text-lg font-bold text-slate-900 flex items-center">
                         <i class="fa-solid fa-paper-plane text-blue-600 mr-2"></i> Send a Question to Mamae
                     </h4>
-                    <form id="qaFormModal" onsubmit="handleFormSubmit(event)" class="space-y-3">
+                    <form id="qaFormModal" onsubmit="handleFormSubmit(event)" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
+                        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-3 text-amber-900 text-xs flex items-center space-x-2">
+                            <i class="fa-solid fa-mug-hot text-amber-600 text-lg"></i>
+                            <div>
+                                <span class="font-bold">Got travel questions or visa woes?</span> Ask Mamae or let’s marites! We keep secrets safe or share wisdom with the whole barrio.
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Your Name / Nickname</label>
+                                <input type="text" id="qaName" name="name" required placeholder="e.g. Marites from Manila" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Location / Where from?</label>
+                                <input type="text" id="qaLocation" name="location" required placeholder="e.g. Cavite / Dubai" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Your Name</label>
-                            <input type="text" id="qaName" required placeholder="e.g. Traveler from Bulacan" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Your Email <span id="emailReqLabel" class="text-slate-400 font-normal">(Optional for Public, Required for Private)</span></label>
+                            <input type="email" id="qaEmail" name="email" placeholder="your.email@example.com" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
                         </div>
+
                         <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Your Email (Private)</label>
-                            <input type="email" id="qaEmail" required placeholder="your.email@example.com" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Your Question / Chika</label>
+                            <textarea id="qaMessage" name="message" rows="3" required placeholder="Ano ba talaga status ng visa-free entry? Paano kung..." class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                         </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Question or Feedback</label>
-                            <textarea id="qaMessage" rows="3" required placeholder="Ask about DFA, visas, etc..." class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+
+                        <!-- Privacy Choice Selector -->
+                        <div class="space-y-2 pt-1">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600">Choose Your Vibe:</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                <label class="flex items-center p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 transition">
+                                    <input type="radio" name="privacy_mode" value="public" checked onclick="toggleEmailRequirement(false)" class="text-blue-600 focus:ring-blue-500 h-4 w-4">
+                                    <span class="ml-2.5 text-xs font-bold text-slate-800">🌍 Public Marites Board <span class="block font-normal text-slate-500 text-[11px]">Visible to all travelers as reference</span></span>
+                                </label>
+                                <label class="flex items-center p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:border-blue-400 transition">
+                                    <input type="radio" name="privacy_mode" value="private" onclick="toggleEmailRequirement(true)" class="text-blue-600 focus:ring-blue-500 h-4 w-4">
+                                    <span class="ml-2.5 text-xs font-bold text-slate-800">🔒 Secret Chika (Private) <span class="block font-normal text-slate-500 text-[11px]">Email required, sent to Mamae only</span></span>
+                                </label>
+                            </div>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <input type="checkbox" id="publicToggle" class="h-4 w-4 text-blue-600 rounded border-slate-300 cursor-pointer">
-                            <label for="publicToggle" class="text-xs text-slate-700 cursor-pointer">Make this question public on the board</label>
-                        </div>
+
                         <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl text-sm transition shadow-sm">
-                            Submit Question <i class="fa-solid fa-arrow-right ml-1"></i>
+                            Submit to Mamae <i class="fa-solid fa-paper-plane ml-1"></i>
                         </button>
-                        <p id="formSuccess" class="text-xs text-emerald-600 font-semibold text-center hidden">
-                            <i class="fa-solid fa-circle-check mr-1"></i> Message submitted successfully!
-                        </p>
                     </form>
                 </div>
                 <div class="space-y-4">
