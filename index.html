@@ -32,15 +32,15 @@
         .guide-tabs-scroll::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 9999px; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col overflow-x-hidden w-full">
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col overflow-x-hidden w-full pt-safe">
 
     <!-- Pinned Top Container (Disclaimer + Navigation Bar locked together) -->
     <div class="sticky top-0 z-50 shadow-sm w-full bg-white">
         <!-- Top Disclaimer Banner -->
-        <div class="bg-amber-50 border-b border-amber-200 text-amber-900 px-4 py-2 text-xs sm:text-sm text-center font-medium">
-            <i class="fa-solid fa-triangle-exclamation mr-1.5 text-amber-600"></i>
-            <strong>Disclaimer:</strong> Mamae Knows Borders is an independent informational guide created by a fellow Filipino traveler and former OFW. We are based on real-world experience and are not affiliated with any embassy, the DFA, or DMW/POEA. Always verify requirements on official government websites.
-        </div>
+        <div class="bg-amber-50 border-b border-amber-200 text-amber-900 px-3 py-1.5 text-[11px] sm:text-xs text-center font-medium leading-tight">
+    <i class="fa-solid fa-triangle-exclamation mr-1 text-amber-600"></i>
+    <strong>Disclaimer:</strong> Mamae Knows Borders is an independent informational guide created by a fellow Filipino traveler and former OFW. Not affiliated with government websites.
+</div>
 
         <!-- Navigation Bar -->
         <header class="fixed top-0 left-0 right-0 z-40 bg-white border-b border-slate-200 shadow-sm">
@@ -115,14 +115,17 @@
             <p class="text-lg sm:text-xl text-slate-200 font-normal max-w-2xl mx-auto">
                 Real-world travel guides, simple step-by-step instructions, and community Q&A shared by a fellow traveler.
             </p>
-            <div class="pt-2 flex flex-wrap justify-center gap-4">
-                <button onclick="openDirectoryModal()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition">
-                    Explore Country Directory
-                </button>
-                <a href="#feedback" class="bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-3.5 rounded-xl backdrop-blur-sm transition border border-white/20">
-                    Ask Mamae a Question
-                </a>
-            </div>
+           <div class="pt-2 flex flex-col sm:flex-row justify-center gap-3">
+            <button onclick="openDirectoryModal()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition">
+                Explore Country Directory
+            </button>
+            <button onclick="openQAPage()" class="bg-teal-600 hover:bg-teal-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition flex items-center justify-center">
+                <i class="fa-solid fa-comments mr-2"></i> View Marites Board 🌍
+            </button>
+            <button onclick="openQAModal()" class="bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-3.5 rounded-xl backdrop-blur-sm transition border border-white/20 flex items-center justify-center">
+                <i class="fa-solid fa-paper-plane mr-2"></i> Ask Mamae
+            </button>
+        </div>
         </div>
     </section>
 
