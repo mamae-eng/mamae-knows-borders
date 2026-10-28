@@ -64,18 +64,17 @@
                     <button onclick="openDirectoryModal()" class="hover:text-blue-600 transition font-semibold text-blue-600 font-bold">Country Directory</button>
                     <button onclick="openAboutModal()" class="hover:text-blue-600 transition font-semibold">About Mamae</button>
                 </nav>
-
-               <!-- Action Buttons (Visible on Mobile & Desktop) -->
-    <div class="flex items-center space-x-2">
-        <!-- Live Travel Updates Button -->
-        <button onclick="openUpdatesModal()" class="inline-flex items-center bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200 font-bold px-3.5 py-1.5 rounded-lg shadow-xs">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block mr-1.5 animate-pulse"></span>
-            Travel Updates/ <span class="ml-1.5 bg-blue-600 text-white text-[10px] px-1.5 py-0.5 rounded-full font-extrabold">News</span>
-        </button>
-        <button onclick="openQAModal()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-3.5 py-1.5 rounded-lg shadow-sm text-xs transition">
-            Ask a Question
-        </button>
-    </div>
+<!-- Action Buttons (Hidden on mobile top bar, visible on desktop) -->
+<div class="hidden md:flex items-center space-x-2">
+    <!-- Live Travel Updates Button -->
+    <button onclick="openUpdatesModal()" class="inline-flex items-center bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200 font-bold px-3.5 py-1.5 rounded-lg shadow-xs">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block mr-1.5 animate-pulse"></span>
+        Travel Updates/ <span class="ml-1.5 bg-blue-600 text-white text-[10px] px-1.5 py-0.5 rounded-full font-extrabold">News</span>
+    </button>
+    <button onclick="openQAModal()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-3.5 py-1.5 rounded-lg shadow-sm text-xs transition">
+        Ask a Question
+    </button>
+</div>
                 </div>
 
                 <!-- Mobile Hamburger Button -->
@@ -85,22 +84,22 @@
             </div>
 
             <!-- Mobile Dropdown Menu -->
-            <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3 shadow-lg">
-                <a href="#categories" onclick="toggleMobileMenu(); closeCountryPage();" class="block text-sm font-semibold text-slate-700 hover:text-blue-600 py-1">Featured Guides</a>
-                <button onclick="toggleMobileMenu(); openChecklistsModal();" class="w-full text-left text-sm font-semibold text-slate-700 hover:text-blue-600 py-1">Essential Checklists</button>
-                <button onclick="toggleMobileMenu(); openDirectoryModal();" class="w-full text-left text-sm font-semibold text-slate-700 hover:text-blue-600 py-1">Country Directory</button>
-                <button onclick="toggleMobileMenu(); openAboutModal();" class="w-full text-left text-sm font-semibold text-slate-700 hover:text-blue-600 py-1">About Mamae</button>
-                <div class="pt-2 flex flex-col space-y-2">
-                    <button onclick="toggleMobileMenu(); openCoffeeModal();" class="w-full bg-amber-400 text-slate-900 font-bold py-1.5 rounded-lg text-xs flex items-center justify-center">
-                        <i class="fa-solid fa-mug-hot mr-1.5"></i> Buy Mamae a Coffee
-                    </button>
-                    <button onclick="toggleMobileMenu(); openQAModal();" class="w-full text-center bg-blue-600 text-white font-semibold py-1.5 rounded-lg text-xs">
-                        Ask a Question
-                    </button>
-                </div>
-            </div>
-        </header>
+<div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3 shadow-lg">
+    <a href="#categories" onclick="toggleMobileMenu(); closeCountryPage();" class="block text-sm font-semibold text-slate-700 hover:text-blue-600 py-1">Featured Guides</a>
+    <button onclick="toggleMobileMenu(); openChecklistsModal();" class="w-full text-left text-sm font-semibold text-slate-700 hover:text-blue-600 py-1">Essential Checklists</button>
+    <button onclick="toggleMobileMenu(); openDirectoryModal();" class="w-full text-left text-sm font-semibold text-slate-700 hover:text-blue-600 py-1">Country Directory</button>
+    <button onclick="toggleMobileMenu(); openAboutModal();" class="w-full text-left text-sm font-semibold text-slate-700 hover:text-blue-600 py-1">About Mamae</button>
+    
+    <!-- Travel Updates & Ask a Question moved inside the mobile menu -->
+    <div class="pt-2 border-t border-slate-100 flex flex-col space-y-2">
+        <button onclick="toggleMobileMenu(); openUpdatesModal();" class="w-full text-left flex items-center justify-between bg-blue-50 border border-blue-200 text-blue-800 font-bold px-3 py-2 rounded-lg text-xs">
+            <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-emerald-500 inline-block mr-2 animate-pulse"></span> Travel Updates & News</span>
+        </button>
+        <button onclick="toggleMobileMenu(); openQAModal();" class="w-full text-center bg-blue-600 text-white font-bold py-2 rounded-lg text-xs transition">
+            Ask a Question
+        </button>
     </div>
+</div>
 
     <!-- Hero Section -->
     <section class="relative bg-slate-900 text-white pt-28 pb-16 px-4 sm:px-8 ...">
