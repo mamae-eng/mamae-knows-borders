@@ -77,12 +77,12 @@
             </button>
         </div>
 
-        <!-- Mobile Dropdown Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3">
-            <a href="#categories" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">Featured Guides</a>
-            <a href="#processes" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">Essential Checklists</a>
-            <a href="#directory" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">Country Directory</a>
-            <a href="#about" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">About Mamae</a>
+                <!-- Mobile Dropdown Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-4 space-y-3 shadow-lg">
+            <a href="#categories" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slate-700 hover:text-blue-600 py-1">Featured Guides</a>
+            <a href="#processes" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slate-700 hover:text-blue-600 py-1">Essential Checklists</a>
+            <a href="#directory" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slate-700 hover:text-blue-600 py-1">Country Directory</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block text-sm font-semibold text-slate-700 hover:text-blue-600 py-1">About Mamae</a>
             <div class="pt-2 flex flex-col space-y-2">
                 <button onclick="toggleMobileMenu(); openCoffeeModal();" class="w-full bg-amber-400 text-slate-900 font-bold py-2.5 rounded-xl text-sm flex items-center justify-center">
                     <i class="fa-solid fa-mug-hot mr-1.5"></i> Buy Mamae a Coffee
@@ -1476,9 +1476,11 @@
             document.getElementById('coffeeModal').classList.add('hidden');
         }
 
-        function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
+                function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
         }
+
 
         function handleFormSubmit(event) {
             event.preventDefault();
