@@ -1821,6 +1821,108 @@
                 modal.classList.add('hidden');
             }
         }
+         // Load and render public questions from localStorage on startup
+        document.addEventListener('DOMContentLoaded', () => {
+            renderPublicQABoard();
+        });
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('qaName').value;
+            const email = document.getElementById('qaEmail').value;
+            const message = document.getElementById('qaMessage').value;
+            const isPublic = document.getElementById('publicToggle').checked;
+
+            if (isPublic) {
+                const newQuestion = {
+                    id: Date.now(),
+                    author: name,
+                    date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+                    question: message,
+                    answer: "Pending Mamae's verified response..."
+                };
+
+                let savedQuestions = JSON.parse(localStorage.getItem('mamae_qa_board') || '[]');
+                savedQuestions.unshift(newQuestion);
+                localStorage.setItem('mamae_qa_board', JSON.stringify(savedQuestions));
+                
+                renderPublicQABoard();
+            }
+
+            // Show success notice if available
+            const successEl = document.getElementById('formSuccess');
+            if (successEl) {
+                successEl.classList.remove('hidden');
+                setTimeout(() => successEl.classList.add('hidden'), 4000);
+            }
+            
+            // Reset form fields
+            const form = document.getElementById('qaFormModal');
+            if (form) form.reset();
+        }
+
+        function renderPublicQABoard() {
+            const container = document.getElementById('transparentQAList');
+            if (!container) return;
+
+            // Default sample question
+            const defaultQuestions = [
+                {
+                    author: "Mark, Cavite",
+                    date: "Recent",
+                    question: "Pano po pag walang makita na available slots sa DFA online appointment?",
+                    answer: "Hi Mark! DFA usually opens new batches of slots randomly or early in the morning. Never pay fixers on Facebook! Keep checking the official portal during off-peak hours."
+                }
+            ];
+
+            let userQuestions = JSON.parse(localStorage.getItem('mamae_qa_board') || '[]');
+            const allQuestions = [...userQuestions, ...defaultQuestions];
+
+            container.innerHTML = allQuestions.map(q => `
+                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-3">
+                    <div class="flex justify-between items-center text-xs text-slate-500">
+                        <span class="font-bold text-slate-800"><i class="fa-solid fa-user-circle text-blue-600 mr-1"></i> Asked by ${q.author}</span>
+                        <span>${q.date || 'Recent'}</span>
+                    </div>
+                    <p class="text-slate-900 font-medium text-sm sm:text-base">"${q.question}"</p>
+                    <div class="bg-blue-50/70 border border-blue-100 rounded-xl p-4 space-y-1">
+                        <div class="text-[11px] font-extrabold uppercase tracking-wider text-blue-700 flex items-center">
+                            <i class="fa-solid fa-mug-hot mr-1.5"></i> Mamae's Verified Answer:
+                        </div>
+                        <p class="text-slate-700 text-xs sm:text-sm leading-relaxed">${q.answer}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openQAPage() {
+            // Hide main homepage sections
+            const heroSection = document.querySelector('section.relative.bg-slate-900');
+            const categoriesSection = document.getElementById('categories');
+
+            if (heroSection) heroSection.classList.add('hidden');
+            if (categoriesSection) categoriesSection.classList.add('hidden');
+
+            // Show Q&A page view
+            const qaPage = document.getElementById('qaPageView');
+            if (qaPage) {
+                qaPage.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function closeQAPage() {
+            const qaPage = document.getElementById('qaPageView');
+            if (qaPage) qaPage.classList.add('hidden');
+
+            // Restore homepage sections
+            const heroSection = document.querySelector('section.relative.bg-slate-900');
+            const categoriesSection = document.getElementById('categories');
+            if (heroSection) heroSection.classList.remove('hidden');
+            if (categoriesSection) categoriesSection.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>
