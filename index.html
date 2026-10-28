@@ -35,11 +35,13 @@
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col overflow-x-hidden w-full pt-safe">
 
     <!-- Pinned Top Container (Disclaimer + Navigation Bar locked together) -->
-    <div class="sticky top-0 z-50 shadow-sm w-full bg-white">
-        <!-- Top Disclaimer Banner -->
-        <div class="bg-amber-50 border-b border-amber-200 text-amber-900 px-3 py-1.5 text-[11px] sm:text-xs text-center font-medium leading-tight">
-    <i class="fa-solid fa-triangle-exclamation mr-1 text-amber-600"></i>
-    <strong>Disclaimer:</strong> Mamae Knows Borders is an independent informational guide created by a fellow Filipino traveler and former OFW. Not affiliated with government websites.
+<div class="sticky top-0 z-50 shadow-sm w-full bg-white">
+    <!-- Top Disclaimer Banner -->
+    <div class="bg-amber-50 border-b border-amber-200 text-amber-900 px-3 py-1.5 text-[11px] sm:text-xs text-center font-medium leading-tight">
+        <i class="fa-solid fa-triangle-exclamation mr-1 text-amber-600"></i>
+        <strong>Disclaimer:</strong> Mamae Knows Borders is an independent informational guide created by a fellow Filipino traveler and former OFW. Not affiliated with government websites.
+    </div>
+    <!-- Your Navigation Bar goes right here inside the same sticky wrapper -->
 </div>
 
         <!-- Navigation Bar -->
@@ -1634,20 +1636,21 @@
             const board = document.getElementById('publicQABoard');
             if (!board) return;
 
-            const publicItems = communityQuestions.filter(q => q.isPublic);
+            // Filter for public items and slice to show only the latest 2
+            const publicItems = communityQuestions.filter(q => q.isPublic).slice(-2).reverse();
 
             if (publicItems.length === 0) {
                 board.innerHTML = `<div class="bg-white border border-slate-200 rounded-2xl p-6 text-center text-slate-500 text-xs">No public questions yet. Be the first to ask Mamae!</div>`;
                 return;
             }
 
-            board.innerHTML = publicItems.map(item => `
+            board.innerHTML = publicItems.map((item) => `
                 <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-3">
                     <div class="flex justify-between items-center text-xs">
                         <span class="font-bold text-slate-900 bg-slate-100 px-2.5 py-1 rounded-md">Traveler Inquiry</span>
                         <span class="text-slate-400">Asked by ${item.author}</span>
                     </div>
-                    <p class="text-xs sm:text-sm text-slate-700 italic">"${item.question}"</p>
+                    <p class="text-xs sm:text-sm text-slate-700 font-medium">"${item.question}"</p>
                     
                     ${item.replies && item.replies.length > 0 ? item.replies.filter(r => r.isPublic).map(reply => `
                         <div class="bg-blue-50/70 border-l-4 border-blue-600 p-3 rounded-r-xl space-y-1 mt-2">
@@ -1659,6 +1662,14 @@
                             <i class="fa-solid fa-clock mr-1"></i> Awaiting Mamae's public response...
                         </div>
                     `}
+
+                    <!-- Direct Reply Input for Mamae -->
+                    <div class="pt-2 flex gap-2 border-t border-slate-100 mt-3">
+                        <input type="text" id="replyInput-${item.id}" placeholder="Type Mamae's reply here..." class="flex-1 bg-slate-50 border border-slate-200 rounded-lg px-3 py-1.5 text-xs focus:outline-none focus:ring-1 focus:ring-blue-500">
+                        <button onclick="submitDirectReply(${item.id})" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-3 py-1.5 rounded-lg text-xs transition">
+                            Reply
+                        </button>
+                    </div>
                 </div>
             `).join('');
         }
@@ -1692,26 +1703,23 @@
             event.target.reset();
         }
 
-        function simulateAdminReply() {
-            const publicItems = communityQuestions.filter(q => q.isPublic);
-            if (publicItems.length === 0) {
-                alert("No public questions to reply to!");
-                return;
-            }
-            const target = publicItems[0];
-            const replyText = prompt("Enter Mamae's public reply for: " + target.question);
-            if (replyText) {
+        // New function to handle direct replies from the input box
+        function submitDirectReply(questionId) {
+            const inputEl = document.getElementById(`replyInput-${questionId}`);
+            if (!inputEl || !inputEl.value.trim()) return;
+
+            const target = communityQuestions.find(q => q.id === questionId);
+            if (target) {
                 target.replies.push({
                     id: Date.now(),
                     author: "Mamae",
-                    text: replyText,
+                    text: inputEl.value.trim(),
                     isPublic: true,
                     timestamp: "Just now"
                 });
                 renderPublicQABoard();
             }
         }
-
         function openGuideFullPage(index) {
             const g = guides[index];
             const imgEl = document.getElementById('fullPageImg');
