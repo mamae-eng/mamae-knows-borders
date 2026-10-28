@@ -107,12 +107,6 @@
             <p class="text-lg sm:text-xl text-slate-200 font-normal max-w-2xl mx-auto">
                 Real-world travel guides, simple step-by-step instructions, and community Q&A shared by a fellow traveler.
             </p>
-            
-            <div class="inline-flex items-center bg-slate-800/80 border border-slate-700 text-slate-200 px-5 py-2.5 rounded-2xl backdrop-blur-md shadow-lg text-xs sm:text-sm font-medium">
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse mr-2.5"></span>
-                <span>Global Travelers Helped: <strong id="visitorCount" class="text-white font-bold tracking-wider">1,482</strong> and counting</span>
-            </div>
-
             <div class="pt-2 flex flex-wrap justify-center gap-4">
                 <a href="#directory" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition">
                     Explore Country Directory
@@ -433,7 +427,7 @@
         </div>
     </section>
 
-    <!-- Community Feedback & Q&A Board Section -->
+        <!-- Community Feedback & Q&A Board Section -->
     <section id="feedback" class="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
             <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Traveler Community Hub</span>
@@ -449,18 +443,18 @@
                 <h3 class="text-xl font-bold text-slate-900 flex items-center">
                     <i class="fa-solid fa-paper-plane text-blue-600 mr-2.5"></i> Send a Question to Mamae
                 </h3>
-                <form action="https://formspree.io/f/your-form-id" method="POST" class="space-y-4" onsubmit="handleFormSubmit(event)">
+                <form id="qaForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Your Name or Nickname</label>
-                        <input type="text" name="name" required placeholder="e.g. Traveler from Bulacan" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <input type="text" id="qaName" name="name" required placeholder="e.g. Traveler from Bulacan" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Your Email (Private - for Mamae's reply)</label>
-                        <input type="email" name="email" required placeholder="your.email@example.com" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <input type="email" id="qaEmail" name="email" required placeholder="your.email@example.com" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">Question or Feedback</label>
-                        <textarea name="message" rows="4" required placeholder="Ask about DFA appointments, US tourist visas, or suggest a guide..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        <textarea id="qaMessage" name="message" rows="4" required placeholder="Ask about DFA appointments, US tourist visas, Japan travel, etc..." class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                     </div>
                     
                     <div class="bg-blue-50/60 border border-blue-200 rounded-xl p-3.5 flex items-start space-x-3">
@@ -474,29 +468,24 @@
                         Submit Question to Mamae <i class="fa-solid fa-arrow-right ml-1"></i>
                     </button>
                     <p id="formSuccess" class="text-xs text-emerald-600 font-semibold text-center hidden">
-                        <i class="fa-solid fa-circle-check mr-1"></i> Message sent successfully! Thank you for reaching out.
+                        <i class="fa-solid fa-circle-check mr-1"></i> Message submitted successfully!
                     </p>
                 </form>
             </div>
 
             <!-- Right: Published Q&A Board -->
             <div class="space-y-4">
-                <h3 class="text-xl font-bold text-slate-900 flex items-center px-1">
-                    <i class="fa-solid fa-comments text-blue-600 mr-2.5"></i> Recent Answered Questions
-                </h3>
+                <div class="flex justify-between items-center px-1">
+                    <h3 class="text-xl font-bold text-slate-900 flex items-center">
+                        <i class="fa-solid fa-comments text-blue-600 mr-2.5"></i> Recent Answered Questions
+                    </h3>
+                    <button onclick="simulateAdminReply()" class="text-[11px] bg-slate-200 hover:bg-slate-300 text-slate-700 px-2.5 py-1 rounded-lg font-medium transition" title="Admin Simulation Tool">
+                        + Simulate Reply
+                    </button>
+                </div>
                 
-                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-3">
-                    <div class="flex justify-between items-center text-xs">
-                        <span class="font-bold text-slate-900 bg-slate-100 px-2.5 py-1 rounded-md">Q: DFA Appointment Slot Availability</span>
-                        <span class="text-slate-400">Asked by Mark, Cavite</span>
-                    </div>
-                    <p class="text-xs sm:text-sm text-slate-700 italic">"Pano po pag walang makita na available slots sa DFA online appointment?"</p>
-                    <div class="bg-blue-50/70 border-l-4 border-blue-600 p-3 rounded-r-xl space-y-1">
-                        <span class="text-[11px] font-extrabold text-blue-900 uppercase tracking-wide block"><i class="fa-solid fa-mug-hot mr-1"></i> Mamae's Answer:</span>
-                        <p class="text-xs sm:text-sm text-slate-800 leading-relaxed">
-                            Hi Mark! DFA usually opens new batches of slots randomly or early in the morning. Never pay fixers on Facebook! Keep checking the official portal during off-peak hours.
-                        </p>
-                    </div>
+                <div id="publicQABoard" class="space-y-4">
+                    <!-- Dynamic Q&A items render here -->
                 </div>
             </div>
         </div>
@@ -856,6 +845,91 @@
                     }
                 ]
             },
+                        {
+                id: "japan-tourist-visa",
+                badge: "Japan Travel",
+                lastUpdated: "October 2026",
+                title: "Japan Tourist Visa Guide for Filipinos",
+                image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80",
+                shortDesc: "Complete walkthrough for Japanese Temporary Visitor visas, core documents, financial proof, JVAC submission, and approval tips.",
+                quickBadges: [
+                    "🇯🇵 Visa Type: Temporary Visitor (Tourism)",
+                    "💵 Visa Fee: FREE (Standard service/agency fees apply)",
+                    "📍 Submission: Via JVAC (VFS Global) or Accredited Agencies"
+                ],
+                steps: [
+                    {
+                        title: "Prepare Core Requirements",
+                        body: "Gather your valid signed passport, completed Japan visa application form, 4.5cm x 3.5cm photo, PSA birth/marriage certificates, and schedule of stay."
+                    },
+                    {
+                        title: "Proof of Financial Capacity",
+                        body: "Secure an original Bank Certificate (with ADB) and your latest Income Tax Return (ITR / BIR Form 2316)."
+                    },
+                    {
+                        title: "Book Appointment & Submit",
+                        body: "Secure an online appointment slot at the Japan Visa Application Centre (JVAC run by VFS Global) or submit through an accredited travel agency."
+                    },
+                    {
+                        title: "Wait for Processing & Collect",
+                        body: "Standard processing takes 4 to 5 working days (or longer during peak seasons). Collect your passport once approved."
+                    }
+                ],
+                tip: "Huwag gumamit ng friction pen o pambura sa Japan visa application form! Kailangan pulido at walang bura ang bawat detalye, o ire-reject agad sa counter.",
+                categories: [
+                    {
+                        name: "1. Core Requirements",
+                        tip: "Huwag gumamit ng friction pen o pambura sa Japan visa application form! Kailangan pulido at walang bura ang bawat detalye, o ire-reject agad sa counter.",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Essential Application Documents</h4>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li><strong>Valid Philippine Passport:</strong> Must have two blank pages and be in good condition.</li>
+                                <li><strong>Visa Application Form:</strong> Completely and accurately filled out (typed or handwritten legibly without erasures).</li>
+                                <li><strong>Passport Photo:</strong> Recent 4.5cm x 3.5cm photo with white background attached to the form.</li>
+                                <li><strong>PSA Civil Documents:</strong> Original PSA Birth Certificate and Marriage Certificate (if applicable).</li>
+                                <li><strong>Schedule of Stay:</strong> Day-by-day itinerary of your activities in Japan.</li>
+                            </ul>
+                        `
+                    },
+                    {
+                        name: "2. Financial & Employment Proof",
+                        tip: "Ang Average Daily Balance (ADB) ang tinitignan ng Embassy, hindi lang ang ending balance mo. Siguraduhing may sapat na laman ang bank account mo para sa haba ng biyahe mo.",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Demonstrating Financial Capability</h4>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li><strong>Bank Certificate:</strong> Original bank certification reflecting account balance and Average Daily Balance (ADB).</li>
+                                <li><strong>Income Tax Return (ITR):</strong> Latest BIR Form 2316 or original ITR document. (If unemployed or sponsored, provide an Affidavit of Support and sponsor's financial documents).</li>
+                                <li><strong>Employment Proof:</strong> Certificate of Employment (COE) with salary details and approved leave of absence.</li>
+                            </ul>
+                        `
+                    },
+                    {
+                        name: "3. JVAC vs. Accredited Agencies",
+                        tip: "Unahan sa JVAC appointment slots! Kung gipit ka sa oras o puno ang online calendar, mas mabilis dumaan sa mga accredited travel agencies ng Japan Embassy.",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Where and How to Submit Your Application</h4>
+                            <p class='text-slate-700 mb-3'>You have two primary submission pathways in the Philippines:</p>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li><strong>JVAC (VFS Global):</strong> Book an online appointment slot at the official Japan Visa Application Centre. Ideal for direct individual applications.</li>
+                                <li><strong>Accredited Travel Agencies:</strong> Submit directly through designated travel agencies authorized by the Japanese Embassy. They handle submission and collection for a reasonable service fee.</li>
+                            </ul>
+                        `
+                    },
+                    {
+                        name: "4. Approval Tips & Pitfalls",
+                        tip: "Walang interview para sa tourist visa sa Japan—nakasalalay ang approval mo sa linis, linaw, at kumpletong dokumento na isusumite mo sa agency o JVAC!",
+                        content: `
+                            <h4 class='text-lg font-bold text-slate-900 mb-2'>Maximizing Your Chances of Approval</h4>
+                            <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                                <li>Ensure your itinerary is realistic, logical, and matches your financial capability.</li>
+                                <li>Never use erasable pens, correction tape, or white-out on official forms.</li>
+                                <li>Double-check that all names, dates, and passport numbers match across all submitted documents.</li>
+                            </ul>
+                        `
+                    }
+                ]
+            },
+
             {
                 id: "visa-free-asean",
                 badge: "Visa-Free Travel",
@@ -1472,6 +1546,111 @@
                 }
             });
         }
+                // Initial Q&A data structure supporting public visibility and reply threads
+        let communityQuestions = [
+            {
+                id: 1,
+                author: "Mark, Cavite",
+                question: "Pano po pag walang makita na available slots sa DFA online appointment?",
+                isPublic: true,
+                timestamp: "October 2026",
+                replies: [
+                    {
+                        id: 101,
+                        author: "Mamae",
+                        text: "Hi Mark! DFA usually opens new batches of slots randomly or early in the morning. Never pay fixers on Facebook! Keep checking the official portal during off-peak hours.",
+                        isPublic: true,
+                        timestamp: "October 2026"
+                    }
+                ]
+            }
+        ];
+
+        function renderPublicQABoard() {
+            const board = document.getElementById('publicQABoard');
+            if (!board) return;
+
+            const publicItems = communityQuestions.filter(q => q.isPublic);
+
+            if (publicItems.length === 0) {
+                board.innerHTML = `<div class="bg-white border border-slate-200 rounded-2xl p-6 text-center text-slate-500 text-xs">No public questions yet. Be the first to ask Mamae!</div>`;
+                return;
+            }
+
+            board.innerHTML = publicItems.map(item => `
+                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-3">
+                    <div class="flex justify-between items-center text-xs">
+                        <span class="font-bold text-slate-900 bg-slate-100 px-2.5 py-1 rounded-md">Traveler Inquiry</span>
+                        <span class="text-slate-400">Asked by ${item.author}</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-700 italic">"${item.question}"</p>
+                    
+                    ${item.replies && item.replies.length > 0 ? item.replies.filter(r => r.isPublic).map(reply => `
+                        <div class="bg-blue-50/70 border-l-4 border-blue-600 p-3 rounded-r-xl space-y-1 mt-2">
+                            <span class="text-[11px] font-extrabold text-blue-900 uppercase tracking-wide block"><i class="fa-solid fa-mug-hot mr-1"></i> ${reply.author}'s Answer:</span>
+                            <p class="text-xs sm:text-sm text-slate-800 leading-relaxed">${reply.text}</p>
+                        </div>
+                    `).join('') : `
+                        <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl text-xs text-slate-500 italic">
+                            <i class="fa-solid fa-clock mr-1"></i> Awaiting Mamae's public response...
+                        </div>
+                    `}
+                </div>
+            `).join('');
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('qaName').value.trim();
+            const email = document.getElementById('qaEmail').value.trim();
+            const message = document.getElementById('qaMessage').value.trim();
+            const isPublic = document.getElementById('publicToggle').checked;
+
+            const newQ = {
+                id: Date.now(),
+                author: name,
+                question: message,
+                isPublic: isPublic,
+                timestamp: "Just now",
+                replies: []
+            };
+
+            communityQuestions.unshift(newQ);
+            renderPublicQABoard();
+
+            const successMsg = document.getElementById('formSuccess');
+            successMsg.classList.remove('hidden');
+            event.target.reset();
+            setTimeout(() => successMsg.classList.add('hidden'), 5000);
+        }
+
+        // Optional helper to simulate Mamae replying to a public question
+        function simulateAdminReply() {
+            const publicItems = communityQuestions.filter(q => q.isPublic);
+            if (publicItems.length === 0) {
+                alert("No public questions to reply to!");
+                return;
+            }
+            const target = publicItems[0];
+            const replyText = prompt("Enter Mamae's public reply for: " + target.question);
+            if (replyText) {
+                target.replies.push({
+                    id: Date.now(),
+                    author: "Mamae",
+                    text: replyText,
+                    isPublic: true,
+                    timestamp: "Just now"
+                });
+                renderPublicQABoard();
+            }
+        }
+
+        // Initialize board on load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderGuides();
+            renderPublicQABoard();
+        });
+
     </script>
 </body>
 </html>
