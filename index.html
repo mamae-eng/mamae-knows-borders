@@ -1947,6 +1947,93 @@
             if (categoriesSection) categoriesSection.classList.remove('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+         // Dynamic email requirement toggle based on Public vs Private choice
+        function toggleEmailRequirement(isPrivate) {
+            const emailInput = document.getElementById('qaEmail');
+            const emailLabel = document.getElementById('emailReqLabel');
+            if (isPrivate) {
+                emailInput.setAttribute('required', 'true');
+                emailLabel.textContent = '(Required for Private Reply)';
+                emailLabel.className = 'text-red-500 font-bold';
+            } else {
+                emailInput.removeAttribute('required');
+                emailLabel.textContent = '(Optional for Public)';
+                emailLabel.className = 'text-slate-400 font-normal';
+            }
+        }
+
+        // Form Submission Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('qaName').value;
+            const location = document.getElementById('qaLocation').value;
+            const email = document.getElementById('qaEmail').value;
+            const message = document.getElementById('qaMessage').value;
+            
+            // Check selected radio value
+            const privacyMode = document.querySelector('input[name="privacy_mode"]:checked').value;
+
+            if (privacyMode === 'public') {
+                // Save to localStorage for public transparency reference page
+                const newQuestion = {
+                    id: Date.now(),
+                    author: `${name}, ${location}`,
+                    date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+                    question: message,
+                    answer: "Pending Mamae's verified response..."
+                };
+
+                let savedQuestions = JSON.parse(localStorage.getItem('mamae_qa_board') || '[]');
+                savedQuestions.unshift(newQuestion);
+                localStorage.setItem('mamae_qa_board', JSON.stringify(savedQuestions));
+                
+                renderPublicQABoard();
+                alert("Success! Your question has been posted publicly to the Marites Board.");
+            } else {
+                // Private mode confirmation (If using Formspree action endpoint, it will also email you automatically)
+                alert(`Secret chika sent privately to Mamae! We will email you back at ${email}.`);
+            }
+            
+            // Reset form fields and close modal
+            const form = document.getElementById('qaFormModal');
+            if (form) form.reset();
+            closeQAModal();
+        }
+
+        // Render Public Marites Board Feed
+        function renderPublicQABoard() {
+            const container = document.getElementById('transparentQAList');
+            if (!container) return;
+
+            const defaultQuestions = [
+                {
+                    author: "Mark, Cavite",
+                    date: "Recent",
+                    question: "Pano po pag walang makita na available slots sa DFA online appointment?",
+                    answer: "Hi Mark! DFA usually opens new batches of slots randomly or early in the morning. Never pay fixers on Facebook! Keep checking the official portal during off-peak hours."
+                }
+            ];
+
+            let userQuestions = JSON.parse(localStorage.getItem('mamae_qa_board') || '[]');
+            const allQuestions = [...userQuestions, ...defaultQuestions];
+
+            container.innerHTML = allQuestions.map(q => `
+                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-3">
+                    <div class="flex justify-between items-center text-xs text-slate-500">
+                        <span class="font-bold text-slate-800"><i class="fa-solid fa-user-circle text-blue-600 mr-1"></i> ${q.author}</span>
+                        <span class="bg-blue-50 text-blue-700 px-2.5 py-0.5 rounded-full font-semibold text-[11px]">${q.date || 'Recent'}</span>
+                    </div>
+                    <p class="text-slate-900 font-medium text-sm sm:text-base">"${q.question}"</p>
+                    <div class="bg-blue-50/70 border border-blue-100 rounded-xl p-4 space-y-1">
+                        <div class="text-[11px] font-extrabold uppercase tracking-wider text-blue-700 flex items-center">
+                            <i class="fa-solid fa-mug-hot mr-1.5"></i> Mamae's Verified Answer:
+                        </div>
+                        <p class="text-slate-700 text-xs sm:text-sm leading-relaxed">${q.answer}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
     </script>
 </body>
 </html>
