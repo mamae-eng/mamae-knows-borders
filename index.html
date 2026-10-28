@@ -128,7 +128,25 @@
         </div>
         </div>
     </section>
+<!-- Dedicated Public Marites Board Page View (Hidden by default) -->
+<div id="qaPageView" class="hidden max-w-4xl mx-auto px-4 py-8 space-y-6" style="display: none;">
+    <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+        <div>
+            <h2 class="text-2xl font-black text-slate-900 flex items-center">
+                <i class="fa-solid fa-comments text-blue-600 mr-2"></i> Public Marites Board 🌍
+            </h2>
+            <p class="text-xs text-slate-500 mt-1">Real questions from fellow travelers with Mamae's verified barrio wisdom.</p>
+        </div>
+        <button onclick="closeQAPage()" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold px-4 py-2 rounded-xl text-xs transition flex items-center">
+            <i class="fa-solid fa-arrow-left mr-1.5"></i> Back to Home
+        </button>
+    </div>
 
+    <!-- Container where saved public questions will dynamically inject -->
+    <div id="transparentQAList" class="space-y-4">
+        <!-- Dynamic questions load here automatically -->
+    </div>
+</div>
     <!-- Dedicated Country Profile Page View (Hidden by default) -->
     <section id="countryPageView" class="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 hidden">
         <div class="bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-md space-y-6">
@@ -2039,33 +2057,46 @@
             `).join('');
         }
          function openQAPage() {
-            // Hide main homepage sections
-            const heroSection = document.querySelector('section.relative.bg-slate-900');
-            const categoriesSection = document.getElementById('categories');
-
-            if (heroSection) heroSection.classList.add('hidden');
-            if (categoriesSection) categoriesSection.classList.add('hidden');
-
-            // Show Q&A page view and render items
-            const qaPage = document.getElementById('qaPageView');
-            if (qaPage) {
-                qaPage.classList.remove('hidden');
-                renderPublicQABoard(); // Populates saved questions
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Hide everything in the body except the sticky navbar and the Q&A page view
+        const bodyChildren = document.body.children;
+        for (let child of bodyChildren) {
+            if (child.id !== 'qaPageView' && !child.classList.contains('sticky')) {
+                child.dataset.originalDisplay = child.style.display || '';
+                child.style.display = 'none';
             }
         }
 
-        function closeQAPage() {
-            const qaPage = document.getElementById('qaPageView');
-            if (qaPage) qaPage.classList.add('hidden');
-
-            // Restore homepage sections
-            const heroSection = document.querySelector('section.relative.bg-slate-900');
-            const categoriesSection = document.getElementById('categories');
-            if (heroSection) heroSection.classList.remove('hidden');
-            if (categoriesSection) categoriesSection.classList.remove('hidden');
+        // Show the Marites Board view only now
+        const qaPage = document.getElementById('qaPageView');
+        if (qaPage) {
+            qaPage.classList.remove('hidden');
+            qaPage.style.display = 'block';
+            if (typeof renderPublicQABoard === 'function') {
+                renderPublicQABoard();
+            }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+    }
+
+    function closeQAPage() {
+        // Restore all body children back to their original display states
+        const bodyChildren = document.body.children;
+        for (let child of bodyChildren) {
+            if (child.dataset.originalDisplay !== undefined) {
+                child.style.display = child.dataset.originalDisplay;
+            } else {
+                child.style.display = '';
+            }
+        }
+
+        // Hide the Marites Board view again
+        const qaPage = document.getElementById('qaPageView');
+        if (qaPage) {
+            qaPage.classList.add('hidden');
+            qaPage.style.display = 'none';
+        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
     </script>
 </body>
 </html>
