@@ -39,6 +39,14 @@ const guides = [
                         <li><strong>Students:</strong> Valid School ID + Certificate of Registration (COR)</li>
                         <li><span class='text-red-600 font-bold'>⚠️ Not Accepted as Primary IDs:</span> Company ID, Barangay Clearance, Police Clearance, PhilHealth ID, Postal ID, or NBI Clearance alone.</li>
                     </ul>
+                    <div class='bg-blue-50/80 border border-blue-200 rounded-2xl p-4 mt-4'>
+                        <h5 class='font-bold text-blue-950 text-sm mb-2 flex items-center'><i class='fa-solid fa-file-pdf text-blue-600 mr-2'></i> How to Handle Your Appointment Packet & Form</h5>
+                        <ul class='list-disc pl-5 space-y-1.5 text-xs sm:text-sm text-slate-700'>
+                            <li>When you book online, DFA emails your Confirmed Appointment Packet PDF (includes checklist, barcoded application form, and 2 e-Receipt copies).</li>
+                            <li><strong>Important:</strong> DO NOT sign or thumbmark the form at home! You must sign it in front of the DFA processing officer during your appointment.</li>
+                            <li><strong>Paper requirement:</strong> Must be printed single-sided on clean A4 bond paper with clear, unsmudged barcodes.</li>
+                        </ul>
+                    </div>
                 `
             },
             {
@@ -151,24 +159,66 @@ const guides = [
         shortDesc: "Complete walkthrough for Japanese Temporary Visitor visas, core documents, financial proof, JVAC submission, and approval tips.",
         quickBadges: [
             "🇯🇵 Visa Type: Temporary Visitor (Tourism)",
-            "💵 Visa Fee: FREE",
+            "💵 Visa Fee: FREE (Standard service/agency fees apply)",
             "📍 Submission: Via JVAC (VFS Global) or Accredited Agencies"
         ],
         steps: [
-            { title: "Prepare Core Requirements", body: "Gather your valid signed passport, completed Japan visa application form, photo, and PSA certificates." },
-            { title: "Proof of Financial Capacity", body: "Secure an original Bank Certificate (with ADB) and your latest Income Tax Return (ITR)." }
+            { title: "Prepare Core Requirements", body: "Gather your valid signed passport, completed Japan visa application form, 4.5cm x 3.5cm photo, PSA birth/marriage certificates, and schedule of stay." },
+            { title: "Proof of Financial Capacity", body: "Secure an original Bank Certificate (with ADB) and your latest Income Tax Return (ITR / BIR Form 2316)." },
+            { title: "Book Appointment & Submit", body: "Secure an online appointment slot at the Japan Visa Application Centre (JVAC run by VFS Global) or submit through an accredited travel agency." },
+            { title: "Wait for Processing & Collect", body: "Standard processing takes 4 to 5 working days (or longer during peak seasons). Collect your passport once approved." }
         ],
-        tip: "Huwag gumamit ng friction pen o pambura sa Japan visa application form!",
+        tip: "Huwag gumamit ng friction pen o pambura sa Japan visa application form! Kailangan pulido at walang bura ang bawat detalye, o ire-reject agad sa counter.",
         categories: [
             {
                 name: "1. Core Requirements",
-                tip: "Huwag gumamit ng friction pen o pambura sa Japan visa application form!",
-                content: `<h4 class='text-lg font-bold text-slate-900 mb-2'>Essential Application Documents</h4><p>Valid PH Passport, visa application form, photo, and PSA documents.</p>`
+                tip: "Huwag gumamit ng friction pen o pambura sa Japan visa application form! Kailangan pulido at walang bura ang bawat detalye, o ire-reject agad sa counter.",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Essential Application Documents</h4>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li><strong>Valid Philippine Passport:</strong> Must have two blank pages and be in good condition.</li>
+                        <li><strong>Visa Application Form:</strong> Completely and accurately filled out (typed or handwritten legibly without erasures).</li>
+                        <li><strong>Passport Photo:</strong> Recent 4.5cm x 3.5cm photo with white background attached to the form.</li>
+                        <li><strong>PSA Civil Documents:</strong> Original PSA Birth Certificate and Marriage Certificate (if applicable).</li>
+                        <li><strong>Schedule of Stay:</strong> Day-by-day itinerary of your activities in Japan.</li>
+                    </ul>
+                `
             },
             {
-                name: "2. Financial Proof",
-                tip: "Ang Average Daily Balance (ADB) ang tinitignan ng Embassy.",
-                content: `<h4 class='text-lg font-bold text-slate-900 mb-2'>Financial Capability</h4><p>Bank certificate with ADB and latest ITR.</p>`
+                name: "2. Financial & Employment Proof",
+                tip: "Ang Average Daily Balance (ADB) ang tinitignan ng Embassy, hindi lang ang ending balance mo. Siguraduhing may sapat na laman ang bank account mo para sa haba ng biyahe mo.",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Demonstrating Financial Capability</h4>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li><strong>Bank Certificate:</strong> Original bank certification reflecting account balance and Average Daily Balance (ADB).</li>
+                        <li><strong>Income Tax Return (ITR):</strong> Latest BIR Form 2316 or original ITR document. (If unemployed or sponsored, provide an Affidavit of Support and sponsor's financial documents).</li>
+                        <li><strong>Employment Proof:</strong> Certificate of Employment (COE) with salary details and approved leave of absence.</li>
+                    </ul>
+                `
+            },
+            {
+                name: "3. JVAC vs. Accredited Agencies",
+                tip: "Unahan sa JVAC appointment slots! Kung gipit ka sa oras o puno ang online calendar, mas mabilis dumaan sa mga accredited travel agencies ng Japan Embassy.",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Where and How to Submit Your Application</h4>
+                    <p class='text-slate-700 mb-3'>You have two primary submission pathways in the Philippines:</p>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li><strong>JVAC (VFS Global):</strong> Book an online appointment slot at the official Japan Visa Application Centre. Ideal for direct individual applications.</li>
+                        <li><strong>Accredited Travel Agencies:</strong> Submit directly through designated travel agencies authorized by the Japanese Embassy. They handle submission and collection for a reasonable service fee.</li>
+                    </ul>
+                `
+            },
+            {
+                name: "4. Approval Tips & Pitfalls",
+                tip: "Walang interview para sa tourist visa sa Japan—nakasalalay ang approval mo sa linis, linaw, at kumpletong dokumento na isusumite mo sa agency o JVAC!",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Maximizing Your Chances of Approval</h4>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li>Ensure your itinerary is realistic, logical, and matches your financial capability.</li>
+                        <li>Never use erasable pens, correction tape, or white-out on official forms.</li>
+                        <li>Double-check that all names, dates, and passport numbers match across all submitted documents.</li>
+                    </ul>
+                `
             }
         ]
     },
@@ -180,10 +230,70 @@ const guides = [
         image: "https://images.unsplash.com/photo-1508248467877-aec1b08de376?auto=format&fit=crop&w=800&q=80",
         shortDesc: "Easy checklist for traveling visa-free to Singapore, Thailand, Malaysia, Vietnam, and Hong Kong.",
         steps: [
-            "<strong>1. Passport Expiry Check:</strong> Must be valid for at least 6 months.",
-            "<strong>2. Onward & Return Travel:</strong> Have confirmed return tickets ready."
+            "<strong>1. Passport Expiry Check:</strong> Ensure your passport is valid for at least 6 months before your departure date.",
+            "<strong>2. Onward & Return Travel:</strong> Have confirmed return or onward flight tickets ready for immigration inspection.",
+            "<strong>3. Accommodation Proof:</strong> Print your hotel bookings, Airbnb reservations, or host invitation letters.",
+            "<strong>4. Employment Ties:</strong> Bring your company ID, Certificate of Employment (COE), or approved leave form for smooth NAIA clearance."
         ],
-        tip: "Kahit visa-free, hinding-hindi ibig sabihin na automatic ang entry!"
+        tip: "Kahit visa-free, hinding-hindi ibig sabihin na automatic ang entry! Respetuhin ang allowed stay days ng bawat bansa at huwag mag-overstay para hindi ma-blacklist sa immigration.",
+        categories: [
+            {
+                name: "1. Visa-Free Destinations & Limits",
+                tip: "Kahit visa-free, hinding-hindi ibig sabihin na automatic ang entry! Respetuhin ang allowed stay days ng bawat bansa at huwag mag-overstay para hindi ma-blacklist sa immigration.",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Major ASEAN & Regional Destinations & Limits</h4>
+                    <p class='text-slate-700 mb-3'>Philippine passport holders enjoy visa-free or simplified entry privileges across several regional neighbors. Always monitor the exact allowable duration:</p>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li><strong>Singapore:</strong> Visa-free up to 30 days</li>
+                        <li><strong>Thailand:</strong> Visa-free up to 60 days</li>
+                        <li><strong>Malaysia:</strong> Visa-free up to 30 days</li>
+                        <li><strong>Vietnam:</strong> Visa-free up to 21 days</li>
+                        <li><strong>Hong Kong:</strong> Visa-free up to 14 days</li>
+                        <li><strong>Taiwan:</strong> Visa-free program rules (check current promotional periods and complete online authorization certificate prior to flight)</li>
+                    </ul>
+                `
+            },
+            {
+                name: "2. Mandatory Documents",
+                tip: "I-print lahat! Huwag umasang papayagan ka ng BI immigration officer kung nakatago lang sa PDF o screenshot sa cellphone ang return ticket at hotel booking mo.",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Essential Entry Proofs Required for Inspection</h4>
+                    <p class='text-slate-700 mb-3'>Immigration officers abroad check these core documents upon landing:</p>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li><strong>Valid PH Passport:</strong> Minimum 6 months validity from your arrival date.</li>
+                        <li><strong>Confirmed Return Ticket:</strong> Strict requirement across all immigration desks.</li>
+                        <li><strong>Accommodation Proof:</strong> Printed hotel bookings, Airbnb reservations, or host invitation letters with contact details.</li>
+                        <li><strong>Financial Capacity:</strong> Sufficient cash, credit cards, or bank certificates for your duration of stay.</li>
+                    </ul>
+                `
+            },
+            {
+                name: "3. Employment & Financial Ties",
+                tip: "Magdala ng solidong patunay na babalik ka ng Pilipinas. Ang company ID at COE ang isa sa pinakamahalagang pananggalang mo sa NAIA counter.",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Proving Strong Ties to the Philippines</h4>
+                    <p class='text-slate-700 mb-3'>To satisfy Bureau of Immigration requirements before leaving NAIA, prepare proof that you have compelling reasons to return home:</p>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li><strong>Employed:</strong> Company ID, Certificate of Employment (COE) with salary details, and approved leave form.</li>
+                        <li><strong>Business Owners / Freelancers:</strong> DTI/SEC registration, business permits, or active client contracts and income proofs.</li>
+                        <li><strong>Students:</strong> Valid school ID, enrollment form, and school-endorsements if traveling during the semester.</li>
+                    </ul>
+                `
+            },
+            {
+                name: "4. NAIA Immigration Tips",
+                tip: "Maging tapat, kalmado, at direkta sumagot sa tanong ng immigration officer. Huwag mag-overexplain o magbigay ng impormasyon na hindi naman itinanong.",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Passing Immigration with Confidence</h4>
+                    <p class='text-slate-700 mb-3'>Keep your departure process seamless with these field-tested tips:</p>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li>Answer questions directly, truthfully, and concisely without over-explaining or volunteering unasked details.</li>
+                        <li>Keep all paper documents (return ticket, hotel voucher, employment ID) organized neatly in a physical folder.</li>
+                        <li>Maintain a calm, respectful demeanor during inspection.</li>
+                    </ul>
+                `
+            }
+        ]
     },
     {
         id: "taiwan-visafree",
@@ -192,11 +302,58 @@ const guides = [
         title: "Taiwan Visa-Free Entry Guide",
         image: "https://images.unsplash.com/photo-1508873696983-2df5c920ac9c?auto=format&fit=crop&w=800&q=80",
         shortDesc: "Simple steps for Philippine passport holders visiting Taiwan visa-free for up to 14 days.",
-        steps: [
-            { title: "Passport Check", body: "Valid for at least 6 months." },
-            { title: "Online Arrival Card", body: "Fill out the ROC Travel Authorization Certificate online." }
+        quickBadges: [
+            "Stay Limit: Up to 14 Days",
+            "Requirement: ROC Travel Auth Cert",
+            "Passport Validity: 6+ Months"
         ],
-        tip: "Libre ang pagkuha ng ROC Travel Authorization Certificate online."
+        steps: [
+            { title: "Passport Check", body: "Ensure your Philippine passport is valid for at least 6 months upon your planned arrival date." },
+            { title: "Return Air Ticket", body: "Hold a confirmed return flight booking or onward ticket out of Taiwan." },
+            { title: "Online Arrival Card", body: 'Fill out the online ROC Travel Authorization Certificate prior to flying via the <a href="https://niaspeedy.immigration.gov.tw/nia_online/app/index.action" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline font-semibold">National Immigration Agency Portal</a>.' },
+            { title: "Hotel & Funds", body: "Have your hotel accommodation details, host contact info, and sufficient travel funds ready for inspection." }
+        ],
+        tip: "Fill out your Taiwan online arrival card a day before your flight so you breeze right through customs!",
+        categories: [
+            {
+                name: "1. Entry Conditions & Limit",
+                tip: "I-fill up ang arrival card online bago lumipad para deretso na sa automated customs inspection paglapag sa Taoyuan.",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Taiwan Visa-Free Program Rules</h4>
+                    <p class='text-slate-700 mb-3'>Philippine passport holders can enter Taiwan visa-free for up to 14 days under specific tourism promotion and trial extension schemes.</p>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li><strong>Allowed Duration:</strong> Maximum of 14 consecutive days of stay. Do not overstay!</li>
+                        <li><strong>Passport Requirement:</strong> Must have at least 6 months validity remaining upon entry.</li>
+                        <li><strong>Return Ticket:</strong> Confirmed return or onward ticket is strictly required by border officers.</li>
+                    </ul>
+                `
+            },
+            {
+                name: "2. Online ROC Certificate",
+                tip: "Libre ang pagkuha ng ROC Travel Authorization Certificate online. Huwag magpapabayad sa mga scam sites na naniningil!",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>How to Secure Your ROC Travel Authorization</h4>
+                    <p class='text-slate-700 mb-3'>Before boarding your flight to Taiwan, you must secure online clearance:</p>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li>Visit the official <a href='https://niaspeedy.immigration.gov.tw/nia_online/app/index.action' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>National Immigration Agency Portal</a>.</li>
+                        <li>Fill out the <abbr title="Republic of China">ROC</abbr> Travel Authorization Certificate form accurately using your passport details.</li>
+                        <li>Print out a physical copy of the approved certificate to present at NAIA check-in and Taiwan immigration.</li>
+                    </ul>
+                `
+            },
+            {
+                name: "3. Arrival & Customs Tips",
+                tip: "Maging handa sa pagpapakita ng hotel booking at return ticket sa Taoyuan Airport kung sakaling hanapin ng immigration officer.",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Smooth Arrival in Taiwan</h4>
+                    <p class='text-slate-700 mb-3'>Keep your trip stress-free upon landing:</p>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li>Have your printed ROC certificate, passport, return ticket, and hotel booking ready in a folder.</li>
+                        <li>Observe strict customs regulations: do not bring pork products or meat items into Taiwan (heavy fines apply!).</li>
+                    </ul>
+                `
+            }
+        ]
     },
     {
         id: "south-america-visafree",
@@ -205,10 +362,69 @@ const guides = [
         title: "South America Travel Guide for Filipino Travelers",
         image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=800&q=80",
         shortDesc: "Comprehensive guide for PH passport holders visiting visa-free nations, consular visa requirements, and US/Schengen transit rules.",
-        steps: [
-            { title: "Check Country Visa Requirements", body: "Know which nations are visa-free (Brazil, Colombia, Peru, Bolivia)." }
+        quickBadges: [
+            "🇧🇷 Brazil, 🇨🇴 Colombia, 🇵🇪 Peru, 🇧🇴 Bolivia: Visa-Free (Up to 90–183 Days)",
+            "⚠️ Argentina, Chile, Uruguay: Consular Visa Required",
+            "✈️ Critical Warning: US/Schengen Transit Visas Required for Layovers"
         ],
-        tip: "Maganda sa Brazil, Colombia, Peru, at Bolivia dahil visa-free tayo!"
+        steps: [
+            { title: "Check Country Visa Requirements", body: "Know which nations are visa-free (Brazil, Colombia, Peru, Bolivia) versus those requiring consular sticker visas before departure (Argentina, Chile, Uruguay)." },
+            { title: "Review Layover & Transit Routes", body: "Make sure your transit airports in the US, Europe, or Canada do not require separate transit visas (even if you stay airside)." },
+            { title: "Prepare Yellow Fever & Health Proof", body: "Secure your International Certificate of Vaccination (ICV) for Yellow Fever from the Bureau of Quarantine if required by your destination." },
+            { title: "Financials & Onward Travel", body: "Bring confirmed roundtrip flight itineraries, hotel bookings, international travel insurance, and proof of financial capacity." }
+        ],
+        tip: "Maganda sa Brazil, Colombia, Peru, at Bolivia dahil visa-free tayo! Pero tandaan: visa-free ay hindi automatic na entry—dalhin ang buong travel folder mo.",
+        categories: [
+            {
+                name: "1. Visa-Free South American Countries",
+                tip: "Maganda sa Brazil, Colombia, Peru, at Bolivia dahil visa-free tayo! Pero tandaan: visa-free ay hindi automatic na entry—dalhin ang buong travel folder mo.",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Visa-Free Destinations for Philippine Passport Holders</h4>
+                    <p class='text-slate-700 mb-3'>You can enter the following South American nations without a tourist visa for extended holiday stays:</p>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li><strong>Brazil:</strong> Visa-free for up to 90 days.</li>
+                        <li><strong>Colombia:</strong> Visa-free for up to 90 days.</li>
+                        <li><strong>Peru:</strong> Visa-free for up to 183 days.</li>
+                        <li><strong>Bolivia:</strong> Visa-free for up to 90 days.</li>
+                    </ul>
+                `
+            },
+            {
+                name: "2. Countries Requiring Consular Visas",
+                tip: "Para sa Argentina, Chile, at Uruguay, kailangan mo munang kumuha ng visa sa embassy bago mag-book ng non-refundable flights. Huwag umasang may visa-on-arrival!",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Destinations Requiring Prior Embassy Visas</h4>
+                    <p class='text-slate-700 mb-3'>Make sure to secure your visas beforehand for these regional destinations:</p>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li><strong>Argentina:</strong> Tourist visa required ahead of travel. (Note: Holders of valid US B1/B2 visas may be eligible to apply for an electronic travel authorization/eTA).</li>
+                        <li><strong>Chile & Uruguay:</strong> Tourist visas required via respective embassies or consulates prior to booking non-refundable flights.</li>
+                    </ul>
+                `
+            },
+            {
+                name: "3. US / Schengen Visa Perks & Exemptions",
+                tip: "Malaking tulong ang may valid US o Schengen visa dahil bukod sa nagpapadali ito ng transit sa US o Europe, pinapadali rin nito ang pagpoproseso ng ilang visa applications sa Americas.",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>The Value of Major Visas for Transatlantic Travel</h4>
+                    <p class='text-slate-700 mb-3'>How holding major visas streamlines your journey:</p>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li>While holding a US or Schengen visa does not automatically bypass entry rules for countries requiring a national visa, it completely solves the massive logistical hurdle of transiting through North American or European aviation hubs on your way across the Atlantic.</li>
+                    </ul>
+                `
+            },
+            {
+                name: "4. Health & Long-Haul Transit Traps",
+                tip: "Huwag kalimutan ang Yellow Fever card at ang US o Schengen transit visa mo. Kahit 1 hour lang ang layover mo sa US para sa flight patungong South America, hahanapin yan ng airline!",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Crucial Health and Flight Connection Rules</h4>
+                    <p class='text-slate-700 mb-3'>Pay close attention to these mandatory health and logistical checkpoints:</p>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li><strong>Yellow Fever Certificate (ICV):</strong> Mandatory yellow fever vaccination card from the Bureau of Quarantine when entering or connecting through endemic regions.</li>
+                        <li><strong>Transit Visas:</strong> Most flights from Manila to South America transit through the United States (LAX, SFO, MIA) or Europe (MAD). A valid US or Schengen transit/tourist visa is strictly required just to make the plane connection, even if you never leave the airport.</li>
+                    </ul>
+                `
+            }
+        ]
     },
     {
         id: "us-b1b2",
@@ -217,10 +433,68 @@ const guides = [
         title: "U.S. B1/B2 Tourist Visa Walkthrough",
         image: "IMG_4170.jpeg",
         shortDesc: "A friendly breakdown of filling out the DS-160, paying fees, and preparing for your interview in Manila.",
-        steps: [
-            { title: "Complete DS-160 Online", body: "Fill out the online DS-160 Application Form carefully and truthfully." }
+        quickBadges: [
+            "🇺🇸 Visa Type: B1/B2 Tourist & Business",
+            "💵 MRV Fee: $185 USD (Non-refundable)",
+            "📍 Interview Location: U.S. Embassy Manila"
         ],
-        tip: "Ang DS-160 ang pinakamahalagang dokumento sa buong application mo."
+        steps: [
+            { title: "Complete DS-160 Online", body: "Fill out the online DS-160 Application Form carefully and truthfully. Save your Application ID and security answers immediately." },
+            { title: "Pay MRV Fee & Create Profile", body: "Register on the official USTravelDocs portal, pay the non-refundable $185 USD MRV application fee through authorized channels, and link your receipt." },
+            { title: "Book Your Interview Slot", body: "Access the scheduling system to lock in your consular interview date and time at the U.S. Embassy in Manila." },
+            { title: "Attend the Consular Interview", body: "Appear in person at the U.S. Embassy with your passport, DS-160 confirmation page, and strong proof of economic and family ties to the Philippines." }
+        ],
+        tip: "Ang DS-160 ang pinakamahalagang dokumento sa buong application mo. Huwag magsinungaling o magtago ng impormasyon dahil nakikita ng consul ang buong history mo.",
+        categories: [
+            {
+                name: "1. Mastering Form DS-160",
+                tip: "Ang DS-160 ang pinakamahalagang dokumento sa buong application mo. Huwag magsinungaling o magtago ng impormasyon dahil nakikita ng consul ang buong history mo.",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Essential Rules for the Online Application</h4>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li>Every answer on your DS-160 form must be 100% truthful, consistent, and accurate.</li>
+                        <li>Save your Application ID, security question answers, and print/save the DS-160 confirmation barcode page.</li>
+                        <li>Double-check employment history, travel history (past 5 years), and family details.</li>
+                    </ul>
+                `
+            },
+            {
+                name: "2. MRV Fee & Account Setup",
+                tip: "Tandaan na ang $185 MRV fee ay non-refundable at valid lang sa loob ng isang taon para sa pag-book ng interview sa Pilipinas.",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Managing Payments and Profile Creation</h4>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li>Create your profile on the official <a href='https://www.ustraveldocs.com/ph/' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>ustraveldocs.com portal</a>.</li>
+                        <li>Pay the $185 USD Machine Readable Visa (MRV) fee via authorized payment partners (e.g., BPI or RCBC online/OTC).</li>
+                        <li>Keep your receipt reference number to activate your scheduling account.</li>
+                    </ul>
+                `
+            },
+            {
+                name: "3. Booking Your Interview",
+                tip: "Mag-abang ng available slots sa umaga o hapon. Huwag magtiwala sa mga nag-aalok ng 'sure slot' o fixer sa Facebook dahil scam yan!",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Securing Your Schedule at Roxas Boulevard</h4>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li>Log back into the scheduling portal once your payment is reflected.</li>
+                        <li>Choose an available interview slot at the <a href='https://ph.usembassy.gov/visas/' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>U.S. Embassy in Manila</a>.</li>
+                        <li>Print your Appointment Confirmation Package.</li>
+                    </ul>
+                `
+            },
+            {
+                name: "4. Embassy Interview Tips",
+                tip: "Hindi titignan ng consul ang mga folders ng litrato o land titles na dala mo. Ang labanan ay kung paano mo patunayan sa loob ng 2 minuto na babalik ka ng Pilipinas!",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Surviving the Window Interview</h4>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li>Consular officers rarely look at heavy folders of documents; they judge your application primarily on your DS-160 and your verbal answers.</li>
+                        <li>Prove strong ties to the Philippines (stable job, property, business, immediate family) demonstrating you will return after temporary travel.</li>
+                        <li>Be calm, concise, and confident.</li>
+                    </ul>
+                `
+            }
+        ]
     },
     {
         id: "american-dream",
@@ -229,9 +503,70 @@ const guides = [
         title: "Pathway to the American Dream (US Immigration)",
         image: "IMG_6797.jpeg",
         shortDesc: "Exploring legitimate legal pathways to U.S. permanent residency: family sponsorship, Form I-130 Complete Guide, and employment petitions.",
-        steps: [
-            { title: "Determine Eligibility & Gather Documents", body: "Verify qualifying family relationship and assemble supporting records." }
+        quickBadges: [
+            "🇺🇸 Goal: U.S. Permanent Residency (Green Card)",
+            "👨‍👩‍👧 Primary Routes: Family & Employment",
+            "⚠️ Warning: Beware of Immigration Scams"
         ],
-        tip: "Walang shortcut sa U.S. immigration!"
+        steps: [
+            { title: "Determine Eligibility & Gather Documents", body: "Before filling out any paperwork, verify your qualifying family relationship and assemble all necessary supporting records (proof of petitioner status, civil marriage certificate, prior marriage terminations, and bona fide marriage evidence)." },
+            { title: "Download & Fill Official Forms", body: "Complete Form I-130 (Petition for Alien Relative) and Form I-130A (Supplemental Information for Spouse Beneficiary) accurately without erasures." },
+            { title: "Submit Petition & Pay Fees", body: "File your petition online via a secure USCIS account ($625) or by mail to the correct Lockbox facility ($675) with Form G-1145 for electronic updates." },
+            { title: "USCIS Review & Adjudication", body: "Track your case status using your 13-character receipt number (IOE...) from Form I-797C, respond to any RFEs, and await approval." }
+        ],
+        tip: "Walang shortcut sa U.S. immigration! Magtiwala lamang sa mga lisensyadong immigration attorney o accredited representatives ng DOJ/EOIR.",
+        categories: [
+            {
+                name: "1. Family & Employment Petitions",
+                tip: "Walang shortcut sa U.S. immigration! Magtiwala lamang sa mga lisensyadong immigration attorney o accredited representatives ng DOJ/EOIR.",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Core Legal Pathways to Permanent Residency</h4>
+                    <p class='text-slate-700 mb-3'>Legitimate U.S. immigration is built on two primary sponsorship pillars managed through <a href='https://www.uscis.gov' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>USCIS</a>:</p>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li><strong>Family-Based Immigration:</strong> Petitions filed by U.S. citizen or Green Card holder immediate relatives (Form I-130).</li>
+                        <li><strong>Employment-Based Visas:</strong> Worker petitions sponsored by U.S. employers requiring specialized labor certification or professional skills (EB-2, EB-3).</li>
+                    </ul>
+                `
+            },
+            {
+                name: "2. Form I-130 Complete Guide & Checklist",
+                tip: "Accuracy is critical! Minor errors or using outdated form editions can lead to immediate rejections.",
+                content: `
+                    <div class="space-y-6">
+                        <div class="bg-gradient-to-r from-indigo-800 to-indigo-950 rounded-2xl p-6 text-white shadow-md">
+                            <span class="bg-amber-400 text-indigo-950 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider inline-block mb-2">Form I-130 Masterclass Guide</span>
+                            <h3 class="text-2xl font-extrabold mb-2">Petition for Alien Relative Made Easy</h3>
+                            <p class="text-indigo-200 text-sm leading-relaxed">
+                                Navigate the family-based immigration journey with confidence. Check off your required documents below in real-time, and review the official step-by-step instructions.
+                            </p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                name: "3. Official Processing & Visa Bulletin",
+                tip: "Mabagal ang proseso ng family petition dahil sa Visa Bulletin quota. Mag-ingat sa mga taong nangangakong mapapabilis nila ang priority date mo sa pera.",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Navigating Processing Times & Priority Dates</h4>
+                    <p class='text-slate-700 mb-3'>Understanding how application queues work:</p>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li><strong>Visa Bulletin:</strong> Monitor priority dates published monthly by the U.S. Department of State to track when your immigrant visa number becomes available.</li>
+                        <li><strong>Processing Centers:</strong> Always check estimated processing timelines directly on official USCIS service center pages before making life adjustments.</li>
+                    </ul>
+                `
+            },
+            {
+                name: "4. Avoiding Immigration Fraud",
+                tip: "Laging i-verify kung ang kumakatawan sa iyo ay lisensyadong abogado. Huwag magpadala ng bayad sa mga social media agents na walang physical office o legal credentials.",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Protecting Yourself from Visa Scams</h4>
+                    <p class='text-slate-700 mb-3'>Red flags to watch out for:</p>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li>Beware of individuals or agencies guaranteeing 100% visa approval or bypassing statutory immigration laws.</li>
+                        <li>Ensure any legal assistance comes from a licensed attorney or a DOJ-accredited representative listed on official directories.</li>
+                    </ul>
+                `
+            }
+        ]
     }
 ];
