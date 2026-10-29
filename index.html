@@ -1358,9 +1358,9 @@
         function renderGuides() {
             const grid = document.getElementById('guidesGrid');
             if (!grid) return;
-            grid.innerHTML = guides.map((g, index) => `
+            grid.innerHTML = guides.map((g) => `
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:shadow-xl transition duration-200 group">
-                    <div class="h-48 relative overflow-hidden cursor-pointer" onclick="openGuideModal(${index})">
+                    <div class="h-48 relative overflow-hidden cursor-pointer" onclick="location.href='guide.html?id=${g.id}'">
                         <img src="${g.image}" alt="${g.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex flex-col justify-end p-5 text-white">
                             <div class="flex justify-between items-center mb-1.5">
@@ -1372,18 +1372,16 @@
                     </div>
                     <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
                         <p class="text-sm text-slate-600">${g.shortDesc}</p>
-                        <div class="pt-3 border-t border-slate-100 grid grid-cols-2 gap-2">
-                            <button onclick="openGuideModal(${index})" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2 px-3 rounded-xl text-xs transition text-center">
-                                <i class="fa-solid fa-window-maximize mr-1"></i> Quick Summary
-                            </button>
-                            <button onclick="openGuideFullPage(${index})" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded-xl text-xs transition text-center">
-                                <i class="fa-solid fa-book-open mr-1"></i> Full Page Guide
-                            </button>
+                        <div class="pt-3 border-t border-slate-100">
+                            <a href="guide.html?id=${g.id}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition text-center w-full block">
+                                <i class="fa-solid fa-book-open mr-1"></i> Read Full Guide
+                            </a>
                         </div>
                     </div>
                 </div>
             `).join('');
         }
+    
 
         function openGuideModal(index) {
             const g = guides[index];
