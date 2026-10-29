@@ -56,12 +56,12 @@
                 </div>
 
                 <!-- Desktop Nav -->
-                <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-600">
-                    <a href="#categories" onclick="closeCountryPage(); closeQAPage();" class="hover:text-blue-600 transition">Featured Guides</a>
-                    <button onclick="openChecklistsModal()" class="hover:text-blue-600 transition font-semibold">Essential Checklists</button>
-                    <button onclick="openDirectoryModal()" class="hover:text-blue-600 transition text-blue-600 font-bold">Country Directory</button>
-                    <button onclick="openAboutModal()" class="hover:text-blue-600 transition font-semibold">About Mamae</button>
-                </nav>
+<nav class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-600">
+    <a href="#categories" class="hover:text-blue-600 transition">Featured Guides</a>
+    <button onclick="openChecklistsModal()" class="hover:text-blue-600 transition font-semibold">Essential Checklists</button>
+    <a href="directory.html" class="hover:text-blue-600 transition text-blue-600 font-bold">Country Directory</a>
+    <button onclick="openAboutModal()" class="hover:text-blue-600 transition font-semibold">About Mamae</button>
+</nav>
 
                 <!-- Action Buttons -->
                 <div class="hidden sm:flex items-center space-x-2">
@@ -115,16 +115,13 @@
                 Real-world travel guides, simple step-by-step instructions, and community Q&A shared by a fellow traveler.
             </p>
             <div class="pt-2 flex flex-col sm:flex-row justify-center gap-3">
-                <button onclick="openDirectoryModal()" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition">
-                    Explore Country Directory
-                </button>
-                <button onclick="openQAPage()" class="bg-teal-600 hover:bg-teal-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition flex items-center justify-center">
-                    <i class="fa-solid fa-comments mr-2"></i> View Marites Board 🌍
-                </button>
-                <button onclick="openQAModal()" class="bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-3.5 rounded-xl backdrop-blur-sm transition border border-white/20 flex items-center justify-center">
-                    <i class="fa-solid fa-paper-plane mr-2"></i> Ask Mamae
-                </button>
-            </div>
+    <a href="directory.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition text-center flex items-center justify-center">
+        Explore Country Directory
+    </a>
+    <a href="qa-board.html" class="bg-teal-600 hover:bg-teal-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition flex items-center justify-center">
+        <i class="fa-solid fa-comments mr-2"></i> View Marites Board 🌍
+    </a>
+</div>
         </div>
     </section>
 
