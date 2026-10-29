@@ -17,15 +17,13 @@
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col overflow-x-hidden w-full pt-safe">
 
-    <!-- Pinned Top Container (Disclaimer + Navigation Bar locked together) -->
+    <!-- Pinned Top Container -->
     <div class="fixed top-0 left-0 right-0 z-50 shadow-sm w-full bg-white">
-        <!-- Top Disclaimer Banner -->
         <div class="bg-amber-50 border-b border-amber-200 text-amber-900 px-3 py-1.5 text-[11px] sm:text-xs text-center font-medium leading-tight">
             <i class="fa-solid fa-triangle-exclamation mr-1 text-amber-600"></i>
             <strong>Disclaimer:</strong> Mamae Knows Borders is an independent informational guide. Not affiliated with any recruitment, travel, or government agency.
         </div>
         
-        <!-- Navigation Bar -->
         <header class="bg-white border-b border-slate-200">
             <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-auto sm:h-20 py-3 sm:py-0 flex flex-wrap lg:flex-nowrap items-center justify-between gap-3">
                 <a href="index.html" class="flex items-center space-x-3 cursor-pointer flex-shrink-0">
@@ -52,9 +50,9 @@
                         <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block mr-1.5 animate-pulse"></span> 
                         Travel Updates/ <span class="ml-1.5 bg-blue-600 text-white text-[10px] px-1.5 py-0.5 rounded-full font-extrabold">News</span>
                     </button>
-                    <a href="qa-board.html" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-3.5 py-1.5 rounded-lg shadow-sm text-xs transition text-center flex items-center">
+                    <button onclick="openQAModal()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-3.5 py-1.5 rounded-lg shadow-sm text-xs transition">
                         Ask a Question
-                    </a>
+                    </button>
                 </div>
 
                 <!-- Mobile Hamburger Button -->
@@ -73,15 +71,15 @@
                     <button onclick="toggleMobileMenu(); openUpdatesModal();" class="w-full bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200 font-bold py-2 px-3 rounded-lg text-xs flex items-center justify-center transition">
                         <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block mr-1.5 animate-pulse"></span> Travel Updates / News
                     </button>
-                    <a href="qa-board.html" class="w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg text-xs transition block">
+                    <button onclick="toggleMobileMenu(); openQAModal();" class="w-full text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg text-xs transition">
                         Ask a Question
-                    </a>
+                    </button>
                 </div>
             </div>
         </header>
     </div>
 
-    <!-- Spacer to offset fixed top container height -->
+    <!-- Spacer -->
     <div class="h-28 sm:h-28"></div>
 
     <!-- Hero Section -->
@@ -104,9 +102,9 @@
                 <a href="qa-board.html" class="bg-teal-600 hover:bg-teal-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition flex items-center justify-center">
                     <i class="fa-solid fa-comments mr-2"></i> View Marites Board 🌍
                 </a>
-                <a href="qa-board.html" class="bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-3.5 rounded-xl backdrop-blur-sm transition border border-white/20 flex items-center justify-center">
+                <button onclick="openQAModal()" class="bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-3.5 rounded-xl backdrop-blur-sm transition border border-white/20 flex items-center justify-center">
                     <i class="fa-solid fa-paper-plane mr-2"></i> Ask Mamae
-                </a>
+                </button>
             </div>
         </div>
     </section>
@@ -121,7 +119,7 @@
         <div id="guidesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
     </section>
 
-    <!-- Buy Mamae a Coffee / Support Section -->
+    <!-- Buy Mamae a Coffee Section -->
     <section id="coffee" class="py-16 bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 border-t border-amber-200 w-full">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-amber-400 text-slate-900 text-3xl shadow-md">
@@ -139,6 +137,44 @@
         </div>
     </section>
 
+    <!-- Featured Guide Popup Modal -->
+    <div id="guideModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200">
+            <div class="relative h-56">
+                <img id="modalImg" src="" alt="Guide Banner" class="w-full h-full object-cover">
+                <button onclick="closeModal()" class="absolute top-4 right-4 bg-black/60 hover:bg-black text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent p-6 text-white">
+                    <div class="flex items-center space-x-2 mb-1">
+                        <span id="modalBadge" class="bg-blue-600 text-xs font-bold px-3 py-1 rounded-full uppercase"></span>
+                        <span id="modalUpdated" class="bg-black/50 text-slate-200 text-[10px] font-medium px-2.5 py-0.5 rounded backdrop-blur-sm"></span>
+                    </div>
+                    <h3 id="modalTitle" class="text-2xl sm:text-3xl font-extrabold mt-1"></h3>
+                </div>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6">
+                <p id="modalDesc" class="text-slate-600 text-sm sm:text-base"></p>
+                <div id="modalBadges" class="hidden flex-wrap gap-2"></div>
+                <div>
+                    <h4 class="font-bold text-slate-900 text-base mb-3 flex items-center">
+                        <i class="fa-solid fa-list-check text-blue-600 mr-2"></i> Step-by-Step Guide
+                    </h4>
+                    <div id="modalSteps" class="space-y-3 text-sm text-slate-700 bg-slate-50 p-4 rounded-2xl border border-slate-200"></div>
+                </div>
+                <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4">
+                    <h4 class="font-bold text-amber-900 text-sm mb-1 flex items-center">
+                        <i class="fa-solid fa-lightbulb text-amber-600 mr-2"></i> Mamae's Real-Talk Tip:
+                    </h4>
+                    <p id="modalTip" class="text-xs sm:text-sm text-amber-800 leading-relaxed"></p>
+                </div>
+                <div class="pt-4 border-t border-slate-200 flex justify-end">
+                    <button onclick="closeModal()" class="bg-slate-900 hover:bg-slate-800 text-white font-semibold px-6 py-3 rounded-xl text-sm transition">Close Guide</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Essential Checklists Modal View -->
     <div id="checklistsModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 p-6 sm:p-8 space-y-6">
@@ -150,7 +186,6 @@
                     <i class="fa-solid fa-xmark text-lg"></i>
                 </button>
             </div>
-            
             <div class="space-y-4 text-slate-700 text-xs sm:text-sm leading-relaxed">
                 <div class="bg-blue-50 border border-blue-200 rounded-2xl p-4 space-y-2">
                     <h4 class="font-bold text-blue-950 text-base flex items-center">
@@ -168,34 +203,40 @@
         </div>
     </div>
 
-    <!-- About Me Modal View -->
-    <div id="aboutModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 p-6 sm:p-8 space-y-6">
+    <!-- Ask a Question Modal -->
+    <div id="qaModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 p-6 sm:p-8 space-y-6">
             <div class="flex justify-between items-center border-b border-slate-200 pb-4">
-                <h3 class="text-2xl font-extrabold text-slate-900">About Mamae</h3>
-                <button onclick="closeAboutModal()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 w-9 h-9 rounded-full flex items-center justify-center transition">
-                    <i class="fa-solid fa-xmark text-lg"></i>
+                <h3 class="text-xl font-extrabold text-slate-900">Send a Question to Mamae</h3>
+                <button onclick="closeQAModal()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
-            <div class="flex flex-col sm:flex-row gap-6 items-center">
-                <div class="w-40 h-40 flex-shrink-0 rounded-2xl overflow-hidden shadow-md border-2 border-slate-100 relative">
-                    <img src="mamae.jpeg" alt="Bulacan to Global Borders" class="w-full h-full object-cover">
+            <form id="qaFormModal" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div class="bg-amber-50 border border-amber-200 rounded-2xl p-3 text-amber-900 text-xs flex items-center space-x-2">
+                    <i class="fa-solid fa-mug-hot text-amber-600 text-lg"></i>
+                    <span>Got travel questions or visa woes? Ask Mamae or let’s marites!</span>
                 </div>
-                <div class="space-y-3 text-slate-700 text-sm leading-relaxed">
-                    <div class="flex items-center space-x-2 text-pink-600">
-                        <i class="fa-solid fa-heart"></i>
-                        <h4 class="text-xl font-extrabold text-slate-900">Hi, I’m Mamae!</h4>
-                    </div>
-                    <p>That’s why I created <strong>Mamae Knows Borders</strong>. To share what I've learned, simplify the complicated, and help fellow travelers navigate life across borders.</p>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Your Name / Nickname</label>
+                    <input type="text" id="qaName" required placeholder="e.g. Marites from Manila" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
-            </div>
-            <div class="pt-4 border-t border-slate-200 flex justify-end">
-                <button onclick="closeAboutModal()" class="bg-slate-900 text-white font-semibold px-6 py-2.5 rounded-xl text-sm">Close</button>
-            </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Location / Where from?</label>
+                    <input type="text" id="qaLocation" required placeholder="e.g. Cavite / Dubai" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">Your Question / Chika</label>
+                    <textarea id="qaMessage" rows="3" required placeholder="Ano ba talaga status ng visa-free entry?..." class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl text-sm transition shadow-sm">
+                    Submit to Marites Board <i class="fa-solid fa-paper-plane ml-1"></i>
+                </button>
+            </form>
         </div>
     </div>
 
-    <!-- Travel Updates & Policy News Modal View -->
+    <!-- Travel Updates Modal -->
     <div id="updatesModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 p-6 sm:p-8 space-y-6">
             <div class="flex justify-between items-center border-b border-slate-200 pb-4">
@@ -206,24 +247,35 @@
             </div>
             <p class="text-slate-600 text-sm">Always cross-check live entry rules directly through verified official portals before departure.</p>
             <div class="pt-4 border-t border-slate-200 flex justify-end">
-                <button onclick="closeUpdatesModal()" class="bg-slate-900 text-white font-semibold px-6 py-2.5 rounded-xl text-sm">Close</button>
+                <button onclick="closeUpdatesModal()" class="bg-slate-900 text-white font-semibold px-6 py-2.5 rounded-xl text-sm">Close Updates</button>
             </div>
         </div>
     </div>
 
-    <!-- Privacy-First Support Modal -->
+    <!-- About Me Modal -->
+    <div id="aboutModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 p-6 sm:p-8 space-y-6">
+            <div class="flex justify-between items-center border-b border-slate-200 pb-4">
+                <h3 class="text-2xl font-extrabold text-slate-900">About Mamae</h3>
+                <button onclick="closeAboutModal()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 w-9 h-9 rounded-full flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="space-y-3 text-slate-700 text-sm leading-relaxed">
+                <h4 class="text-xl font-extrabold text-slate-900">Hi, I’m Mamae!</h4>
+                <p>That’s why I created <strong>Mamae Knows Borders</strong>. To share what I've learned, simplify the complicated, and help fellow travelers navigate life across borders.</p>
+            </div>
+            <div class="pt-4 border-t border-slate-200 flex justify-end">
+                <button onclick="closeAboutModal()" class="bg-slate-900 text-white font-semibold px-6 py-2.5 rounded-xl text-sm">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Buy Mamae a Coffee Modal -->
     <div id="coffeeModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200">
             <div class="bg-gradient-to-r from-amber-400 to-orange-400 p-6 text-slate-900 flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <div class="bg-white/90 p-2.5 rounded-xl shadow-sm">
-                        <i class="fa-solid fa-mug-hot text-xl text-amber-600"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-extrabold leading-none">Treat Mamae to a Coffee</h3>
-                        <span class="text-xs font-semibold text-slate-800">100% Anonymous & Secure</span>
-                    </div>
-                </div>
+                <h3 class="text-xl font-extrabold leading-none">Treat Mamae to a Coffee</h3>
                 <button onclick="closeCoffeeModal()" class="bg-black/10 hover:bg-black/20 text-slate-900 w-9 h-9 rounded-full flex items-center justify-center transition">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
@@ -241,24 +293,20 @@
     <footer class="bg-slate-900 text-white py-12 mt-auto w-full">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
             <p class="text-sm font-semibold">Mamae Knows Borders — Built with dedication for Filipinos dreaming of the world.</p>
-            <p class="text-xs text-slate-400 max-w-xl mx-auto">
-                Mamae Knows Borders is an independent informational guide. Not affiliated with any recruitment, travel, or government agency.
-            </p>
-            <p class="text-xs text-slate-500 pt-4 border-t border-slate-800">
-                © 2026 Mamae Knows Borders. All rights reserved.
-            </p>
+            <p class="text-xs text-slate-400 max-w-xl mx-auto">Mamae Knows Borders is an independent informational guide.</p>
+            <p class="text-xs text-slate-500 pt-4 border-t border-slate-800">© 2026 Mamae Knows Borders. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript & Scripts -->
+    <!-- Scripts -->
     <script src="js/data.js"></script>
     <script>
         function renderGuides() {
             const grid = document.getElementById('guidesGrid');
             if (!grid) return;
-            grid.innerHTML = guides.map((g) => `
+            grid.innerHTML = guides.map((g, index) => `
                 <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col hover:shadow-xl transition duration-200 group">
-                    <div class="h-48 relative overflow-hidden cursor-pointer" onclick="location.href='guide.html?id=${g.id}'">
+                    <div class="h-48 relative overflow-hidden cursor-pointer" onclick="openGuideModal(${index})">
                         <img src="${g.image}" alt="${g.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent flex flex-col justify-end p-5 text-white">
                             <div class="flex justify-between items-center mb-1.5">
@@ -270,9 +318,12 @@
                     </div>
                     <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
                         <p class="text-sm text-slate-600">${g.shortDesc}</p>
-                        <div class="pt-3 border-t border-slate-100">
-                            <a href="guide.html?id=${g.id}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition text-center w-full block">
-                                <i class="fa-solid fa-book-open mr-1"></i> Read Full Guide & Share URL
+                        <div class="pt-3 border-t border-slate-100 grid grid-cols-2 gap-2">
+                            <button onclick="openGuideModal(${index})" class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2 px-3 rounded-xl text-xs transition text-center">
+                                <i class="fa-solid fa-window-maximize mr-1"></i> Quick Summary
+                            </button>
+                            <a href="guide.html?id=${g.id}" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded-xl text-xs transition text-center flex items-center justify-center">
+                                <i class="fa-solid fa-book-open mr-1"></i> Read Full Guide
                             </a>
                         </div>
                     </div>
@@ -280,44 +331,88 @@
             `).join('');
         }
 
-        function openChecklistsModal() {
-            document.getElementById('checklistsModal').classList.remove('hidden');
-            document.getElementById('checklistsModal').classList.add('flex');
-        }
-        function closeChecklistsModal() {
-            document.getElementById('checklistsModal').classList.remove('flex');
-            document.getElementById('checklistsModal').classList.add('hidden');
+        function openGuideModal(index) {
+            const g = guides[index];
+            document.getElementById('modalImg').src = g.image;
+            document.getElementById('modalBadge').innerText = g.badge;
+            document.getElementById('modalUpdated').innerText = 'Updated: ' + g.lastUpdated;
+            document.getElementById('modalTitle').innerText = g.title;
+            document.getElementById('modalDesc').innerText = g.shortDesc;
+            document.getElementById('modalTip').innerHTML = g.tip;
+
+            const badgesContainer = document.getElementById('modalBadges');
+            if (g.quickBadges && g.quickBadges.length > 0) {
+                badgesContainer.innerHTML = g.quickBadges.map(badge => `
+                    <span class="bg-blue-50 text-blue-800 border border-blue-200 text-xs font-bold px-3 py-1.5 rounded-full shadow-xs">${badge}</span>
+                `).join('');
+                badgesContainer.classList.remove('hidden');
+                badgesContainer.classList.add('flex');
+            } else {
+                badgesContainer.classList.add('hidden');
+            }
+            
+            document.getElementById('modalSteps').innerHTML = g.steps.map((step, idx) => {
+                const title = typeof step === 'object' ? step.title : `Step ${idx + 1}`;
+                const body = typeof step === 'object' ? step.body : step;
+                return `
+                    <div class="flex items-start space-x-3 pb-3 border-b border-slate-200/60 last:border-0 last:pb-0">
+                        <div class="bg-blue-600 text-white font-bold text-xs w-6 h-6 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5">${idx + 1}</div>
+                        <div class="flex-grow text-sm leading-relaxed">
+                            <strong class="text-slate-900 block mb-0.5">${title}</strong>
+                            <span>${body}</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            document.getElementById('guideModal').classList.remove('hidden');
+            document.getElementById('guideModal').classList.add('flex');
         }
 
-        function openAboutModal() {
-            document.getElementById('aboutModal').classList.remove('hidden');
-            document.getElementById('aboutModal').classList.add('flex');
-        }
-        function closeAboutModal() {
-            document.getElementById('aboutModal').classList.remove('flex');
-            document.getElementById('aboutModal').classList.add('hidden');
+        function closeModal() {
+            document.getElementById('guideModal').classList.remove('flex');
+            document.getElementById('guideModal').classList.add('hidden');
         }
 
-        function openUpdatesModal() {
-            document.getElementById('updatesModal').classList.remove('hidden');
-            document.getElementById('updatesModal').classList.add('flex');
-        }
-        function closeUpdatesModal() {
-            document.getElementById('updatesModal').classList.remove('flex');
-            document.getElementById('updatesModal').classList.add('hidden');
-        }
+        function openChecklistsModal() { document.getElementById('checklistsModal').classList.remove('hidden'); document.getElementById('checklistsModal').classList.add('flex'); }
+        function closeChecklistsModal() { document.getElementById('checklistsModal').classList.remove('flex'); document.getElementById('checklistsModal').classList.add('hidden'); }
 
-        function openCoffeeModal() {
-            document.getElementById('coffeeModal').classList.remove('hidden');
-            document.getElementById('coffeeModal').classList.add('flex');
-        }
-        function closeCoffeeModal() {
-            document.getElementById('coffeeModal').classList.remove('flex');
-            document.getElementById('coffeeModal').classList.add('hidden');
-        }
+        function openAboutModal() { document.getElementById('aboutModal').classList.remove('hidden'); document.getElementById('aboutModal').classList.add('flex'); }
+        function closeAboutModal() { document.getElementById('aboutModal').classList.remove('flex'); document.getElementById('aboutModal').classList.add('hidden'); }
 
-        function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
+        function openUpdatesModal() { document.getElementById('updatesModal').classList.remove('hidden'); document.getElementById('updatesModal').classList.add('flex'); }
+        function closeUpdatesModal() { document.getElementById('updatesModal').classList.remove('flex'); document.getElementById('updatesModal').classList.add('hidden'); }
+
+        function openCoffeeModal() { document.getElementById('coffeeModal').classList.remove('hidden'); document.getElementById('coffeeModal').classList.add('flex'); }
+        function closeCoffeeModal() { document.getElementById('coffeeModal').classList.remove('flex'); document.getElementById('coffeeModal').classList.add('hidden'); }
+
+        function openQAModal() { document.getElementById('qaModal').classList.remove('hidden'); document.getElementById('qaModal').classList.add('flex'); }
+        function closeQAModal() { document.getElementById('qaModal').classList.remove('flex'); document.getElementById('qaModal').classList.add('hidden'); }
+
+        function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('hidden'); }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('qaName').value;
+            const location = document.getElementById('qaLocation').value;
+            const message = document.getElementById('qaMessage').value;
+
+            const newQuestion = {
+                id: Date.now(),
+                author: `${name}, ${location}`,
+                date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+                question: message,
+                answer: "Pending Mamae's verified response..."
+            };
+
+            let savedQuestions = JSON.parse(localStorage.getItem('mamae_qa_board') || '[]');
+            savedQuestions.unshift(newQuestion);
+            localStorage.setItem('mamae_qa_board', JSON.stringify(savedQuestions));
+            
+            alert("Success! Your question has been posted to the Marites Board.");
+            document.getElementById('qaFormModal').reset();
+            closeQAModal();
+            location.href = 'qa-board.html';
         }
 
         window.addEventListener('DOMContentLoaded', () => {
