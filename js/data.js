@@ -502,7 +502,7 @@ const guides = [
         lastUpdated: "October 2026",
         title: "Pathway to the American Dream (US Immigration)",
         image: "IMG_6797.jpeg",
-        shortDesc: "Exploring legitimate legal pathways to U.S. permanent residency: family sponsorship, Form I-130 Complete Guide, and employment petitions.",
+        shortDesc: "Exploring legitimate legal pathways to U.S. permanent residency: family sponsorship, Form I-130 Complete Guide, Removal of Conditions, and Naturalization.",
         quickBadges: [
             "🇺🇸 Goal: U.S. Permanent Residency (Green Card)",
             "👨‍👩‍👧 Primary Routes: Family & Employment",
@@ -540,6 +540,15 @@ const guides = [
                                 Navigate the family-based immigration journey with confidence. Check off your required documents below in real-time, and review the official step-by-step instructions.
                             </p>
                         </div>
+                        <h4 class='text-lg font-bold text-slate-900 mb-2'>Filing Form I-130 (Petition for Alien Relative)</h4>
+                        <p class='text-slate-700 mb-3'>The foundational first step for U.S. citizens or lawful permanent residents looking to bring family members to the United States.</p>
+                        <h5 class='font-bold text-slate-800 mt-4 mb-2'>Key Steps & Tracking Tools:</h5>
+                        <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                            <li>Verify petitioner status (U.S. citizen or Green Card holder).</li>
+                            <li>Gather proof of relationship (birth certificates, marriage certificates).</li>
+                            <li>Submit Form I-130 along with the required filing fees to <a href='https://www.uscis.gov' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>USCIS</a>.</li>
+                            <li><strong>Sign Up & Check Status:</strong> Create your account on the <a href='https://my.uscis.gov/' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>USCIS Online Account Portal</a> to file forms electronically, upload evidence, and monitor updates. You can also track standalone progress using the <a href='https://egov.uscis.gov/casestatus/landing.do' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>USCIS Case Status Online Tool</a>.</li>
+                        </ul>
                     </div>
                 `
             },
