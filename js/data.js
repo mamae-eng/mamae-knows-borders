@@ -517,22 +517,58 @@ const guides = [
         tip: "Walang shortcut sa U.S. immigration! Magtiwala lamang sa mga lisensyadong immigration attorney o accredited representatives ng DOJ/EOIR.",
         categories: [
             {
-                name: "1. Form I-130 Petition",
-                tip: "Huwag kalimutang i-track ang iyong kaso online gamit ang USCIS account mo para malaman agad kung may update o Request for Evidence (RFE).",
+                name: "1. Family & Employment Petitions",
+                tip: "Walang shortcut sa U.S. immigration! Magtiwala lamang sa mga lisensyadong immigration attorney o accredited representatives ng DOJ/EOIR.",
                 content: `
-                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Filing Form I-130 (Petition for Alien Relative)</h4>
-                    <p class='text-slate-700 mb-3'>The foundational first step for U.S. citizens or lawful permanent residents looking to bring family members to the United States.</p>
-                    <h5 class='font-bold text-slate-800 mt-4 mb-2'>Key Steps & Tracking:</h5>
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Core Legal Pathways to Permanent Residency</h4>
+                    <p class='text-slate-700 mb-3'>Legitimate U.S. immigration is built on two primary sponsorship pillars managed through <a href='https://www.uscis.gov' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>USCIS</a>:</p>
                     <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
-                        <li>Verify petitioner status (U.S. citizen or Green Card holder).</li>
-                        <li>Gather proof of relationship (birth certificates, marriage certificates).</li>
-                        <li>Submit Form I-130 along with the required filing fees to <a href='https://www.uscis.gov' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>USCIS</a>.</li>
-                        <li><strong>Sign Up & Check Status:</strong> Create your account on the <a href='https://my.uscis.gov/' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>USCIS Online Account Portal</a> to file forms electronically, upload evidence, and monitor updates. You can also track standalone progress using the <a href='https://egov.uscis.gov/casestatus/landing.do' target='_blank' rel='noopener noreferrer' class='text-blue-600 underline font-semibold'>USCIS Case Status Online Tool</a>.</li>
+                        <li><strong>Family-Based Immigration:</strong> Petitions filed by U.S. citizen or Green Card holder immediate relatives (Form I-130).</li>
+                        <li><strong>Employment-Based Visas:</strong> Worker petitions sponsored by U.S. employers requiring specialized labor certification or professional skills (EB-2, EB-3).</li>
                     </ul>
                 `
             },
             {
-                name: "2. Removal of Conditions (I-751)",
+                name: "2. Form I-130 Complete Guide & Checklist",
+                tip: "Accuracy is critical! Minor errors or using outdated form editions can lead to immediate rejections.",
+                content: `
+                    <div class="space-y-6">
+                        <div class="bg-gradient-to-r from-indigo-800 to-indigo-950 rounded-2xl p-6 text-white shadow-md">
+                            <span class="bg-amber-400 text-indigo-950 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider inline-block mb-2">Form I-130 Masterclass Guide</span>
+                            <h3 class="text-2xl font-extrabold mb-2">Petition for Alien Relative Made Easy</h3>
+                            <p class="text-indigo-200 text-sm leading-relaxed">
+                                Navigate the family-based immigration journey with confidence. Check off your required documents below in real-time, and review the official step-by-step instructions.
+                            </p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                name: "3. Official Processing & Visa Bulletin",
+                tip: "Mabagal ang proseso ng family petition dahil sa Visa Bulletin quota. Mag-ingat sa mga taong nangangakong mapapabilis nila ang priority date mo sa pera.",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Navigating Processing Times & Priority Dates</h4>
+                    <p class='text-slate-700 mb-3'>Understanding how application queues work:</p>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li><strong>Visa Bulletin:</strong> Monitor priority dates published monthly by the U.S. Department of State to track when your immigrant visa number becomes available.</li>
+                        <li><strong>Processing Centers:</strong> Always check estimated processing timelines directly on official USCIS service center pages before making life adjustments.</li>
+                    </ul>
+                `
+            },
+            {
+                name: "4. Avoiding Immigration Fraud",
+                tip: "Laging i-verify kung ang kumakatawan sa iyo ay lisensyadong abogado. Huwag magpadala ng bayad sa mga social media agents na walang physical office o legal credentials.",
+                content: `
+                    <h4 class='text-lg font-bold text-slate-900 mb-2'>Protecting Yourself from Visa Scams</h4>
+                    <p class='text-slate-700 mb-3'>Red flags to watch out for:</p>
+                    <ul class='list-disc pl-5 space-y-2 text-slate-700 mb-4'>
+                        <li>Beware of individuals or agencies guaranteeing 100% visa approval or bypassing statutory immigration laws.</li>
+                        <li>Ensure any legal assistance comes from a licensed attorney or a DOJ-accredited representative listed on official directories.</li>
+                    </ul>
+                `
+            },
+            {
+                name: "5. Removal of Conditions (I-751)",
                 tip: "Huwag na huwag palampasin ang 90-day filing window bago mag-expire ang iyong 2-year conditional Green Card! Kung lumagpas ka nang walang dahilan, pwedeng ma-terminate ang status mo.",
                 content: `
                     <h4 class='text-lg font-bold text-slate-900 mb-2'>Removing Conditions on Permanent Residence (Form I-751)</h4>
@@ -548,7 +584,7 @@ const guides = [
                 `
             },
             {
-                name: "3. Naturalization (Form N-400)",
+                name: "6. Naturalization (Form N-400)",
                 tip: "Maghanda para sa Civics at English test! Maraming libreng reviewers online tulad ng USCIS Civics Test Study Tools. Tandaan din na ang continuous residence at physical presence ang susi.",
                 content: `
                     <h4 class='text-lg font-bold text-slate-900 mb-2'>Path to U.S. Citizenship via Naturalization (Form N-400)</h4>
